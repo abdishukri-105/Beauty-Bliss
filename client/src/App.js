@@ -1,23 +1,12 @@
-import logo from './logo.svg';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-pink-900">
+
+       <FontAwesomeIcon icon={faCheckCircle} className="text-blue-800 mr-3"/> hello 
     </div>
   );
 }
