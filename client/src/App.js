@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function App() {
   return (
-    <div className="App bg-pink-900">
+    <div className="App ">
 
        <FontAwesomeIcon icon={faCheckCircle} className="text-blue-800 mr-3"/> hello 
     </div>
