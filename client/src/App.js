@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App ">
 
-       <FontAwesomeIcon icon={faCheckCircle} className="text-blue-800 mr-3"/> hello 
+       <FontAwesomeIcon icon={faCheckCircle} className="text-blue-800 mr-3"/> hello tailwind 
     </div>
   );
 }
