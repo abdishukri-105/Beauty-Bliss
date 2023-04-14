@@ -1,5 +1,5 @@
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-import './App.css';
+import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function App() {
