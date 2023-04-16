@@ -1,0 +1,132 @@
+  [1m[35m (234.7ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode'[0m
+  [1m[35m (94.6ms)[0m  [1m[35mCREATE DATABASE "api_test" ENCODING = 'unicode'[0m
+  [1m[35m (24.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (23.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20230415161806)
+  [1m[36mTRANSACTION (42.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230415161806"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-16 04:47:38.203086"], ["updated_at", "2023-04-16 04:47:38.203086"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (43.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stainless Steel Water Bottle"], ["description", "This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours."], ["price", 19.99], ["image_url", "https://example.com/images/water_bottle.jpg"], ["created_at", "2023-04-16 04:58:58.469260"], ["updated_at", "2023-04-16 04:58:58.469260"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Organic Cotton T-Shirt"], ["description", "This comfortable and stylish t-shirt is made of 100% organic cotton. It is lightweight, breathable, and perfect for casual wear. Available in various colors and sizes."], ["price", 29.99], ["image_url", "https://example.com/images/tshirt.jpg"], ["created_at", "2023-04-16 04:58:58.519361"], ["updated_at", "2023-04-16 04:58:58.519361"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Smartphone Car Mount"], ["description", "This car mount is designed to securely hold your smartphone while driving. It is compatible with most smartphones and can be easily attached to your car's air vent. The mount is adjustable and can be rotated 360 degrees for optimal viewing angles."], ["price", 14.99], ["image_url", "https://example.com/images/car_mount.jpg"], ["created_at", "2023-04-16 04:58:58.524043"], ["updated_at", "2023-04-16 04:58:58.524043"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Wireless Bluetooth Earbuds"], ["description", "These earbuds are perfect for listening to music, podcasts, or taking calls on the go. They are wireless, have a long battery life, and come with a charging case. The earbuds are also water-resistant and sweatproof, making them great for workouts and outdoor activities."], ["price", 59.99], ["image_url", "https://example.com/images/earbuds.jpg"], ["created_at", "2023-04-16 04:58:58.528843"], ["updated_at", "2023-04-16 04:58:58.528843"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Portable Power Bank"], ["description", "This power bank is perfect for charging your devices on the go. It has a high-capacity battery and can charge multiple devices at once. The power bank is compact and lightweight, making it easy to carry in your bag or pocket."], ["price", 39.99], ["image_url", "https://example.com/images/power_bank.jpg"], ["created_at", "2023-04-16 04:58:58.534010"], ["updated_at", "2023-04-16 04:58:58.534010"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Started GET "/products" for 127.0.0.1 at 2023-04-16 08:00:21 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/griffins/Desktop/Lectures/RubyOnRails/Beauty-Bliss/api/app/controllers/products_controller.rb:13: syntax error, unexpected ':', expecting '}'
+            render {error: "Product not found"}, status...
+                         ^
+/Users/griffins/Desktop/Lectures/RubyOnRails/Beauty-Bliss/api/app/controllers/products_controller.rb:13: syntax error, unexpected '}', expecting `end'
+...er {error: "Product not found"}, status: 404
+...                              ^
+):
+  
+app/controllers/products_controller.rb:13: syntax error, unexpected ':', expecting '}'
+app/controllers/products_controller.rb:13: syntax error, unexpected '}', expecting `end'
+app/controllers/products_controller.rb:13: syntax error, unexpected ':', expecting '}'
+app/controllers/products_controller.rb:13: syntax error, unexpected '}', expecting `end'
+Started GET "/products" for 127.0.0.1 at 2023-04-16 08:02:18 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 245ms (Views: 50.5ms | ActiveRecord: 32.6ms | Allocations: 37880)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hyaluronic Acid Serum"], ["description", "This serum is packed with hyaluronic acid to hydrate and plump up your skin. It helps to reduce the appearance of fine lines and wrinkles, and leaves your skin looking and feeling smoother and more radiant."], ["price", 29.99], ["image_url", "https://example.com/images/hyaluronic_acid_serum.jpg"], ["created_at", "2023-04-16 05:04:27.481663"], ["updated_at", "2023-04-16 05:04:27.481663"]]
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Charcoal Face Mask"], ["description", "This face mask is infused with charcoal to help purify and detoxify your skin. It helps to unclog pores and remove impurities, leaving your skin feeling refreshed and rejuvenated."], ["price", 14.99], ["image_url", "https://example.com/images/charcoal_face_mask.jpg"], ["created_at", "2023-04-16 05:04:27.498048"], ["updated_at", "2023-04-16 05:04:27.498048"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Vitamin C Serum"], ["description", "This serum is packed with vitamin C to brighten and even out your skin tone. It helps to reduce the appearance of dark spots and hyperpigmentation, and leaves your skin looking brighter and more youthful."], ["price", 39.99], ["image_url", "https://example.com/images/vitamin_c_serum.jpg"], ["created_at", "2023-04-16 05:04:27.503510"], ["updated_at", "2023-04-16 05:04:27.503510"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rosewater Toner"], ["description", "This toner is made with rosewater to help soothe and hydrate your skin. It helps to balance your skin's pH and prepare it for the rest of your skincare routine. It can also be used throughout the day to refresh and revitalize your skin."], ["price", 19.99], ["image_url", "https://example.com/images/rosewater_toner.jpg"], ["created_at", "2023-04-16 05:04:27.508099"], ["updated_at", "2023-04-16 05:04:27.508099"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anti-Aging Eye Cream"], ["description", "This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful."], ["price", 49.99], ["image_url", "https://example.com/images/anti_aging_eye_cream.jpg"], ["created_at", "2023-04-16 05:04:27.513487"], ["updated_at", "2023-04-16 05:04:27.513487"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products" for 127.0.0.1 at 2023-04-16 08:04:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 100ms (Views: 51.1ms | ActiveRecord: 11.8ms | Allocations: 37548)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-16 08:04:53 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"username"=>"user1", "password"=>"[FILTERED]", "product"=>{}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 1695)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-16 08:05:23 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 1674)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-04-16 08:05:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/products/1" for 127.0.0.1 at 2023-04-16 08:06:31 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"username"=>"user1", "password"=>"[FILTERED]", "id"=>"1", "product"=>{}}
+  [1m[36mProduct Load (4.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 200 OK in 43ms (Views: 1.1ms | ActiveRecord: 5.0ms | Allocations: 2611)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2023-04-16 08:15:31 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 200 OK in 101ms (Views: 1.0ms | ActiveRecord: 56.2ms | Allocations: 3674)
+
+
+Started GET "/products/50" for 127.0.0.1 at 2023-04-16 08:15:34 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"50"}
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 404 Not Found in 6ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 547)
+
+
