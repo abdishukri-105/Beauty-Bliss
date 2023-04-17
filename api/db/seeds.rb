@@ -1,4 +1,5 @@
-puts "Seeding..."
+puts "📃 Seeding data..."
+
 products = [
     {
       name: "Hyaluronic Acid Serum",
@@ -37,4 +38,4 @@ products = [
     Product.create(product)
   end
   
-puts "Done!!"
+  puts "✅ Done seeding"

@@ -1,39 +1,28 @@
 class ProductsController < ApplicationController
+    wrap_parameters format: []
 
-    def index 
-        products = Product.all
-        render json: products
-    end
+rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
-    def show
-        product = Product.find_by(id: params[:id])
-        if product
-        render json: product
-        else 
-            render json: {error: "Product not found"}, status: 404
-        end
-    end
+  def index
+    products = Product.all
+    render json: products.as_json(only: [:id, :name, :description, :price, :image_url ])
+  end
 
-    def create
-        product = Product.find_by(id: params[:id])
-        product.create(product_params)
-        app_response(status: 201, message: "Created successfully")
-    end
+  def show 
+    product = find_product
+    render json: product.as_json
+  end
 
-    def update
-        product = Product.find_by(id: params[:id])
-        product_not_found unless product.valid?
-        product.update(product_params)
-        app_response(status: 200, message: "Updated successfully")
-    end
+  private
+
+  def find_product
+    Product.find_by(id: params[:id]) || raise(ActiveRecord::RecordNotFound)
+  end
+
+  def render_not_found_response
+    render json: { error: "Product not found" }, status: :not_found 
+  end
+
+
+
 end
-
-    private
-
-    def product_params
-        params.permit(:name, :description, :price, :image_url)
-    end
-
-    def product_not_found
-        not_found(message: "That does not seem to be a valid product.")
-    end
