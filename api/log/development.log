@@ -130,3 +130,557 @@ Processing by ProductsController#show as */*
 Completed 404 Not Found in 6ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 547)
 
 
+Started GET "/products/" for 127.0.0.1 at 2023-04-17 09:24:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 2 pending migrations:
+
+20230416180826_create_admins.rb
+20230416181101_create_orders.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAdmins (20230416180826)
+  [1m[36mTRANSACTION (44.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (83.8ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416180826"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20230416181101)
+  [1m[36mTRANSACTION (43.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (10.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416181101"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (41.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products/" for 127.0.0.1 at 2023-04-17 09:25:17 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"username"=>"user1", "password"=>"[FILTERED]", "product"=>{}}
+  [1m[36mProduct Load (83.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 167ms (Views: 55.7ms | ActiveRecord: 89.1ms | Allocations: 36674)
+
+
+Started GET "/products/" for 127.0.0.1 at 2023-04-17 09:25:36 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 1.6ms | Allocations: 1695)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-04-17 09:25:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/products" for 127.0.0.1 at 2023-04-17 10:00:36 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 77ms (Views: 70.2ms | ActiveRecord: 25.3ms | Allocations: 4695)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-04-17 10:00:41 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 200 OK in 171ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 2671)
+
+
+Started GET "/products/10" for 127.0.0.1 at 2023-04-17 10:00:47 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 619)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 10:03:43 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 1692)
+
+
+Started POST "/products/" for 127.0.0.1 at 2023-04-17 10:05:41 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:18:in `create'
+[31mUnpermitted parameter: :product. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x00007fc0102896f0>, params: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "controller"=>"products", "action"=>"create", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}} }[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 1316)
+
+
+  
+NoMethodError (undefined method `create' for nil:NilClass):
+  
+app/controllers/products_controller.rb:19:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCarts (20230417074112)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (57.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230417074112"]]
+  [1m[36mTRANSACTION (40.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCarts (20230417074112)
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.7ms)[0m  [1m[35mDROP TABLE "carts"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (81.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230417074112"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20230416181101)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230416181101"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (100.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_development"[0m
+  [1m[35m (104.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_test"[0m
+  [1m[35m (478.4ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode'[0m
+  [1m[35m (342.7ms)[0m  [1m[35mCREATE DATABASE "api_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20230415161806)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230415161806"]]
+  [1m[36mTRANSACTION (40.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20230416181101)
+  [1m[36mTRANSACTION (34.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416181101"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCarts (20230417074112)
+  [1m[36mTRANSACTION (41.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230417074112"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (17.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-17 08:09:12.309683"], ["updated_at", "2023-04-17 08:09:12.309683"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products/" for 127.0.0.1 at 2023-04-17 11:28:07 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (43.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 57ms (Views: 9.0ms | ActiveRecord: 43.0ms | Allocations: 857)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:28:16 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 629)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:28:25 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:28:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 2.6ms | ActiveRecord: 4.9ms | Allocations: 19525)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:29:40 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 2.4ms | Allocations: 781)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:30:02 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.6ms | Allocations: 645)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (2.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hyaluronic Acid Serum"], ["description", "This serum is packed with hyaluronic acid to hydrate and plump up your skin. It helps to reduce the appearance of fine lines and wrinkles, and leaves your skin looking and feeling smoother and more radiant."], ["price", 29.99], ["image_url", "https://example.com/images/hyaluronic_acid_serum.jpg"], ["created_at", "2023-04-17 08:35:46.765887"], ["updated_at", "2023-04-17 08:35:46.765887"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Charcoal Face Mask"], ["description", "This face mask is infused with charcoal to help purify and detoxify your skin. It helps to unclog pores and remove impurities, leaving your skin feeling refreshed and rejuvenated."], ["price", 14.99], ["image_url", "https://example.com/images/charcoal_face_mask.jpg"], ["created_at", "2023-04-17 08:35:46.773111"], ["updated_at", "2023-04-17 08:35:46.773111"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Vitamin C Serum"], ["description", "This serum is packed with vitamin C to brighten and even out your skin tone. It helps to reduce the appearance of dark spots and hyperpigmentation, and leaves your skin looking brighter and more youthful."], ["price", 39.99], ["image_url", "https://example.com/images/vitamin_c_serum.jpg"], ["created_at", "2023-04-17 08:35:46.780520"], ["updated_at", "2023-04-17 08:35:46.780520"]]
+  [1m[36mTRANSACTION (27.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rosewater Toner"], ["description", "This toner is made with rosewater to help soothe and hydrate your skin. It helps to balance your skin's pH and prepare it for the rest of your skincare routine. It can also be used throughout the day to refresh and revitalize your skin."], ["price", 19.99], ["image_url", "https://example.com/images/rosewater_toner.jpg"], ["created_at", "2023-04-17 08:35:46.813178"], ["updated_at", "2023-04-17 08:35:46.813178"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anti-Aging Eye Cream"], ["description", "This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful."], ["price", 49.99], ["image_url", "https://example.com/images/anti_aging_eye_cream.jpg"], ["created_at", "2023-04-17 08:35:46.817601"], ["updated_at", "2023-04-17 08:35:46.817601"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:35:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 93ms (Views: 54.9ms | ActiveRecord: 11.1ms | Allocations: 37185)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:37:56 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ProductsController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2023-04-17 11:38:10 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 18ms (Views: 11.5ms | ActiveRecord: 8.1ms | Allocations: 2771)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-04-17 12:09:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (38.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (36.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:18:in `create'
+[31mUnpermitted parameter: :product. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x00007fb51bf659c8>, params: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "controller"=>"products", "action"=>"create", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}} }[0m
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 39.3ms | Allocations: 22011)
+
+
+  
+NoMethodError (undefined method `create' for nil:NilClass):
+  
+app/controllers/products_controller.rb:19:in `create'
+Started POST "/products" for 127.0.0.1 at 2023-04-17 12:09:48 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 9.3ms | Allocations: 1992)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<ProductsController:0x0000000000d8b8>):
+  
+app/controllers/products_controller.rb:18:in `create'
+Started POST "/products" for 127.0.0.1 at 2023-04-17 12:17:47 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+Completed 500 Internal Server Error in 8ms (Allocations: 1941)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<ProductsController:0x0000000000d958>):
+  
+app/controllers/products_controller.rb:18:in `create'
+Started GET "/products" for 127.0.0.1 at 2023-04-17 12:19:03 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 21.2ms | Allocations: 1986)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<ProductsController:0x00000000011a58>):
+  
+app/controllers/products_controller.rb:4:in `index'
+Started GET "/ws" for ::1 at 2023-04-17 12:23:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-17 12:23:50 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-17 12:23:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-17 12:24:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-17 12:24:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-17 14:11:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-17 14:12:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-17 14:14:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/products" for 127.0.0.1 at 2023-04-17 14:17:03 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+Completed 500 Internal Server Error in 14ms (Allocations: 1940)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<ProductsController:0x00000000012548>):
+  
+app/controllers/products_controller.rb:4:in `index'
+Started GET "/products" for 127.0.0.1 at 2023-04-17 14:17:38 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (24.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 63814ms (Views: 58.6ms | ActiveRecord: 73.0ms | Allocations: 144723)
+
+
+Started GET "/ws" for ::1 at 2023-04-17 14:19:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started POST "/products" for 127.0.0.1 at 2023-04-17 14:19:20 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19:in `create'
+[31mUnpermitted parameter: :product. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x00007fac1b14f748>, params: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "controller"=>"products", "action"=>"create", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}} }[0m
+Completed 500 Internal Server Error in 11625ms (ActiveRecord: 4.2ms | Allocations: 86244)
+
+
+  
+NoMethodError (undefined method `create' for nil:NilClass):
+  
+app/controllers/products_controller.rb:20:in `create'
+Started POST "/products" for 127.0.0.1 at 2023-04-17 14:21:17 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19:in `create'
+[31mUnpermitted parameter: :product. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x00007f98af4ec560>, params: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "controller"=>"products", "action"=>"create", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}} }[0m
+Completed 500 Internal Server Error in 4594ms (ActiveRecord: 17.3ms | Allocations: 106047)
+
+
+  
+NoMethodError (undefined method `create!' for nil:NilClass):
+  
+app/controllers/products_controller.rb:20:in `create'
+Started GET "/ws" for ::1 at 2023-04-17 14:27:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/products" for 127.0.0.1 at 2023-04-17 14:52:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (34.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 111ms (Views: 33.8ms | ActiveRecord: 42.4ms | Allocations: 36151)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2023-04-17 14:52:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/products/3"):
+  
+Started GET "/products/14" for 127.0.0.1 at 2023-04-17 14:53:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/products/14"):
+  
+Started GET "/products/2" for 127.0.0.1 at 2023-04-17 14:53:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/products/2"):
+  
+Started GET "/products" for 127.0.0.1 at 2023-04-17 14:53:09 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 1174)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 14:54:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 94ms (Views: 42.6ms | ActiveRecord: 11.8ms | Allocations: 36151)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-04-17 14:54:32 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "id"=>"1", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (22.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 200 OK in 39ms (Views: 2.5ms | ActiveRecord: 23.0ms | Allocations: 1323)
+
+
+Started GET "/products/10" for 127.0.0.1 at 2023-04-17 14:54:40 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "id"=>"10", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 547)
+
+
+Started GET "/products/19" for 127.0.0.1 at 2023-04-17 14:54:45 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "id"=>"19", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 404 Not Found in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 546)
+
+
+Started GET "/products/9" for 127.0.0.1 at 2023-04-17 14:54:47 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "id"=>"9", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (4.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 404 Not Found in 9ms (Views: 0.7ms | ActiveRecord: 4.4ms | Allocations: 546)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2023-04-17 14:54:50 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "id"=>"5", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 618)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-17 14:54:53 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg", "product"=>{"name"=>"Stainless Steel Water Bottle", "description"=>"This water bottle is perfect for outdoor activities, workouts, or everyday use. It is made of high-quality stainless steel and has a double-wall insulation to keep your beverages cold or hot for hours.", "price"=>19.99, "image_url"=>"https://example.com/images/water_bottle.jpg"}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 1155)
+
+
