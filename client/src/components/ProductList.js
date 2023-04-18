@@ -52,31 +52,21 @@ const ProductList = ({ category, products, setProducts }) => {
     return (
 <div >
     {/* <Sidebar setCategory={setCategories} /> */}
-    <div className="grid grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-4 gap-4 p-4">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="bg-white rounded-lg shadow-md p-5 relative">
-            <div className="flex justify-between items-center">
+          <div key={product.id} className="bg-white rounded-lg shadow-md p-2 relative">
+             <div className='rounded-lg '>
+               <img src={product.image} alt="beauty products" />
+            </div>
+            <div className="flex justify-between p-2 items-center">
               <Link
                 to={`/product/${product.id}`}
-                className="text-xl font-semibold cursor-pointer hover:text-blue-500  border-blue-600"
+                className="text-xl font-semibold cursor-pointer  hover:text-pink-300  text-pink-300"
               >
                 {product.name}
               </Link>
-              {/* <div className="text-sm font-medium text-teal-600">{article.category}</div> */}
             </div>
-            <p className="text-gray-700 mt-2 mb-4">{`${product.description.slice(0, 100)}${
-              product.description.length > 25 ? '...' : ''
-            }`}</p>
-            <div className="">
-              <div className="flex justify-between border-blue-300  border-t">
-                <div className="flex justify-around">
-                
-                </div>
-                {/* <button className="text-red-500 hover:text-red-500 mt-3 " onClick={() => handleDelete(article.id)}>
-                  <img src={deleteIcon} alt="delete" />
-                </button> */}
-              </div>
-            </div>
+           
           </div>
         ))}
     </div>
