@@ -1,46 +1,39 @@
 import { useState } from "react";
 
-  
-function Sidebar({ setCategory }) {
-    const [categories, setCategories] = useState([
-        "Skincare",
-        "Makeup",
-        "Haircare",
-        "Fragrances",
-        "Bath & Body",
-        "Men's grooming",
-        "Tools and accessories",
-        "Beauty suppliments",
-        "Natural/Organic products",
-        "Specialized Products"
-      ]);
-    
-      const handleClick = (category) => {
-        if (category === "All") {
-          setCategory(null);
-        } else {
-          setCategory(category);
-        }
-      };
-      
+const Sidebar = ({ setCategory }) => {
 
-    return (
-        <div className="p-2   h-screen w-44 bg-white">
-        <h2 className="text-l  font-extrabold mb-3 text-black h-7 w-[249px]">SHOP BY CATEGORIES</h2>
-        <ul className="p-3 text-normal inline m-0 leading-[normal] relative font-bold h-[536px] w-[226px]">
-          {categories.map((category) => (
-            <li 
-              key={category}
-              className="cursor-pointer mb-3 text-grey  hover:text-pink"
-              onClick={() => handleClick(category)}
-            >
-              {category}
-            </li>
-          ))}
-        </ul>
-      </div>
-  
-    )
-}
+  const [categories, setCategories] = useState([
+    "All",
+    "Skincare",
+    "Makeup",
+   
 
-export default Sidebar
+  ]);
+
+  const handleClick = (category) => {
+    if (category === "All") {
+      setCategory(null);
+    } else {
+      setCategory(category);
+    }
+  };
+
+  return (
+    <div className="p-2 text-center  h-screen w-44 bg-slate-50">
+      <h2 className="text-2xl  font-semibold mb-3">Categories</h2>
+      <ul className="p-3">
+        {categories.map((category) => (
+          <li 
+            key={category}
+            className="cursor-pointer mb-3 text-blue-400 border-b border-gray-700 hover:text-teal-900"
+            onClick={() => handleClick(category)}
+          >
+            {category}
+          </li>
+        ))}
+      </ul>
+   </div>
+  );
+};
+
+export default Sidebar;

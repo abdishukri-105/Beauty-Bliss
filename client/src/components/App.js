@@ -4,6 +4,7 @@ import '../App.css'
 import LandingPage from '../pages/LandingPage'
 import Navbar from './Navbar';
 import ProductList from '../components/ProductList'
+import ProductPage from "../pages/ProductPage"
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -11,10 +12,9 @@ function App() {
     <div className='App'>
     <Navbar/>
     <Routes>
-      
-    <Route path='/' element={<LandingPage/>}/>
-    <Route path="/product-list" element={<ProductList/>} />
-      
+      <Route path='/' element={<LandingPage/>}/>
+      <Route path='/product-list' element={<ProductList/>} />
+      <Route path="/products" element={<ProductPage />} /> 
     </Routes>
     </div>
   

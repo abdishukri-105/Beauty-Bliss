@@ -1,0 +1,37 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Lipstick",
+        "category": "Makeup",
+        "image": "https://example.com/lipstick.jpg",
+        "price": 12.99,
+        "description": "This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades."
+      },
+      {
+        "id": 2,
+        "name": "Moisturizer",
+        "category": "Skincare",
+        "image": "https://example.com/moisturizer.jpg",
+        "price": 25.99,
+        "description": "This hydrating moisturizer is great for dry skin and provides a natural, dewy finish."
+      },
+      {
+        "id": 3,
+        "name": "Eyeshadow Palette",
+        "category": "Makeup",
+        "image": "https://example.com/eyeshadow.jpg",
+        "price": 39.99,
+        "description": "This versatile eyeshadow palette features a range of shades to create a variety of eye looks."
+      },
+      {
+        "id": 4,
+        "name": "Cleanser",
+        "category": "Skincare",
+        "image": "https://example.com/cleanser.jpg",
+        "price": 18.99,
+        "description": "This gentle cleanser removes dirt and impurities without stripping the skin of its natural oils."
+      }
+    ]
+  }
+  
