@@ -8,7 +8,11 @@ function Sidebar({ setCategory }) {
         "Haircare",
         "Fragrances",
         "Bath & Body",
-        
+        "Men's grooming",
+        "Tools and accessories",
+        "Beauty suppliments",
+        "Natural/Organic products",
+        "Specialized Products"
       ]);
     
       const handleClick = (category) => {
@@ -21,9 +25,9 @@ function Sidebar({ setCategory }) {
       
 
     return (
-        <div className="p-2 text-center  h-screen w-44 bg-white">
-        <h2 className="text-2xl  font-semibold mb-3">SHOP BY CATEGORIES</h2>
-        <ul className="p-3">
+        <div className="p-2   h-screen w-44 bg-white">
+        <h2 className="text-l  font-extrabold mb-3 text-black h-7 w-[249px]">SHOP BY CATEGORIES</h2>
+        <ul className="p-3 text-normal inline m-0 leading-[normal] relative font-bold h-[536px] w-[226px]">
           {categories.map((category) => (
             <li 
               key={category}
