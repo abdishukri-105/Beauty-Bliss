@@ -1,14 +1,11 @@
 import React from 'react';
-import Sidebar from './Sidebar';
+
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import { Link } from "react-router-dom";
 
-const ProductList = ({ category }) => {
+const ProductList = ({ category, products, setProducts }) => {
 
-    const [products, setProducts] = useState([]);
-   
-  
     useEffect(() => {
       fetch(' http://localhost:3000/products')
         .then((response) => response.json())
@@ -20,6 +17,15 @@ const ProductList = ({ category }) => {
     }, []);
 
   console.log(products)
+
+  const filteredProducts = category
+  ? products.filter((product) => product.category === category)
+  : products;
+
+  if (filteredProducts.length === 0) {
+    return <div className="text-2xl ml-12 text-red-700">No product of this category</div>;
+  }
+
 
     // const filteredProducts = category
     //   ? products.filter((product) => product.category === category)
@@ -47,7 +53,7 @@ const ProductList = ({ category }) => {
 <div >
     {/* <Sidebar setCategory={setCategories} /> */}
     <div className="grid grid-cols-3 gap-4 p-4">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <div key={product.id} className="bg-white rounded-lg shadow-md p-5 relative">
             <div className="flex justify-between items-center">
               <Link

@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import axios from "axios";
 
 
-const ProductPage = ({username, userId, sessionId}) => {
+const ProductPage = ({ userId }) => {
 
   const [category, setCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,7 +44,6 @@ const ProductPage = ({username, userId, sessionId}) => {
             category={category}
             products={filteredProducts}
             setFilteredProducts={setFilteredProducts}
-            userId={userId}
           />
         </div>
       </div>

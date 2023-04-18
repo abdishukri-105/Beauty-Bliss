@@ -11,9 +11,8 @@ function Navbar() {
         <Link to='/'  className=" text-black font-bold text-3xl  hover:text-pink font-['Roboto'] ">
           Beauty Bliss
         </Link>
-      
-          <div className="flex justify-between mt-2 text-black hover:text-white ">
-            <div className='mr-6 '><Search /> </div>
+        <div className='flex justify-between'>
+          <div className="flex justify-between mt-2 mr-10 text-black hover:text-white ">
             <div> <ShoppingCart /></div>
           </div>
           <div className="gap-2 flex items-center    text-[rgba(51,51,51,1)]">
@@ -22,9 +21,8 @@ function Navbar() {
               Log In
             </p>
           </div>
-       
-      
-    </div>
+         </div>
+      </div>
 
   </nav>
     )
