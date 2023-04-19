@@ -4,7 +4,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 function ShoppingCart() {
     return (
-        <FontAwesomeIcon icon={faCartShopping} style={{color: "#000000"}}  />
+        <FontAwesomeIcon icon={faCartShopping}  />
     )
 }
 
