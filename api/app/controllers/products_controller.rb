@@ -19,7 +19,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     Product.find_by(id: params[:id]) || raise(ActiveRecord::RecordNotFound)
   end
 
-  def render_not_found_response
+  def render_not_found_response=
     render json: { error: "Product not found" }, status: :not_found 
   end
 

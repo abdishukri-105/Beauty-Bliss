@@ -338,3 +338,163 @@ Processing by UsersController#create as */*
 Completed 201 Created in 271ms (Views: 0.4ms | ActiveRecord: 7.7ms | Allocations: 41523)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUsernameToUsers (20230418060624)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "username" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230418060624"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vic@gmail.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-19 06:03:24.496680"], ["updated_at", "2023-04-19 06:03:24.496680"], ["username", "Veek"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products" for ::1 at 2023-04-19 10:11:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 0.7ms | ActiveRecord: 4.0ms | Allocations: 42181)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-04-19 10:11:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for ::1 at 2023-04-19 10:11:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for ::1 at 2023-04-19 10:11:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for ::1 at 2023-04-19 10:11:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/me" for ::1 at 2023-04-19 10:12:14 +0300
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 401 Unauthorized in 11ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 3238)
+
+
+Started POST "/signup" for ::1 at 2023-04-19 11:02:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vickeryace@gmail.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-19 08:02:29.701154"], ["updated_at", "2023-04-19 08:02:29.701154"], ["username", nil]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+Completed 201 Created in 251ms (Views: 0.7ms | ActiveRecord: 8.3ms | Allocations: 42092)
+
+
+Started GET "/products" for ::1 at 2023-04-19 11:07:58 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 0.6ms | ActiveRecord: 2.6ms | Allocations: 21179)
+
+
+Started GET "/products" for ::1 at 2023-04-19 12:08:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 0.5ms | ActiveRecord: 3.0ms | Allocations: 42179)
+
+
+Started POST "/signup" for ::1 at 2023-04-19 12:10:04 +0300
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vickeryace@gmail.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-19 09:10:04.855600"], ["updated_at", "2023-04-19 09:10:04.855600"], ["username", nil]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+Completed 201 Created in 244ms (Views: 0.5ms | ActiveRecord: 7.2ms | Allocations: 19937)
+
+
+Started POST "/login" for ::1 at 2023-04-19 12:11:28 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vickeryace@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 401 Unauthorized in 368ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 351658)
+
+
+Started POST "/login" for ::1 at 2023-04-19 12:11:37 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1152)
+
+
+Started POST "/login" for ::1 at 2023-04-19 12:12:47 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vickeryace@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 401 Unauthorized in 220ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1037)
+
+
+Started POST "/login" for ::1 at 2023-04-19 12:17:21 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vickeryace@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 401 Unauthorized in 219ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1041)
+
+
+Started POST "/login" for ::1 at 2023-04-19 12:22:42 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vickeryace@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 401 Unauthorized in 213ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1037)
+
+
+Started POST "/signup" for ::1 at 2023-04-19 12:25:37 +0300
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"vic@gmail.com", "username"=>"veek", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vic@gmail.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-19 09:25:37.976698"], ["updated_at", "2023-04-19 09:25:37.976698"], ["username", "veek"]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+Completed 201 Created in 224ms (Views: 0.3ms | ActiveRecord: 4.1ms | Allocations: 2197)
+
+
+Started POST "/login" for ::1 at 2023-04-19 12:26:03 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"vic@gmail.com", "username"=>"veek", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vic@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 401 Unauthorized in 217ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1037)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "onetothree"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "onetothree@gmail.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-19 09:39:30.024025"], ["updated_at", "2023-04-19 09:39:30.024025"], ["username", "onetothree"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/login" for ::1 at 2023-04-19 12:41:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"onetothree@gmail.com", "username"=>"onetothree", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "onetothree@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 201 Created in 253ms (Views: 0.5ms | ActiveRecord: 3.9ms | Allocations: 41328)
+
+
