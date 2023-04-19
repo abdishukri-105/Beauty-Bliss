@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
     return (
-      <nav className="">
-      <div className="h-32 pt-8 bg-white flex items-start w-[1440px] pb-[49px] pl-[41px] pr-[73px]">
+      <nav className="sticky top-0 z-20">
+      <div className="h-32 pt-8   bg-white flex items-start w-[1440px] pb-[49px] pl-[41px] pr-[73px]">
       <div className="flex items-center p-0 w-[1326px] h-[47px] gap-[600px]">
         <p className="font-bold text-black h-[47px] w-[223px] font-['Poppins'] text-[30px]">
           Beauty Bliss
