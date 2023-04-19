@@ -1,9 +1,58 @@
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
+
 const ProductsInfoPage = () => {
-    return ( 
-        <div>
-            info
+
+    const [product, setProduct] = useState(null);
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/products/${id}`)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            setProduct(data)
+          })
+          .catch(error => console.log(error))
+      }, [id]);
+
+      console.log(product);
+      
+      return ( 
+        <div className="grid grid-cols-2 mt-12 mr-20 ml-20">
+            {product &&
+                <>
+                    <div className=" ">
+                        <img src={product.image} alt="beauty product"
+                        className="w-3/4 h-auto rounded-lg " />
+                    </div>
+    
+                    <div className=" ">
+                        <div>
+                            <h1 className="text-3xl font-bold mb-5 uppercase font-['Poppins']">{product.name}</h1>
+                            <p className="text-gray-600 italic mb-4  font-bold"> ksh {product.price}</p>
+                            <p className="mb-6"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, facere illum ea sint consequuntur labore sit dolore quos nulla in?{product.description}</p>
+                        </div>
+                        <div className="flex justify-around ">
+                            <div>counter </div>
+                            <div className="bg-pink-300 py-4 px-6 rounded-2xl shadow-xl">
+                                <button>
+                                   <span className="uppercase text-white font-semibold">add to cart</span> 
+                                    <span className="ml-3 "><FontAwesomeIcon icon={faCartShopping}   /></span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </>
+            }
         </div>
-     );
+    );
+    
 }
  
 export default ProductsInfoPage;

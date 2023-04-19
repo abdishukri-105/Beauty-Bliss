@@ -10,7 +10,7 @@ const ProductList = ({ category, products, setProducts }) => {
       fetch(' http://localhost:3000/products')
         .then((response) => response.json())
         .then((data) => {
-           console.log(data)
+           console.log(data) 
            setProducts(data)
           })
         .catch((error) => console.log(error));

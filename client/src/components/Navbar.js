@@ -8,7 +8,7 @@ function Navbar() {
   <nav className="w-full shadow-lg hover:cursor-pointer">
    
       <div className=" flex justify-around py-4 shadow-sm  ">
-        <Link to='/'  className=" text-black font-bold text-3xl  hover:text-pink font-['Roboto'] ">
+        <Link to='/'  className=" text-black font-bold text-3xl  hover:text-pink font-['Poppins'] ">
           Beauty Bliss
         </Link>
         <div className='flex justify-between'>

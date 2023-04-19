@@ -22,7 +22,7 @@ function LandingPage() {
                 <br />
             </p>
             <Link to= "/products">
-            <button className=' px-12 py-19 w-[329px] h-[70px] text-4xl text-white font-semibold rounded-[32px] bg-pink hover:bg-pink-300 hover:transparent focus:outline-none '>
+            <button className=' px-12 py-19 w-[329px] h-[70px] text-4xl text-black font-semibold rounded-[32px] bg-pink bg-pink-300 hover:transparent focus:outline-none '>
                 Shop Now {">"}
             </button>
           </Link>
