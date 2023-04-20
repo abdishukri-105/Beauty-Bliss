@@ -1,9 +1,9 @@
 import React from 'react'
-import Search from './Search'
-import ShoppingCart from '../pages/ShoppingCart'
+// import Search from './Search'
+// import ShoppingCart from '../pages/ShoppingCart'
 import User from './User'
-import ProductPage from '../pages/ProductPage'
-import { useState, useEffect } from 'react';
+// import ProductPage from '../pages/ProductPage'
+// import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -31,10 +31,12 @@ function Navbar({}) {
           </div>
        
           <div className="gap-2 flex items-center    text-[rgba(51,51,51,1)]">
+            <Link to="/login">
             <User />
-            <p className="text-lg ">
+            {/* <p className="text-lg ">
               Log In
-            </p>
+            </p> */}
+            </Link>
           </div>
 
          </div>
