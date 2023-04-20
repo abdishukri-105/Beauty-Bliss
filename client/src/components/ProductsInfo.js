@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 
 const ProductsInfoPage = () => {
 
     const [product, setProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1); 
+    const [cartItem, setCartItem] = useState(0);
 
+
+    const navigate = useNavigate()
+  
     const { id } = useParams();
 
     useEffect(() => {
@@ -20,32 +25,69 @@ const ProductsInfoPage = () => {
           .catch(error => console.log(error))
       }, [id]);
 
-      console.log(product);
+    const handleMinusClick = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
+        }
+    };
+
+    const handlePlusClick = () => {
+        setQuantity(quantity + 1);
+    };
+
+    const handleAddToCartClick = () => {
+        const timestamp = Date.now();
+        const newCartItem = { ...product, quantity, timestamp };
+        fetch('http://localhost:3000/cart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newCartItem)
+        })
+        .then(() => {
+          console.log('Item added to cart:', newCartItem);
+          setCartItem(newCartItem)
+          navigate('/order');
+        })
+        .catch(error => console.log(error));
+    };
+    
       
-      return ( 
-        <div className="grid grid-cols-2 mt-12 mr-20 ml-20">
+    return ( 
+        <div className="grid grid-cols-1 lg:grid-cols-2 mt-12 mr-20 ml-20">
             {product &&
                 <>
                     <div className=" ">
                         <img src={product.image} alt="beauty product"
-                        className="w-3/4 h-auto rounded-lg " />
+                        className="w-3/4 h-auto rounded-lg" />
                     </div>
     
-                    <div className=" ">
+                    <div className=" mt-9">
                         <div>
                             <h1 className="text-3xl font-bold mb-5 uppercase font-['Poppins']">{product.name}</h1>
-                            <p className="text-gray-600 italic mb-4  font-bold"> ksh {product.price}</p>
+                            <p className="text-gray-600 italic mb-4 font-bold"> ksh {product.price}</p>
                             <p className="mb-6"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, facere illum ea sint consequuntur labore sit dolore quos nulla in?{product.description}</p>
                         </div>
                         <div className="flex justify-around ">
-                            <div>counter </div>
-                            <div className="bg-pink-300 py-4 px-6 rounded-2xl shadow-xl">
-                                <button>
-                                   <span className="uppercase text-white font-semibold">add to cart</span> 
-                                    <span className="ml-3 "><FontAwesomeIcon icon={faCartShopping}   /></span>
+                            <div className=" p-4">
+                                <button className="bg-gray-200 rounded-lg px-3 py-1"
+                                    onClick={handleMinusClick}>
+                                    <FontAwesomeIcon icon={faMinus} />
+                                </button>
+                                <span className="px-5">{quantity}</span>
+                                <button className="bg-gray-200 rounded-lg px-3 py-1"
+                                    onClick={handlePlusClick}>
+                                    <FontAwesomeIcon icon={faPlus} />
                                 </button>
                             </div>
-
+                            <div className="bg-pink-300 py-4 px-6 rounded-2xl shadow-xl">
+                                <button onClick={handleAddToCartClick}>
+                                    <span className="uppercase text-white font-semibold">add to cart</span> 
+                                    <span className="ml-3 "><FontAwesomeIcon icon={faCartShopping} /></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="  text-2xl mt-5 ">
+                        <Link to="/products"><button className="border rounded-2xl py-2 px-4">back to all products</button>   </Link> 
                         </div>
                     </div>
                 </>

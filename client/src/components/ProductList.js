@@ -50,6 +50,7 @@ const ProductList = ({ category, products, setProducts }) => {
     
   
     return (
+
 <div >
     {/* <Sidebar setCategory={setCategories} /> */}
     <div className="grid grid-cols-4 gap-4 p-4">
@@ -74,5 +75,6 @@ const ProductList = ({ category, products, setProducts }) => {
     );
   };
   
+
 
 export default ProductList;
