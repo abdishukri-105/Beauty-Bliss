@@ -36,7 +36,7 @@ function Card() {
               </button>
             </Link>
 
-            <Link to= "/checkout">
+            <Link to= "/order">
               <button className=" bg-pink border-pink px-3 py-1 text-xs font-semibold	 text-white rounded-lg mr-1">
                 Add to Cart
               </button>
