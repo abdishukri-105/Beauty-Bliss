@@ -13,6 +13,9 @@ import Payment from './Payment';
 import Footer from './Footer';
 import Login from './Login';
 import Signup from './Signup'
+import 'flowbite/dist/flowbite.min.css';
+import 'flowbite/dist/flowbite.min.js';
+
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
 

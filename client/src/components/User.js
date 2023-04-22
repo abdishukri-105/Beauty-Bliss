@@ -4,8 +4,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function User() {
     return (
-        <FontAwesomeIcon icon={faUser} />
-    )
+<FontAwesomeIcon icon={faUser} size="lg" />    )
 }
 
 export default User
