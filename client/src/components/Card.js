@@ -30,7 +30,7 @@ function Card() {
             </div>
             <div className="flex items-center my-2">
 
-            <Link to= "/product-list">
+            <Link to= "/products">
               <button className=" bg-pink border-pink px-3 py-1 text-xs font-semibold text-white rounded-lg mr-1 ">
                 Buy Now
               </button>

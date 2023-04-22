@@ -1,9 +1,6 @@
-// import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import '../App.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import LandingPage from '../pages/LandingPage'
 import Navbar from './Navbar';
-// import ProductList from '../components/ProductList'
 import ProductPage from "../pages/ProductPage"
 import { Routes, Route } from "react-router-dom";
 import ProductsInfoPage from './ProductsInfo';
@@ -16,6 +13,8 @@ import Payment from './Payment';
 import Footer from './Footer';
 import Login from './Login';
 import Signup from './Signup'
+// for the admin panel
+import AdminTable from '../admin/AdminTable';
 
 function App() {
 
@@ -24,7 +23,6 @@ function App() {
     <div className='App'>
     <Navbar/>
     <Routes>
-
       <Route path='/' element={<LandingPage/>}/>
       <Route path="/products" element={<ProductPage />} />
       <Route  path='/product/:id' element={< ProductsInfoPage/>}/>
@@ -36,19 +34,21 @@ function App() {
       <Route path="/login" element={<Login/>} /> 
       <Route path="/signup" element={<Signup/>} /> 
 
-
     {/* <Route path='/' element={<LandingPage/>}/>
     {/* <Route path="/product-list" element={<ProductList/>} />
     <Route path="/product-page" element={<ProductPage/>} /> */}
-  
 
-      
+
+ {/* this is for the admin panel */}
+    <Route path="/admin-table" element={< AdminTable/>} /> 
+
+
 
     </Routes>
     <Slideshow/>
     <Footer/>
     </div>
-  
+     
 
   );
 }
