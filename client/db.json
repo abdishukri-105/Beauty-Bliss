@@ -244,6 +244,7 @@
       "id": 31
     },
     {
+
       "name": "shukri",
       "address": "south c",
       "phoneNumber": "0769011081",
@@ -284,12 +285,8 @@
       "address": "south c",
       "phoneNumber": "0769011081",
       "id": 38
-    },
-    {
-      "name": "abdishukri",
-      "address": "south c",
-      "phoneNumber": "0769011081",
-      "id": 39
     }
+
+   
   ]
 }

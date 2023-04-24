@@ -55,17 +55,30 @@ const ProductList = ({ category, products, setProducts }) => {
     {/* <Sidebar setCategory={setCategories} /> */}
     <div className="grid grid-cols-4 gap-4 p-4">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="bg-white rounded-lg shadow-md p-2 relative">
+          <div key={product.id} className="card bg-white rounded-lg  p-2 relative w-full max-w-sm border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110">
              <div className='rounded-lg '>
-               <img src={product.image} alt="beauty products" />
+               <img 
+              className="object-cover p-2 rounded-t-lg"
+               src={product.image} 
+               alt="beauty products"
+                />
             </div>
-            <div className="flex justify-between p-2 items-center">
+            <div className="px-5 pb-5">
               <Link
                 to={`/product/${product.id}`}
-                className="text-xl font-semibold cursor-pointer  hover:text-pink-300  text-pink-300"
+                className="text-sm font-semibold cursor-pointer  hover:text-none text-grey"
               >
                 {product.name}
               </Link>
+              <div className="flex items-center justify-between">
+
+              <Link 
+              to={`/product/${product.id}`}
+              className=" pricing text-l font-bold text-gray-900 dark:text-white">
+                ksh {product.price}
+              </Link>
+             </div>
+
             </div>
            
           </div>
@@ -78,3 +91,5 @@ const ProductList = ({ category, products, setProducts }) => {
 
 
 export default ProductList;
+
+
