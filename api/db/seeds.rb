@@ -1,4 +1,7 @@
 puts "Seeding..."
+ 
+# Product.destroy
+
 products = [
 
   {

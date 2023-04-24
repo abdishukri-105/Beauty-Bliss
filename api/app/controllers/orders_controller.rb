@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
       end
     end
 
-    private 
+    private  
 
     # Calculate order value
     def calculate_order_amount(product, cart_item)

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  # resources :users
   # resources :carts
   # resources :orders
   resources :products
@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   # post '/user/register', to: "user#create_account"
   # post '/user/login', to: "user#login_account"
   # delete '/user/logout', to: "user#logout_account"
-  post "/login", to: "sessions#create"
-  post '/register', to: "users#create"
-  delete "/logout", to: "sessions#destroy"
+  # post "/login", to: "sessions#create"
+  # post '/register', to: "users#create"
+  # delete "/logout", to: "sessions#destroy"
+
+    post '/users', to: 'users#register'
+    post '/login', to: 'users#login'
+    delete '/logout', to: 'users#logout'
 
   # Products Routes
   # post '/products/create', to: "products#create"
