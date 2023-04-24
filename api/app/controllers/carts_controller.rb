@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 
-def create
+def add_to_cart
   product = Product.find_by(id: params[:product])
   if product.nil?
     return app_response(status_code: 404, message: "Product not found")
