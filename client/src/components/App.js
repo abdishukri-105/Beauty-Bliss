@@ -2,7 +2,7 @@ import '../App.css'
 import LandingPage from '../pages/LandingPage'
 import Navbar from './Navbar';
 import ProductPage from "../pages/ProductPage"
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import ProductsInfoPage from './ProductsInfo';
 import ShoppingCart  from '../pages/ShoppingCart'
 import Slideshow from '../components/Slideshow';
@@ -15,6 +15,8 @@ import Login from './Login';
 import Signup from './Signup'
 import 'flowbite/dist/flowbite.min.css';
 import 'flowbite/dist/flowbite.min.js';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
@@ -22,10 +24,44 @@ import AddProduct from '../admin/AddProduct';
 
 function App() {
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://127.0.0.1:3000/login', {
+        username,
+        password,
+      });
+      console.log(response.data);
+      const { name, email } = response.data;
+      console.log(`Welcome, ${name}! Your email is ${email}.`);
+      setIsLoggedIn(true)
+      navigate("/admin-table");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
+  const handleLogout = async () => {
+    try {
+      await axios.delete('http://127.0.0.1:3000/logout');
+      setIsLoggedIn(false);
+      navigate('/login');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+
   return (
     <div className='App'>
-    <Navbar/>
+    <Navbar isLoggedIn={isLoggedIn} username={username} handleLogout={handleLogout} />
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
       <Route path="/products" element={<ProductPage />} />
@@ -35,16 +71,10 @@ function App() {
       <Route path="/billinginfo" element={<BillingInfo/>} />
       <Route path="/receipt" element={<Receipt/>} /> 
       <Route path="/payment" element={<Payment/>} /> 
-      <Route path="/login" element={<Login/>} /> 
-      <Route path="/signup" element={<Signup/>} /> 
+      <Route path="/login" element={<Login handleSubmit={handleSubmit} username={username} password={password} setPassword={setPassword} setUsername={setUsername}/>} /> 
+      <Route path="/signup" element={<Signup />} /> 
       <Route path="/add-product" element={<AddProduct/>} /> 
-    {/* <Route path='/' element={<LandingPage/>}/>
-    {/* <Route path="/product-list" element={<ProductList/>} />
-    <Route path="/product-page" element={<ProductPage/>} /> */}
-
-
- {/* this is for the admin panel */}
-    <Route path="/admin-table" element={< AdminTable/>} /> 
+      <Route path="/admin-table" element={< AdminTable/>} /> 
 
 
 
