@@ -11,7 +11,7 @@ function Signup() {
           <div className="mb-7">
             <span className="mb-3 text-4xl font-medium font-Poppins">Sign up</span>
             <span className="font-light text-pink-400  ml-56 ">
-              <span className="font-light text-black">No Account ?</span>
+              <span className="font-light text-black">already have account ?</span>
               <Link className="ml-2 text-pink" to="/Login">Sign in</Link>
               {/* <a className="ml-2" href="/image.jpg">Sign in </a> */}
             </span>

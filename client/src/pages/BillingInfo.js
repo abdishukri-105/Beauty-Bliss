@@ -7,12 +7,12 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
 
 
   return (
-    <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full shadow-lg rounded-md bg-pink-50">
+    <div className="min-h-80 max-w-2xl p-5 my-4 sm:my-8 mx-auto w-full shadow-lg rounded-md bg-pink-">
       <h1 className="text-center text-2xl uppercase font-bold underline italic mb-3">Billing Information</h1>
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className=" grid-cols-1 md:grid-cols-2  gap-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="name" className=" text-sm font-medium text-gray-700 mb-2">
               Name
             </label>
             <input
@@ -23,11 +23,11 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
               value={formData.name}
               onChange={handleChange}
               required
-              className="border-gray-300 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
+              className="border-gray-300 mb-7 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
             />
           </div>
           <div>
-            <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="address" className=" text-sm font-medium text-gray-700 mb-2">
               Address
             </label>
             <input
@@ -38,7 +38,7 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
               value={formData.address}
               onChange={handleChange}
               required
-              className="border-gray-300 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
+              className="border-gray-300 mb-7 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
             />
           </div>
           <div>
@@ -60,7 +60,7 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
         <div className="mt-6">
           <button
             type="submit"
-            className="w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-black bg-palette-light hover:bg-palette-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-palette-light focus:ring-opacity-50"
+            className="w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-black bg-pink-200 hover:bg-pink-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-palette-light focus:ring-opacity-50"
           >
             Submit
           </button>
