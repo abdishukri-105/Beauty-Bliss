@@ -12,9 +12,9 @@ console.log(cartItems);
   return (
     <div>
       <div className="text-center text-2xl mt-5 ">
-      <Link to="/products"><button className="border rounded-2xl py-2 px-4">back to all products</button>   </Link> 
+      <Link to="/products"><button className="border bg-pink text-white rounded-2xl py-2 px-4">back to all products</button>   </Link> 
       </div>
-    <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full shadow-lg rounded-md bg-pink-50" >
+    <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full shadow-lg rounded-md bg-white" >
       <h1 className='text-center text-2xl uppercase font-bold underline italic mb-3'>your cart</h1>
         <table className="mx-auto">
           <thead>
@@ -68,7 +68,7 @@ console.log(cartItems);
 
         <div className="flex justify-end mt-4">
           <button  onClick={handleCheckout}
-          className="px-4 py-2 font-primary font-bold uppercase text-dark bg-pink-200 rounded-md hover:bg-palette-light transition-colors duration-300">Checkout</button>
+          className="px-4 py-2 font-primary font-bold uppercase text-white bg-pink rounded-md hover:bg-palette-light transition-colors duration-300">Checkout</button>
         </div>
        
     </div>
