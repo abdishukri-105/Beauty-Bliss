@@ -40,5 +40,9 @@ products = [
 products.each do |product|
   Product.create(product)
 end
+
+# Generate 2 users
+User.create(username: "user1", email: "user1@example.com", password: "password1")
+User.create(username: "user2", email: "user2@example.com", password: "password2")
   
 puts "Done!!"
