@@ -2396,3 +2396,528 @@ Migrating to CreateUsers (20230421091509)
   [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "image_url", "category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Anti-Aging Eye Cream"], ["description", "This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful."], ["price", 49.99], ["image_url", "https://example.com/images/anti_aging_eye_cream.jpg"], ["category", "Eye Creams"], ["user_id", nil], ["created_at", "2023-04-21 11:33:47.165994"], ["updated_at", "2023-04-21 11:33:47.165994"]]
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mProduct Load (5.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Started GET "/products" for 127.0.0.1 at 2023-04-22 22:16:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (13.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (48.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (57.39ms)
+Completed 200 OK in 420ms (Views: 209.4ms | ActiveRecord: 136.6ms | Allocations: 52459)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-22 22:18:46 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.56ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.9ms | Allocations: 1694)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2023-04-22 22:19:01 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (41.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 160ms (Views: 2.0ms | ActiveRecord: 42.7ms | Allocations: 2849)
+
+
+Started DELETE "/products/3" for 127.0.0.1 at 2023-04-22 22:19:20 +0300
+Processing by ProductsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:33:in `destroy'
+  [1m[36mProduct Destroy (49.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/products_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:33:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 200 OK in 111ms (Views: 8.5ms | ActiveRecord: 84.0ms | Allocations: 2288)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2023-04-22 22:20:02 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 39ms (Views: 1.7ms | ActiveRecord: 2.4ms | Allocations: 627)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-22 22:20:06 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.92ms)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 2.2ms | Allocations: 1492)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-04-22 22:21:10 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Charcoal Face Mask", "description"=>"This face mask is infused with charcoal to help purify and detoxify your skin. It helps to unclog pores and remove impurities, leaving your skin feeling refreshed and rejuvenated.", "price"=>14.99, "image_url"=>"https://example.com/images/charcoal_face_mask.jpg", "category"=>"Masks"}
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.13ms)
+Completed 201 Created in 9ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 658)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-22 22:21:47 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Charcoal Face Mask", "description"=>"This face mask is infused with charcoal to help purify and detoxify your skin. It helps to unclog pores and remove impurities, leaving your skin feeling refreshed and rejuvenated.", "price"=>14.99, "image_url"=>"https://example.com/images/charcoal_face_mask.jpg", "category"=>"Masks"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.53ms)
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 1.5ms | Allocations: 1496)
+
+
+Started GET "/products/8" for 127.0.0.1 at 2023-04-24 10:01:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/products/8"):
+  
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:01:38 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>199.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.05ms)
+Completed 200 OK in 236ms (Views: 97.8ms | ActiveRecord: 103.0ms | Allocations: 50781)
+
+
+Started DELETE "/products/5" for 127.0.0.1 at 2023-04-24 10:01:57 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/products/5"):
+  
+Started DELETE "/products/5" for 127.0.0.1 at 2023-04-24 10:02:25 +0300
+Processing by ProductsController#destroy as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>199.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams", "id"=>"5"}
+  [1m[36mProduct Load (40.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:33:in `destroy'
+  [1m[36mProduct Destroy (11.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/products_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:33:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 151ms (Views: 8.0ms | ActiveRecord: 76.4ms | Allocations: 7123)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2023-04-24 10:02:49 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>199.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams", "id"=>"5"}
+  [1m[36mProduct Load (18.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 404 Not Found in 26ms (Views: 1.2ms | ActiveRecord: 18.6ms | Allocations: 611)
+
+
+Started GET "/products/" for 127.0.0.1 at 2023-04-24 10:02:54 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>199.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.43ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.3ms | Allocations: 6704)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-04-24 10:03:26 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>299.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.66ms)
+Completed 201 Created in 11ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 666)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-04-24 10:04:20 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>299.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.99ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.66ms)
+Completed 201 Created in 56ms (Views: 4.3ms | ActiveRecord: 10.7ms | Allocations: 10111)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:04:32 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>299.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.61ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.5ms | Allocations: 1436)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:04:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>299.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.24ms)
+Completed 200 OK in 139ms (Views: 66.0ms | ActiveRecord: 20.4ms | Allocations: 50538)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-04-24 10:05:05 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>299.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.65ms)
+Completed 201 Created in 12ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 982)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:06:51 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>299.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.61ms)
+Completed 200 OK in 68ms (Views: 67.4ms | ActiveRecord: 0.4ms | Allocations: 1313)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:07:06 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Anti-Aging Eye Cream", "description"=>"This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.", "price"=>299.99, "image_url"=>"https://example.com/images/anti_aging_eye_cream.jpg", "category"=>"Eye Creams"}
+  [1m[36mProduct Load (6.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.27ms)
+Completed 200 OK in 57ms (Views: 32.4ms | ActiveRecord: 15.4ms | Allocations: 10847)
+
+
+  [1m[35m (41.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230424072028)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (63.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (43.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (65.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_development"[0m
+  [1m[35m (57.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_test"[0m
+  [1m[35m (240.7ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode'[0m
+  [1m[35m (127.3ms)[0m  [1m[35mCREATE DATABASE "api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "display_picture" character varying, "type" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421091509)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:22:42.970821"], ["updated_at", "2023-04-24 07:22:42.970821"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "bc4783e9239cab1ccf9b1e54a7e5ae7cfbcc862c"], ["created_at", "2023-04-24 07:22:42.984735"], ["updated_at", "2023-04-24 07:22:42.984735"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "display_picture" character varying, "type" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421091509)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:22:43.131041"], ["updated_at", "2023-04-24 07:22:43.131041"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-04-24 07:22:43.138609"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "bc4783e9239cab1ccf9b1e54a7e5ae7cfbcc862c"], ["created_at", "2023-04-24 07:22:43.145318"], ["updated_at", "2023-04-24 07:22:43.145318"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230424072028)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (54.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_development"[0m
+  [1m[35m (51.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_test"[0m
+  [1m[35m (100.4ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode'[0m
+  [1m[35m (94.2ms)[0m  [1m[35mCREATE DATABASE "api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "display_picture" character varying, "type" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421091509)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:23:19.019024"], ["updated_at", "2023-04-24 07:23:19.019024"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "bc4783e9239cab1ccf9b1e54a7e5ae7cfbcc862c"], ["created_at", "2023-04-24 07:23:19.031224"], ["updated_at", "2023-04-24 07:23:19.031224"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (45.3ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "display_picture" character varying, "type" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421091509)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:23:19.214637"], ["updated_at", "2023-04-24 07:23:19.214637"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-04-24 07:23:19.222419"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "bc4783e9239cab1ccf9b1e54a7e5ae7cfbcc862c"], ["created_at", "2023-04-24 07:23:19.229135"], ["updated_at", "2023-04-24 07:23:19.229135"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (92.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_development"[0m
+  [1m[35m (39.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_test"[0m
+  [1m[35m (97.8ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode'[0m
+  [1m[35m (162.4ms)[0m  [1m[35mCREATE DATABASE "api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421091509)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:23:46.359195"], ["updated_at", "2023-04-24 07:23:46.359195"]]
+  [1m[36mTRANSACTION (18.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b1a4556e4390e9da3304fb5817f01ea3c6358bfb"], ["created_at", "2023-04-24 07:23:46.388576"], ["updated_at", "2023-04-24 07:23:46.388576"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421091509)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:23:46.485444"], ["updated_at", "2023-04-24 07:23:46.485444"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-04-24 07:23:46.492251"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b1a4556e4390e9da3304fb5817f01ea3c6358bfb"], ["created_at", "2023-04-24 07:23:46.498919"], ["updated_at", "2023-04-24 07:23:46.498919"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230424072028)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (47.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230424072028"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (55.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_development"[0m
+  [1m[35m (47.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_test"[0m
+  [1m[35m (111.4ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode'[0m
+  [1m[35m (98.8ms)[0m  [1m[35mCREATE DATABASE "api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230424072028)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:24:00.037415"], ["updated_at", "2023-04-24 07:24:00.037415"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "34a010b1bf0980fba994549d830bdde697ca85bd"], ["created_at", "2023-04-24 07:24:00.049448"], ["updated_at", "2023-04-24 07:24:00.049448"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "product_id" integer, "quantity" integer, "active" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "amount" float, "status" integer DEFAULT 0, "cart_data" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "image_url" character varying, "category" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (24.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230424072028)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230415161806),
+(20230416181101),
+(20230417074112);
+
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-24 07:24:00.215425"], ["updated_at", "2023-04-24 07:24:00.215425"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-04-24 07:24:00.222753"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "34a010b1bf0980fba994549d830bdde697ca85bd"], ["created_at", "2023-04-24 07:24:00.228789"], ["updated_at", "2023-04-24 07:24:00.228789"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (41.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user1"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "user1"], ["email", "user1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-24 07:39:43.734564"], ["updated_at", "2023-04-24 07:39:43.734564"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user2"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "user2"], ["email", "user2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-24 07:39:44.070317"], ["updated_at", "2023-04-24 07:39:44.070317"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
