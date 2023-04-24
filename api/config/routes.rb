@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :carts
   # resources :orders
-  # resources :products
+  resources :products
   # mount Rswag::Ui::Engine => '/api-docs'
   # mount Rswag::Api::Engine => '/api-docs'
 
