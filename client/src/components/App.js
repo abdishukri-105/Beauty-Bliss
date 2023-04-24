@@ -18,6 +18,7 @@ import 'flowbite/dist/flowbite.min.js';
 
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
+import AddProduct from '../admin/AddProduct';
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
       <Route path="/payment" element={<Payment/>} /> 
       <Route path="/login" element={<Login/>} /> 
       <Route path="/signup" element={<Signup/>} /> 
-
+      <Route path="/add-product" element={<AddProduct/>} /> 
     {/* <Route path='/' element={<LandingPage/>}/>
     {/* <Route path="/product-list" element={<ProductList/>} />
     <Route path="/product-page" element={<ProductPage/>} /> */}
