@@ -1,5 +1,6 @@
 puts "Seeding..."
 products = [
+
   {
     name: "Hyaluronic Acid Serum",
     description: "This serum is packed with hyaluronic acid to hydrate and plump up your skin. It helps to reduce the appearance of fine lines and wrinkles, and leaves your skin looking and feeling smoother and more radiant.",
@@ -44,5 +45,6 @@ end
 # Generate 2 users
 User.create(username: "user1", email: "user1@example.com", password: "password1")
 User.create(username: "user2", email: "user2@example.com", password: "password2")
+
   
 puts "Done!!"

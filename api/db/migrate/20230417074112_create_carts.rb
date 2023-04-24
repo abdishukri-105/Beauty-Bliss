@@ -5,7 +5,6 @@ class CreateCarts < ActiveRecord::Migration[7.0]
       t.integer :quantity
       t.boolean :active
       t.belongs_to :user
-
       t.timestamps
     end
   end

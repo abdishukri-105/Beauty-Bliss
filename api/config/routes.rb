@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # post '/user/login', to: "user#login_account"
   # delete '/user/logout', to: "user#logout_account"
   post "/login", to: "sessions#create"
-  post '/register', to: "users#create_account"
+  post '/register', to: "users#create"
   delete "/logout", to: "sessions#destroy"
 
   # Products Routes
