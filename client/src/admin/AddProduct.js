@@ -16,38 +16,33 @@ const AddProduct = () => {
     setProduct((prevProduct) => ({ ...prevProduct, [name]: value }));
   };
 
-  const handleFileChange = (e) => {
-    setProduct((prevProduct) => ({ ...prevProduct, image: e.target.files[0] }));
-  };
-
+  // const handleFileChange = (e) => {
+  //   setProduct((prevProduct) => ({
+  //     ...prevProduct,
+  //     image: URL.createObjectURL(e.target.files[0]),
+  //   }));
+  // };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", product.name);
-    formData.append("description", product.description);
-    formData.append("price", product.price);
-    formData.append("quantity", product.quantity);
-    formData.append("image", product.image);
     try {
-      const response = await axios.post("http://localhost:3000/products", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post("http://localhost:3000/products", product);
       console.log(response.data);
       setProduct({
         name: "",
         description: "",
         price: "",
         quantity: "",
-        image: null,
+        image: "",
       });
     } catch (error) {
       console.error(error);
-      setError("There was an error adding the product. Please try again later.");
+      setError(
+        "There was an error adding the product. Please try again later."
+      );
     }
   };
-  
+      
   return (
     <div className="flex flex-col items-center mt-10  justify-center">
        <h2 className="text-2xl font-bold mb-2 ">Add Product</h2>
@@ -96,7 +91,7 @@ const AddProduct = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="mb-4">fd
+        <div className="mb-4">
           <label
             className="block text-gray-700 font-bold mb-2"
             htmlFor="quantity"
@@ -114,16 +109,18 @@ const AddProduct = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="image">
-            Image
-          </label>
-          <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="image"
-            name="image"
-            type="file"
-            onChange={handleFileChange}
-          />
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="image">
+              Image URL
+            </label>
+            <input
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="image"
+              name="image"
+              type="url"
+              placeholder="Image URL"
+              value={product.image}
+              onChange={handleChange}
+            />
         </div>
         <div className="flex items-center justify-center">
           <button
