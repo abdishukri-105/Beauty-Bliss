@@ -1,3 +1,4 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :description, :price, :image_url, :category
+  belongs_to :user
 end
