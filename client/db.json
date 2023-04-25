@@ -38,6 +38,24 @@
     },
     {
       "id": 8
+    },
+    {
+      "name": "moisturizing mask",
+      "description": "Rich Moisture Sheet Mask is the perfect antidote to dry skin. Give yourself a hydrating face mask at home in just 15 minutes - no mess, no need to rinse. Now in our Little Mix Limited Edition pack, celebrating choosing kindness.\n",
+      "price": "200",
+      "quantity": "50",
+      "image": "https://www.shutterstock.com/image-photo/facial-sheet-mask-on-brown-background-1966441699",
+      "category": "Skincare",
+      "id": 10
+    },
+    {
+      "name": "toner ",
+      "description": "Brightening & Anti- aging Essence Toner helps protect your skin from antioxidants free radicals and even help sunburn damaged skin.It revitilizes and brightens skin tone.It restores skin vitality and radiance.Long lasting moisturizing and strengthening defense building a strong barrier for your skin.Charming fruity refreshing and fresh smooth skin and revitalize skin.It contains high permeability VC essence which can penetrate deep into the skin ,relieve skin thirst ,dissolve melanin precipitation ,brighten the skin and make the skin hydrated and translucent .Mix and extract seven kinds of organic essences ,soften and soothe,refine skin ,reduce skin pressure and glow skin.",
+      "price": "600",
+      "quantity": "250",
+      "image": "https://www.shutterstock.com/image-photo/facial-sheet-mask-on-brown-background-1966441699",
+      "category": "skincare",
+      "id": 12
     }
   ],
   "cart": [
@@ -306,6 +324,12 @@
       "address": "28377",
       "phoneNumber": "093019308193",
       "id": 39
+    },
+    {
+      "name": "Mutheki",
+      "address": "redtfyt",
+      "phoneNumber": "0794 174767",
+      "id": 40
     }
   ]
 }

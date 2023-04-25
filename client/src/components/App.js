@@ -17,7 +17,7 @@ import 'flowbite/dist/flowbite.min.css';
 import 'flowbite/dist/flowbite.min.js';
 import axios from 'axios';
 import React, { useState } from 'react';
-
+import EditProduct from '../admin/EditProduct';
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
 import AddProduct from '../admin/AddProduct';
@@ -75,6 +75,7 @@ function App() {
       <Route path="/signup" element={<Signup />} /> 
       <Route path="/add-product" element={<AddProduct/>} /> 
       <Route path="/admin-table" element={< AdminTable/>} /> 
+      <Route path="/edit-product/:productId" component={EditProduct} />
 
 
 
