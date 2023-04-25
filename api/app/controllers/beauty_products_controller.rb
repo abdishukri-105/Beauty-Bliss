@@ -4,7 +4,6 @@ class BeautyProductsController < ApplicationController
   # GET /beauty_products
   def index
     @beauty_products = BeautyProduct.all
-
     render json: @beauty_products
   end
 
@@ -39,6 +38,7 @@ class BeautyProductsController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_beauty_product
       @beauty_product = BeautyProduct.find(params[:id])
@@ -46,7 +46,7 @@ class BeautyProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def beauty_product_params
-      params.require(:beauty_product).permit(:name, :description, :price, :image_url, :category, :qty, :user_id)
+      params.require(:beauty_product).permit(:name, :description, :price, :image_url, :category, :qty)
     end
     
 end
