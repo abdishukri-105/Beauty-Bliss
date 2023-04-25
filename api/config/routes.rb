@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :cart_items
+  resources :beauty_products
   resources :customers
   # resources :users
-  # resources :carts
+  resources :carts
   # resources :orders
   resources :products
   # mount Rswag::Ui::Engine => '/api-docs'
@@ -26,10 +28,10 @@ Rails.application.routes.draw do
   # delete '/products/:id/destroy', to: "products#delete"
 
   # Cart Routes
-  get '/carts', to: "carts#show_cart"
-  post '/carts/add', to: "carts#add_to_cart"
-  delete '/carts/:cart_id/destroy', to: "carts#delete_from_cart"
-  delete '/carts/destroy/all', to: "carts#clear_cart"
+  # get '/carts', to: "carts#show_cart"
+  # post '/carts/add', to: "carts#add_to_cart"
+  # delete '/carts/:cart_id/destroy', to: "carts#delete_from_cart"
+  # delete '/carts/destroy/all', to: "carts#clear_cart"
 
   # Order Routes
   post '/orders/create', to: "orders#make_order"

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         end
     end
 
+
     def login
         sql = "username = :username OR email = :email"
         user = User.where(sql, { username: user_params[:username], email: user_params[:email] }).first
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
         end
     end
 
+    
     def logout
         remove_user
         app_response(message: 'Logout successful')
@@ -30,7 +32,9 @@ class UsersController < ApplicationController
 
       private
       def user_params
-        params.permit(:username, :email, :password)
+        # params.permit(:username, :email, :password)
+        # params.permit(:username, :email, :password)
+        params.require(:user).permit( :password,  :username,  :email)
       end
 end
 

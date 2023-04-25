@@ -10,12 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_24_203554) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_25_083751) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "beauty_products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.float "price"
+    t.string "image_url"
+    t.string "category"
+    t.integer "qty"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.bigint "cart_id", null: false
+    t.bigint "beauty_product_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["beauty_product_id"], name: "index_cart_items_on_beauty_product_id"
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+  end
+
   create_table "carts", force: :cascade do |t|
-    t.integer "product_id"
+    t.integer "beauty_product_id"
     t.integer "quantity"
     t.boolean "active"
     t.bigint "user_id"
@@ -64,5 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_203554) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cart_items", "beauty_products"
+  add_foreign_key "cart_items", "carts"
   add_foreign_key "products", "users"
 end
