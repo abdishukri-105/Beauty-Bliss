@@ -20,12 +20,16 @@ const ProductPage = ({ userId }) => {
     })
     .then(response => {
       const data = response.data;
-      const filtered = data.filter(product => product.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      const filtered = data.filter(product => {
+        const productName = product.name || "";
+        const search = searchQuery || "";
+        return productName.toLowerCase().includes(search.toLowerCase());
+      });
       setFilteredProducts(filtered);
     })
     .catch(error => console.log(error));
   }, [searchQuery]);
-  
+    
   
   return (
     <div className="flex p-5 ">

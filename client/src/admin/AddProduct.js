@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const AddProduct = () => {
+  const [error, setError] = useState(null);
   const [product, setProduct] = useState({
     name: "",
     description: "",
@@ -34,19 +35,19 @@ const AddProduct = () => {
         },
       });
       console.log(response.data);
+      setProduct({
+        name: "",
+        description: "",
+        price: "",
+        quantity: "",
+        image: null,
+      });
     } catch (error) {
       console.error(error);
+      setError("There was an error adding the product. Please try again later.");
     }
-    setProduct({
-      name: "",
-      description: "",
-      price: "",
-      quantity: "",
-      image: null,
-    });
   };
-
-
+  
   return (
     <div className="flex flex-col items-center mt-10  justify-center">
        <h2 className="text-2xl font-bold mb-2 ">Add Product</h2>
@@ -95,7 +96,7 @@ const AddProduct = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4">fd
           <label
             className="block text-gray-700 font-bold mb-2"
             htmlFor="quantity"
