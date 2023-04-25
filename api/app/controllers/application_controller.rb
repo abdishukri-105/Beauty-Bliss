@@ -1,12 +1,15 @@
 class ApplicationController < ActionController::API
     include ActionController::Cookies
+
       rescue_from StandardError, with: :standard_error
+
       def app_response(message: 'success', status: 200, data: nil)
           render json: {
               message: message,
               data: data
           }, status: status
       end
+
       def encode(uid, email)
           payload = {
               data: {

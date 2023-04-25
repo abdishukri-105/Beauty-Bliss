@@ -17,8 +17,9 @@ class ProductsController < ApplicationController
     def create
         # user = User.find(session[:user_id])
         # app_response(status_code: 401, message: "You do not have permission to add a product to the store") unless user.valid?
-            product = Product.create(product_params)
-            app_response(status_code: 201, message: "Created successfully", body: product, serializer: ProductSerializer)
+        product = Product.create(product_params)
+        render json: product
+        # app_response(status_code: 201, message: "Created successfully", body: product, serializer: ProductSerializer)
     end
 
     def update
@@ -33,7 +34,8 @@ class ProductsController < ApplicationController
         product.destroy
         app_response(message: "Deleted successfully")
     end
-end
+
+ 
 
     private
 
@@ -44,3 +46,5 @@ end
     def product_not_found
         not_found(message: "That does not seem to be a valid product.")
     end
+
+end
