@@ -7,26 +7,28 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import profiledummy from"../images/profile.dummy.jpg"
 
 
 function Navbar({}) {
 
 
     return (
-      <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-lg mt-3 ">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-sm mt-3 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-              <Link to='/'  className=" text-black font-bold text-3xl font-['Poppins'] ">
+        <Link to='/'  className=" text-black font-bold text-3xl font-['Poppins'] ">
                 Beauty Bliss
               </Link> 
-        <div className="flex items-right md:order-2">
-            <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-              <span className="sr-only">Open user menu</span>
-              <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo"/>
-                  {/* <Link to="/login"> */}
-                  {/* <User /> */}
-                  {/* </Link> */}
+          <div className=" flex items-right gap-4 md:order-2">
 
-            </button>
+            <Link  to="/order"className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink md:p-0 dark:text-white md:dark:hover:text-pink dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" passHref >
+            <FontAwesomeIcon className="text-palette-primary w-6 m-auto" icon={faShoppingCart} />
+            </Link>
+
+              <button type="button" className="flex mr-3 text-sm bg-white-800 rounded-full md:mr-0 focus:ring-4 focus:ring-green-50 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                <span className="sr-only">Open user menu</span>
+                <img className="w-8 h-8 rounded-full" src={profiledummy} alt="user photo"/>
+              </button>
             {/* <!-- Dropdown menu --> */}
             <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
               {/* <div className="px-4 py-3">
@@ -41,10 +43,10 @@ function Navbar({}) {
                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
                 </li>
                 <li>
-                  <Link to="/signup" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">signup</Link>
+                  <Link to="/signup" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Signup</Link>
                 </li>
                 <li>
-                  <Link to="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">login</Link>
+                  <Link to="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</Link>
                 </li>
               </ul>
             </div>
@@ -64,12 +66,6 @@ function Navbar({}) {
             </li>
             <li>
               <Link className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink md:p-0 dark:text-white md:dark:hover:text-pink dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" to="/products"> Products </Link>
-            </li>
-            <li>
-            <Link  to="/order"className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink md:p-0 dark:text-white md:dark:hover:text-pink dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" passHref >
-            <FontAwesomeIcon className="text-palette-primary w-6 m-auto" icon={faShoppingCart} />
-            </Link>
-
             </li>
           </ul>
         </div>

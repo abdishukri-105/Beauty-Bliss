@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import ProductList from "../components/ProductList";
 import Search from "../components/Search";
@@ -53,4 +52,3 @@ const ProductPage = ({ userId }) => {
 };
 
 export default ProductPage;
-
