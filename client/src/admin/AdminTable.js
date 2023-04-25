@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons';
+import { faCheck} from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import 'flowbite/dist/flowbite.min.css';
 import 'flowbite/dist/flowbite.min.js';
@@ -13,10 +14,11 @@ import 'flowbite/dist/flowbite.min.js';
 function AdminTable() {
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [editingProduct, setEditingProduct] = useState(null);
 
 // GET/products
   useEffect(() => {
-    axios.get('http://localhost:3000/beauty_products')
+    axios.get('http://localhost:3000/products')
       .then(response => {
         setProducts(response.data);
       })
@@ -29,7 +31,7 @@ function AdminTable() {
   const handleDelete = (productId) => {
     if (window.confirm("Are you sure you want to delete this product?,You cant go back once you do this")) {
       axios
-        .delete(`http://localhost:3000/beauty_products/${productId}`)
+        .delete(`http://localhost:3000/products/${productId}`)
         .then(() => {
           setProducts(products.filter((p) => p.id !== productId));
         })
@@ -43,6 +45,24 @@ function AdminTable() {
   const filteredProducts = products.filter((product) =>
   product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
 );
+// edit logic
+const handleEdit = (product) => {
+  setEditingProduct(product);
+};
+
+
+//save the edited price
+const handleSave = () => {
+  axios
+    .put(`http://localhost:3000/products/${editingProduct.id}`, editingProduct)
+    .then(() => {
+      setEditingProduct(null);
+      setProducts(products.map(p => p.id === editingProduct.id ? editingProduct : p));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
   
 return (
@@ -126,6 +146,10 @@ return (
                     <th scope="col" className="px-6 py-3">
                         Action
                     </th>
+                    <th scope="col" className="px-6 py-3">
+                        
+                    </th>
+
                 </tr>
             </thead>
             <tbody>
@@ -154,16 +178,36 @@ return (
 
                     {/* price */}
                     <td className="px-6 py-4">
-                    {product.price}
+                    {editingProduct && editingProduct.id === product.id ? (
+                   <input
+                   type="text"
+                   value={editingProduct.price}
+                   onChange={(e) =>
+                     setEditingProduct({ ...editingProduct, price: e.target.value })
+                   }
+                     />
+                    ) : (
+                      product.price
+                    )}
                     </td>
+                    <td>
+                    {editingProduct && editingProduct.id === product.id ? (
+                      <button onClick={() => handleSave(product)}>
+                        <FontAwesomeIcon icon={faCheck} style={{color: "#6eae61",}} />
+                      </button>
+                    ) : (
+                      <button>
+                      </button>
+                    )}
+                    <button onClick={() => handleSave(product)}>
+                    </button>
 
-
-                    <td className="flex items-center px-6 py-4 space-x-3">
+                  </td>
+                   <td className="flex items-center px-6 py-4 space-x-3">
                         {/* edit */}
-                        <Link to={`/edit-product/${product.id}`}>
-                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691db", "--fa-secondary-color": "#3b60a0",}} />                    </button>
-                        </Link>
+                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => handleEdit(product)}>
+                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691db", "--fa-secondary-color": "#3b60a0",}} />                  
+                        </button>
 
                         {/* delete */}
                         <button className="font-medium text-red-600 dark:text-red-500 hover:underline"

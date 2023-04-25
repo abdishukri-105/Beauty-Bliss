@@ -16,7 +16,7 @@ const ProductPage = ({ userId }) => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:3000/beauty_products', {
+    axios.get('http://localhost:3000/products', {
     })
     .then(response => {
       const data = response.data;
