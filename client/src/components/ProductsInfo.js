@@ -16,7 +16,7 @@ const ProductsInfoPage = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:3000/products/${id}`)
+        fetch(`http://localhost:3000/beauty_products/${id}`)
           .then(response => response.json())
           .then(data => {
             console.log(data)

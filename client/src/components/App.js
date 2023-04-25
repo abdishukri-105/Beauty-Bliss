@@ -32,20 +32,21 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    navigate("/admin-table");
 
-    try {
-      const response = await axios.post('http://127.0.0.1:3000/login', {
-        username,
-        password,
-      });
-      console.log(response.data);
-      const { name, email } = response.data;
-      console.log(`Welcome, ${name}! Your email is ${email}.`);
-      setIsLoggedIn(true)
-      navigate("/admin-table");
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const response = await axios.post('http://127.0.0.1:3000/login', {
+    //     username,
+    //     password,
+    //   });
+    //   console.log(response.data);
+    //   const { name, email } = response.data;
+    //   console.log(`Welcome, ${name}! Your email is ${email}.`);
+    //   setIsLoggedIn(true)
+    //   navigate("/admin-table");
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
   
   const handleLogout = async () => {
