@@ -29,7 +29,7 @@ const Orders = () => {
     
 useEffect(() => {
     if (cartItems.length === 0) {
-      axios.get('http://localhost:3000/cart')
+      axios.get('http://localhost:4000/cart')
         .then(response => {
           console.log(response.data)
           setCartItems(response.data)
@@ -42,7 +42,7 @@ useEffect(() => {
 
   // remove item from cart
   const handleDeleteItem = (item) => {
-    axios.delete(`http://localhost:3000/cart/${item.id}`)
+    axios.delete(`http://localhost:4000/cart/${item.id}`)
       .then(response => {
         setCartItems(prevState => prevState.filter(cartItem => cartItem.id !== item.id));
       })
@@ -53,7 +53,7 @@ useEffect(() => {
   
   // edit quantity in cart
   const handleQuantityChange = (value, item) => {
-    axios.patch(`http://localhost:3000/cart/${item.id}`, { quantity: value })
+    axios.patch(`http://localhost:4000/cart/${item.id}`, { quantity: value })
       .then(response => {
         setCartItems(prevState => {
           const index = prevState.findIndex(cartItem => cartItem.id === item.id);

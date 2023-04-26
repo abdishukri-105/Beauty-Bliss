@@ -44,16 +44,6 @@
       "price": 18.99,
       "description": "This gentle cleanser removes dirt and impurities without stripping the skin of its natural oils.",
       "quantity": "1"
-    },
-    {
-      "id": 2,
-      "name": "Moisturizer",
-      "category": "Skincare",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCvNTfgK7h0Eex6lOdpq8uiPUOgrLI71Mogg&usqp=CAU",
-      "price": 25.99,
-      "description": "This hydrating moisturizer is great for dry skin and provides a natural, dewy finish.",
-      "quantity": 1,
-      "timestamp": 1682316469454
     }
   ],
   "customers": [
@@ -244,7 +234,6 @@
       "id": 31
     },
     {
-
       "name": "shukri",
       "address": "south c",
       "phoneNumber": "0769011081",
@@ -286,7 +275,5 @@
       "phoneNumber": "0769011081",
       "id": 38
     }
-
-   
   ]
 }
