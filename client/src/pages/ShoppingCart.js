@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
@@ -11,10 +10,10 @@ console.log(cartItems);
 
   return (
     <div>
-      <div className="text-center text-2xl mt-5 ">
-      <Link to="/products"><button className="border bg-pink text-white rounded-2xl py-2 px-4">back to all products</button>   </Link> 
+      <div className="text-center text-xl mt-5 ">
+      <Link to="/products"><button className="border border-pink-400 text-black rounded-2xl py-2 px-4">back to all products</button>   </Link> 
       </div>
-    <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full shadow-lg rounded-md bg-white" >
+    <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full shadow-md rounded-md bg-white" >
       <h1 className='text-center text-2xl uppercase font-bold underline italic mb-3'>your cart</h1>
         <table className="mx-auto">
           <thead>
@@ -25,7 +24,6 @@ console.log(cartItems);
                  <th className="font-primary font-normal px-6 py-4">Delete</th>
                 <th className="font-primary font-normal px-6 py-4 hidden sm:table-cell">Price</th>
                 <th className="font-primary font-normal px-6 py-4">Subtotal</th> */}
-               
             </tr>
           </thead>
           <tbody>
@@ -65,12 +63,12 @@ console.log(cartItems);
         </div>
       </div>
     )} */}
-
+       { cartItems.length  > 0 && 
         <div className="flex justify-end mt-4">
           <button  onClick={handleCheckout}
-          className="px-4 py-2 font-primary font-bold uppercase text-white bg-pink rounded-md hover:bg-palette-light transition-colors duration-300">Checkout</button>
+          className="px-4 py-2 font-primary font-bold uppercase text-white bg-pink-400 rounded-md hover:bg-palette-light transition-colors duration-300">Checkout</button>
         </div>
-       
+       }
     </div>
 
       

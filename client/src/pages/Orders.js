@@ -51,6 +51,7 @@ useEffect(() => {
       });
   }
   
+  
   // edit quantity in cart
   const handleQuantityChange = (value, item) => {
     axios.patch(`http://localhost:4000/cart/${item.id}`, { quantity: value })
