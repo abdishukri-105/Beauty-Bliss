@@ -4,16 +4,14 @@ import axios from 'axios';
 import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons';
+import { faCheck} from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import 'flowbite/dist/flowbite.min.css';
 import 'flowbite/dist/flowbite.min.js';
-
-
 function AdminTable() {
-
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-
+    const [editingProduct, setEditingProduct] = useState(null);
 // GET/products
   useEffect(() => {
     axios.get('http://localhost:3000/beauty_products')
@@ -24,7 +22,6 @@ function AdminTable() {
         console.log(error);
       });
   }, []);
-
 // delete logic
   const handleDelete = (productId) => {
     if (window.confirm("Are you sure you want to delete this product?,You cant go back once you do this")) {
@@ -38,17 +35,31 @@ function AdminTable() {
         });
     }
   };
-  
 // Search logic
   const filteredProducts = products.filter((product) =>
   product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
 );
-
+// edit logic
+const handleEdit = (product) => {
+  setEditingProduct(product);
+};
+//save the edited price
+const handleSave = () => {
+  axios
+    .put(`http://localhost:3000/beauty_products/${editingProduct.id}`, editingProduct)
+    .then(() => {
+      setEditingProduct(null);
+      setProducts(products.map(p => p.id === editingProduct.id ? editingProduct : p));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 return (
-    <div className="relative overflow-x-auto mt-8 shadow-md sm:rounded-lg mr-20 ml-20 p-5">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg mr-20 ml-20 p-5">
         {/* Search */}
         <div className='flex  justify-start '>
-            <div class="pb-4 bg-white dark:bg-gray-900 mr-9 mb-6">
+            <div class="pb-4 bg-white dark:bg-gray-900 mr-9 mb-10">
                 <label for="table-search" className="sr-only ">Search</label>
                 <div class="relative mt-1 mx-auto">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -62,11 +73,21 @@ return (
                           />
                 </div>
                 </div>
-               
-                 <Link to="/add-product" type="button" class="">
-                   <p className='px-8 bg-pink-500 py-2 rounded-lg'>Add product</p>
-                 </Link>
-               
+               <Link to="/add-product" type="button" class="flex items-center justify-center mr-5 text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm    dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                  <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                  </svg>
+                  Add product
+                </Link>
+                {/* <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full mr-5 md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                  </svg>
+                    Filter
+                  <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                  </svg>
+                </button> */}
           </div>
         <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
           {/* Product */}
@@ -84,28 +105,30 @@ return (
                 </div>
         </div>
         </div>
-        <table className=" ml-20  mr-20 text-sm text-left text-gray-900 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+        <table className=" ml-20 mr-20 text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th scope="col" className="px-4 py-5">
+                    <th scope="col" className="px-6 py-3">
                         <span class="sr-only">
                         Image
                         </span>
                     </th>
-                    <th scope="col" className="px-4 py-5">
+                    <th scope="col" className="px-6 py-3">
                         Product name
                     </th>
-                    <th scope="col" className="px-9 py-5">
+                    <th scope="col" className="px-6 py-3">
                         Product description
                     </th>
-                    <th scope="col" className="px-4 py-5">
+                    <th scope="col" className="px-6 py-3">
                         Category
                     </th>
-                    <th scope="col" className="px-4 py-5">
+                    <th scope="col" className="px-6 py-3">
                         Price
                     </th>
-                    <th scope="col" className="px-4 py-5">
+                    <th scope="col" className="px-6 py-3">
                         Action
+                    </th>
+                    <th scope="col" className="px-6 py-3">
                     </th>
                 </tr>
             </thead>
@@ -121,23 +144,44 @@ return (
                         {product.name}
                     </th>
                     {/* description */}
-                    <td className=" px-9 py-5">
+                    <td className=" px-6 py-4">
                         {product.description}
                     </td>
                     {/* category */}
-                    <td className="px-5 py-5">
+                    <td className="px-6 py-4">
                         {product.category}
                     </td>
                     {/* price */}
-                    <td className="px-5 py-5">
-                    {product.price}
+                    <td className="px-6 py-4">
+                    {editingProduct && editingProduct.id === product.id ? (
+                   <input
+                   type="text"
+                   value={editingProduct.price}
+                   onChange={(e) =>
+                     setEditingProduct({ ...editingProduct, price: e.target.value })
+                   }
+                     />
+                    ) : (
+                      product.price
+                    )}
                     </td>
-                    <td className="flex items-center px-5 py-4 space-x-3">
+                    <td>
+                    {editingProduct && editingProduct.id === product.id ? (
+                      <button onClick={() => handleSave(product)}>
+                        <FontAwesomeIcon icon={faCheck} style={{color: "#6EAE61",}} />
+                      </button>
+                    ) : (
+                      <button>
+                      </button>
+                    )}
+                    <button onClick={() => handleSave(product)}>
+                    </button>
+                  </td>
+                   <td className="flex items-center px-6 py-4 space-x-3">
                         {/* edit */}
-                        <Link to={`/edit-product/${product.id}`}>
-                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691DB", "--fa-secondary-color": "#3B60A0",}} />                    </button>
-                        </Link>
+                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => handleEdit(product)}>
+                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691DB", "--fa-secondary-color": "#3B60A0",}} />
+                        </button>
                         {/* delete */}
                         <button className="font-medium text-red-600 dark:text-red-500 hover:underline"
                         onClick={() => handleDelete(product.id)}
@@ -152,4 +196,10 @@ return (
     </div>
     )
 }
+
 export default AdminTable
+
+
+
+
+

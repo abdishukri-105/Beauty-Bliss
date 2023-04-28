@@ -7,27 +7,27 @@ import React from 'react'
 // import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
+import { faShoppingCart, faCircle } from '@fortawesome/free-solid-svg-icons';
+import profiledummy from"../images/user.jpg"
 
 function Navbar({isLoggedIn, username, handleLogout}) {
 
 
 
-    return (
-      <nav className="bg- border-gray-200 dark:bg-gray-900 shadow-lg pt-3  ">
+  return (
+      <nav className="bg- border-gray-200 dark:bg-gray-900 shadow-sm pt-3  ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
               <Link to='/'  className=" text-black font-bold text-3xl font-['Poppins'] ">
                 Beauty Bliss
               </Link> 
-        <div className="flex items-right md:order-2">
-            <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        <div className="flex items-right gap-4 md:order-2">
+            <Link  to="/order"className="block py-2 text-2xl pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" passHref >
+              <FontAwesomeIcon className="text-palette-primary w-6 m-auto" icon={faShoppingCart} />
+            </Link>
+            <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-green-50 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
               <span className="sr-only">Open user menu</span>
-              <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo"/>
-                  {/* <Link to="/login"> */}
-                  {/* <User /> */}
-                  {/* </Link> */}
-
+              {/* <FontAwesomeIcon icon={faCircle} className='text-xl rounded-full w-8 h-8'/> */}
+              <img className="w-8 h-8 rounded-full" src={profiledummy} alt="user photo"/>
             </button>
             {/* <!-- Dropdown menu --> */}
             <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
@@ -39,7 +39,8 @@ function Navbar({isLoggedIn, username, handleLogout}) {
                 {isLoggedIn ? (
                   <>
                     <li>
-                      <Link to="admin-table" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</Link>
+                      <Link to="admin-table" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</Link>
                     </li>
                     <li>
                       <button onClick={handleLogout} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</button>
@@ -69,15 +70,14 @@ function Navbar({isLoggedIn, username, handleLogout}) {
              <Link to="/" class="block py-2 pl-3 pr-4 text-grey-900 bg-pink rounded md:bg-transparent md:text-pink md:p-0 md:dark:text-pink" aria-current="page">Home</Link>
             </li>
             <li>
-              <a href="/about" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink md:p-0 dark:text-white md:dark:hover:text-pink dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-            </li>
-            <li>
               <Link className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink md:p-0 dark:text-white md:dark:hover:text-pink dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" to="/products"> Products </Link>
             </li>
             <li>
-             <Link  to="/order"className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink md:p-0 dark:text-white md:dark:hover:text-pink dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" passHref >
-            <FontAwesomeIcon className="text-palette-primary w-6 m-auto" icon={faShoppingCart} />
-            </Link>
+              <a href="/about" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink md:p-0 dark:text-white md:dark:hover:text-pink dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+            </li>
+          
+            <li>
+          
 
             </li>
           </ul>

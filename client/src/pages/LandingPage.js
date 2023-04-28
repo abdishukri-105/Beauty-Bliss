@@ -21,14 +21,14 @@ function LandingPage() {
               <br />
             </p>
             <Link to="/products">
-              <button className="px-10 py-4   text-2xl text-white font-semibold rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 bg-pink-400 hover:bg-pink-600 duration-300">
+              <button className="px-10 py-4   text-2xl text-white font-semibold rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 bg-pink hover:bg-pink-600 duration-300">
                 Shop Now 
               </button>
             </Link>
           </div>
         </div>
         {/* Content */}
-        <div className=" h-[25rem] w-full rounded-lg" style={{ backgroundImage: `url(${landingImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className=" h-[27rem] w-full rounded-2xl" style={{ backgroundImage: `url(${landingImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         </div>
       </div>
     </main>

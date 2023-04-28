@@ -29,8 +29,8 @@ const About = () => {
           <p className="mt-4 text-lg text-gray-500">
             We're always looking for talented developers to help us improve our ecommerce website. If you're interested in contributing, please visit our GitHub repository and submit a pull request. We appreciate all contributions, big or small!
           </p>
-          <div className="mt-8 text-center">
-            <a href="https://github.com/abdishukri-105/Beauty-Bliss" className="font-medium text-pink-600 hover:text-pink-500">
+          <div className="mt-8 text-center text-xl underline">
+            <a href="https://github.com/abdishukri-105/Beauty-Bliss" className="font-medium text-blue-600 hover:text-pink-500">
               View our GitHub repository
             </a>
           </div>
