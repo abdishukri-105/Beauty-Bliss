@@ -79,7 +79,7 @@ const ProductsInfoPage = () => {
                                     <FontAwesomeIcon icon={faPlus} />
                                 </button>
                             </div>
-                            <div className="bg-pink py-4 px-6 rounded-2xl shadow-xl">
+                            <div className="bg-pink-300 py-4 px-6 rounded-2xl shadow-xl">
                                 <button onClick={handleAddToCartClick}>
                                     <span className="uppercase text-white font-semibold">add to cart</span> 
                                     <span className="ml-3 "><FontAwesomeIcon icon={faCartShopping} /></span>

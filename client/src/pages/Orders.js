@@ -88,29 +88,18 @@ useEffect(() => {
   };
 
   
+
   const handleConfirm = () => {
-    // Clear cart items and form data here
-    setCartItems([]);
-    setFormData({});
-    navigate("/payment")
+    setCartItems(prevState => {
+      return [];
+    });
+    navigate("/payment");
+    console.log(cartItems)
   };
-
-  
-//   const handleConfirm = () => {
-//     // Clear cart items and form data here
-//     axios.delete('http://localhost:3000/cart')
-//       .then(response => {
-//         setCartItems([]);
-//         setFormData({});
-//         navigate("/payment")
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
-//   };
   
 
-console.log(formData)
+console.log(formData, cartItems)
+
   return (
     <div>
       {stage === "cart" && (

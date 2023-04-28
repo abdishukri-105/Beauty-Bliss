@@ -9,6 +9,7 @@ import Slideshow from '../components/Slideshow';
 import BillingInfo from '../pages/BillingInfo';
 import Receipt from '../pages/Receipt';
 import Orders from '../pages/Orders';
+import About from '../pages/About';
 import Payment from './Payment';
 import Footer from './Footer';
 import Login from './Login';
@@ -21,7 +22,6 @@ import React, { useState } from 'react';
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
 import AddProduct from '../admin/AddProduct';
-import About from '../pages/About';
 
 function App() {
 

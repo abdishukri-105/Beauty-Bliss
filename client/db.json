@@ -36,31 +36,7 @@
       "qty": 47,
       "user_id": null,
       "quantity": 1,
-      "timestamp": 1682645035925
-    },
-    {
-      "id": 7,
-      "name": "lotion",
-      "description": "nygfoiulyCDBOHxvniLC   dizucbhaxkAMLZzujawxsenASD OCyxsjhgs",
-      "price": 500,
-      "image_url": null,
-      "category": "skincare",
-      "qty": 29,
-      "user_id": null,
-      "quantity": 2,
-      "timestamp": 1682669400697
-    },
-    {
-      "id": 4,
-      "name": "Lip Balm",
-      "description": "Moisturizing lip balm with SPF 15",
-      "price": 4.99,
-      "image_url": "https://example.com/lip-balm.jpg",
-      "category": "Skincare",
-      "qty": 25,
-      "user_id": 1,
-      "quantity": 2,
-      "timestamp": 1682702356753
+      "timestamp": 1682720928414
     }
   ],
   "customers": [
