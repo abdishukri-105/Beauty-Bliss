@@ -9,22 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Footer() {
 	return (
 		<>
-			<div className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
-				<div className="p-5 ">
+			{/* < className="bg h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20"> */}
+				{/* <div className="p-5 ">
 					<ul>
 						<p className="text-gray-800 font-bold text-3xl pb-6">
 							Beauty Bliss<span className="text-pink"></span>
 						</p>
-						<div className="flex gap-6 pb-5">
-						    {/* <FontAwesomeIcon icon={faInstagram} className="text-2xl cursor-pointer hover:text-yellow-600" />
-							{/* <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" /> */}
-							{/* <FontAwesomeIcon icon={faTwitter} className="text-2xl cursor-pointer hover:pink" /> */}
-							{/* <FaTwitter className="text-2xl cursor-pointer hover:pink" /> */}
-							{/* <FontAwesomeIcon icon={faLinkedIn} className="text-2xl cursor-pointer hover:pink" /> */}
-							{/* <FaLinkedin className="text-2xl cursor-pointer hover:pink" /> */}
-							{/* <FontAwesomeIcon icon={faYouTube} className="text-2xl cursor-pointer hover:text-red-600" /> */}
-							{/* <FaYoutube className="text-2xl cursor-pointer hover:text-red-600" /> */} 
-						</div>
+					
 					</ul>
 				</div>
 				<div className="p-5">
@@ -83,13 +74,13 @@ function Footer() {
 							Videos
 						</li>
 					</ul>
-				</div>
-			</div>
-			<div className="flex flex-col justify-center items-center text-center  p-5 bg-gray-50">
-				<h1 className=" text-gray-800 font-semibold">
-					© 2021-2022 All rights reserved | Build with ❤ by{" "}
+				</div> */}
+			
+			<div className="flex flex-col justify-center items-center shadow-lg text-center  p-5 bg-pink-00">
+				<h1 className=" text-pink-500 font-semibold">
+					© 2023 All rights reserved | Built with ❤ at{" "} 
 					<span className="hover:pink font-semibold cursor-pointer">
-						streamline{" "}
+						Moringa school {" "} 
 					</span>
 				</h1>
 			</div>

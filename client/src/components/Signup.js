@@ -10,19 +10,19 @@ function Signup() {
   const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/login")
+    // navigate("/login")
 
-    // try {
-    //   const response = await axios.post('http://127.0.0.1:3000/users', {
-    //     username,
-    //     password,
-    //     email,
-    //   });
-    //   console.log(response.data)
-    //   // navigate("/login")
-    // } catch (error) {
-    //   console.log(error)
-    // }
+    try {
+      const response = await axios.post('http://127.0.0.1:3000/users', {
+        username,
+        password,
+        email,
+      });
+      console.log(response.data)
+      navigate("/login")
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

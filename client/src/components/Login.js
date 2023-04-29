@@ -6,7 +6,7 @@ function login({handleSubmit,username,password, setPassword, setUsername}) {
 
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+  <div className="flex items-center justify-center min-h-screen bg-gray-100">
     <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-3xl md:flex-row md:space-y-0 ">
       {/* <!-- left side --> */}
       <div className="flex flex-col justify-center p-8 md:p-14">
@@ -51,8 +51,8 @@ function login({handleSubmit,username,password, setPassword, setUsername}) {
             <button
               type="submit"
               className="w-full bg-pink text-black p-1 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
-            >
-              Sign up
+             >
+              Login 
             </button>
           </form>
       </div>

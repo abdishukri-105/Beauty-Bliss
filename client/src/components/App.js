@@ -20,6 +20,7 @@ import React, { useState } from 'react';
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
 import AddProduct from '../admin/AddProduct';
+import About from '../pages/About';
 
 function App() {
 
@@ -31,21 +32,21 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/admin-table");
+    // navigate("/admin-table");
 
-    // try {
-    //   const response = await axios.post('http://127.0.0.1:3000/login', {
-    //     username,
-    //     password,
-    //   });
-    //   console.log(response.data);
-    //   const { name, email } = response.data;
-    //   console.log(`Welcome, ${name}! Your email is ${email}.`);
-    //   setIsLoggedIn(true)
-    //   navigate("/admin-table");
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const response = await axios.post('http://127.0.0.1:3000/login', {
+        username,
+        password,
+      });
+      console.log(response.data);
+      const { name, email } = response.data;
+      console.log(`Welcome, ${name}! Your email is ${email}.`);
+      setIsLoggedIn(true)
+      navigate("/admin-table");
+    } catch (error) {
+      console.log(error);
+    }
   };
   
   const handleLogout = async () => {
@@ -64,8 +65,9 @@ function App() {
     <Navbar isLoggedIn={isLoggedIn} username={username} handleLogout={handleLogout} />
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path="/products" element={<ProductPage />} />
-      <Route  path='/product/:id' element={< ProductsInfoPage/>}/>
+      <Route path='/product/:id' element={< ProductsInfoPage/>}/>
       <Route path="/order" element={<Orders/>} />
       <Route path="/cart" element={<ShoppingCart/>} />
       <Route path="/billinginfo" element={<BillingInfo/>} />
@@ -75,11 +77,8 @@ function App() {
       <Route path="/signup" element={<Signup />} /> 
       <Route path="/add-product" element={<AddProduct/>} /> 
       <Route path="/admin-table" element={< AdminTable/>} /> 
-
-
-
     </Routes>
-    <Slideshow/>
+    {/* <Slideshow/> */}
     <Footer/>
     </div>
      

@@ -38,7 +38,7 @@ const ProductsInfoPage = () => {
     const handleAddToCartClick = () => {
         const timestamp = Date.now();
         const newCartItem = { ...product, quantity, timestamp };
-        fetch('http://localhost:3000/cart', {
+        fetch('http://localhost:4000/cart', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newCartItem)
@@ -53,7 +53,7 @@ const ProductsInfoPage = () => {
     
       
     return ( 
-        <div className="grid grid-cols-1 lg:grid-cols-2 mt-12 mr-20 ml-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mb-10 mt-12 mr-20 ml-20">
             {product &&
                 <>
                     <div className=" ">
@@ -61,14 +61,14 @@ const ProductsInfoPage = () => {
                         className="w-3/4 h-auto rounded-2xl" />
                     </div>
     
-                    <div className=" mt-9">
+                    <div className=" mt-5">
                         <div>
                             <h1 className="text-3xl font-bold mb-5  font-['Poppins']">{product.name}</h1>
                             <p className="text-black italic mb-4 font-bold"> ksh {product.price}</p>
                             <p className="mb-6 text-grey font-medium"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, facere illum ea sint consequuntur labore sit dolore quos nulla in?{product.description}</p>
                         </div>
                         <div className="flex justify-around ">
-                            <div className=" p-4">
+                            <div className=" bg-gray-100 rounded-2xl p-3">
                                 <button className="bg-transparent rounded-lg px-3 py-1"
                                     onClick={handleMinusClick}>
                                     <FontAwesomeIcon icon={faMinus} />
@@ -79,17 +79,17 @@ const ProductsInfoPage = () => {
                                     <FontAwesomeIcon icon={faPlus} />
                                 </button>
                             </div>
-                            <div className="bg-pink py-6 px-8 rounded-2xl shadow-xl">
+                            <div className="bg-pink py-4 px-6 rounded-2xl shadow-xl">
                                 <button onClick={handleAddToCartClick}>
                                     <span className="uppercase text-white font-semibold">add to cart</span> 
                                     <span className="ml-3 "><FontAwesomeIcon icon={faCartShopping} /></span>
                                 </button>
                             </div>
                         </div>
-                        <div className="  text-bold mt-5 ">
+                        <div className="  text-bold mt-10">
                         <Link to="/products">
-                            <div className="text-lg font-medium text-brown hover:underline dark:text-brown">
-                                continue shopping
+                            <div className="text-lg font-medium text-pink-500 hover:underline dark:text-brown">
+                                continue shopping  
                             </div>   
                         </Link> 
                         </div>

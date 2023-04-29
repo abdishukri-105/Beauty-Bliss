@@ -7,7 +7,6 @@ const Sidebar = ({ setCategory }) => {
     "Skincare",
     "Makeup",
     "vaseline"
-
   ]);
 
   const handleClick = (category) => {
@@ -20,7 +19,7 @@ const Sidebar = ({ setCategory }) => {
   };
 
   return (
-    <div className="p-2 text-center  h-screen w-44 bg-white">
+    <div className="p-2 text-center h-screen w-44 bg-gray-50 ">
       <h2 className="text-2xl font-semibold mb-3">Categories</h2>
       <ul className="p-3 ">
         {categories.map((category) => (

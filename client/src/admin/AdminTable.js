@@ -4,17 +4,12 @@ import axios from 'axios';
 import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons';
-import { faCheck} from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import 'flowbite/dist/flowbite.min.css';
 import 'flowbite/dist/flowbite.min.js';
-
-
 function AdminTable() {
-
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [editingProduct, setEditingProduct] = useState(null);
 
 // GET/products
   useEffect(() => {
@@ -26,7 +21,6 @@ function AdminTable() {
         console.log(error);
       });
   }, []);
-
 // delete logic
   const handleDelete = (productId) => {
     if (window.confirm("Are you sure you want to delete this product?,You cant go back once you do this")) {
@@ -40,31 +34,11 @@ function AdminTable() {
         });
     }
   };
-  
 // Search logic
   const filteredProducts = products.filter((product) =>
   product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
 );
-// edit logic
-const handleEdit = (product) => {
-  setEditingProduct(product);
-};
 
-
-//save the edited price
-const handleSave = () => {
-  axios
-    .put(`http://localhost:3000/products/${editingProduct.id}`, editingProduct)
-    .then(() => {
-      setEditingProduct(null);
-      setProducts(products.map(p => p.id === editingProduct.id ? editingProduct : p));
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-  
 return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg mr-20 ml-20 p-5">
         {/* Search */}
@@ -139,10 +113,6 @@ return (
                     <th scope="col" className="px-6 py-3">
                         Action
                     </th>
-                    <th scope="col" className="px-6 py-3">
-                        
-                    </th>
-
                 </tr>
             </thead>
             <tbody>
@@ -166,37 +136,14 @@ return (
                     </td>
                     {/* price */}
                     <td className="px-6 py-4">
-                    {editingProduct && editingProduct.id === product.id ? (
-                   <input
-                   type="text"
-                   value={editingProduct.price}
-                   onChange={(e) =>
-                     setEditingProduct({ ...editingProduct, price: e.target.value })
-                   }
-                     />
-                    ) : (
-                      product.price
-                    )}
+                    {product.price}
                     </td>
-                    <td>
-                    {editingProduct && editingProduct.id === product.id ? (
-                      <button onClick={() => handleSave(product)}>
-                        <FontAwesomeIcon icon={faCheck} style={{color: "#6eae61",}} />
-                      </button>
-                    ) : (
-                      <button>
-                      </button>
-                    )}
-                    <button onClick={() => handleSave(product)}>
-                    </button>
-
-                  </td>
-                   <td className="flex items-center px-6 py-4 space-x-3">
+                    <td className="flex items-center px-6 py-4 space-x-3">
                         {/* edit */}
-                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => handleEdit(product)}>
-                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691db", "--fa-secondary-color": "#3b60a0",}} />                  
-                        </button>
-
+                        <Link to={`/edit-product/${product.id}`}>
+                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691DB", "--fa-secondary-color": "#3B60A0",}} />                    </button>
+                        </Link>
                         {/* delete */}
                         <button className="font-medium text-red-600 dark:text-red-500 hover:underline"
                         onClick={() => handleDelete(product.id)}
@@ -211,4 +158,10 @@ return (
     </div>
     )
 }
+
 export default AdminTable
+
+
+
+
+
