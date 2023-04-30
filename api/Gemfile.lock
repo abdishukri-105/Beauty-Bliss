@@ -71,13 +71,15 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    bcrypt (3.1.18)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+<<<<<<< HEAD
     byebug (11.1.3)
     case_transform (0.2)
       activesupport
+=======
+>>>>>>> b40a2402cdfda7fdc25e26c70539b25f3eea0ef5
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -195,10 +197,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+<<<<<<< HEAD
   active_model_serializers (~> 0.10.13)
   bcrypt (~> 3.1.7)
+=======
+>>>>>>> b40a2402cdfda7fdc25e26c70539b25f3eea0ef5
   bootsnap
-  byebug
   debug
   faker
   jwt

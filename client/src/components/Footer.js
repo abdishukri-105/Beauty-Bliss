@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -99,3 +100,16 @@ function Footer() {
 
 export default Footer;
 
+=======
+import "./FooterStyles.css";
+
+const Footer = () => {
+  return (
+    <div className="footer">
+      <h1>Your Code Here</h1>
+    </div>
+  );
+};
+
+export default Footer;
+>>>>>>> b40a2402cdfda7fdc25e26c70539b25f3eea0ef5
