@@ -8,10 +8,10 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
 
 
   return (
-    <div className="min-h-80 max-w-xl p-10 my-4 sm:my-8 mx-auto w-full shadow-lg rounded-md ">
-      <h1 className="text-center text-2xl uppercase font-bold underline italic mb-3">Billing Information</h1>
+  <div className="min-h-80 bg-white max-w-md p-10 my-4 sm:my-8 mx-auto w-full shadow-md rounded-md ">
+      <h1 className="text-center text-xl uppercase font-bold underline italic mb-2">Billing Information</h1>
       <form onSubmit={handleSubmit}>
-        <div className=" grid-cols-1 md:grid-cols-2  gap-4">
+        <div className=" grid-cols-1 md:grid-  gap-4">
           <div>
             <label htmlFor="name" className=" text-sm font-medium text-gray-700 mb-2">
               Name
@@ -24,7 +24,7 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
               value={formData.name}
               onChange={handleChange}
               required
-              className="border-gray-300 mb-7 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
+              className="border-gray-300 mb-3 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
             />
           </div>
           <div>
@@ -39,7 +39,7 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
               value={formData.address}
               onChange={handleChange}
               required
-              className="border-gray-300 mb-7 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
+              className="border-gray-300 mb-3 rounded-md shadow-sm focus:border-palette-light focus:ring focus:ring-palette-light focus:ring-opacity-50 w-full"
             />
           </div>
           <div>
@@ -58,10 +58,10 @@ function BillingInfo({ handleChange, handleSubmit, formData }) {
             />
           </div>
         </div>
-        <div className="mt-6">
+        <div className="mt-7">
           <button
             type="submit"
-            className="w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-black bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-palette-light focus:ring-opacity-50"
+            className="w-full py-2 px-3 border border-transparent rounded-md shadow-sm text-black bg-pink-400 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-palette-light focus:ring-opacity-50"
           >
             Submit
           </button>

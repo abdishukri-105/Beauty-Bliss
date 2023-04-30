@@ -59,7 +59,7 @@ const ProductList = ({ category, products, setProducts }) => {
              <div className='rounded-lg '>
                <img 
               className="object-cover p-2 rounded-t-lg"
-               src={product.image} 
+               src={product.image_url} 
                alt="beauty products"
                 />
             </div>

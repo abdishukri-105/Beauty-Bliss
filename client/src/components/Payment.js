@@ -1,6 +1,6 @@
 const Payment = () => {
     return (
-      <div className="flex justify-center mt-20 mb-40">
+      <div className="flex justify-center  mt-20 mb-40">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h1 className="text-3xl font-bold mb-4 text-center">Order Received</h1>
           <p className="text-lg mb-4"> Your order has been received successfully.</p>

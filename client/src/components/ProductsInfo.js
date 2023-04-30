@@ -57,7 +57,7 @@ const ProductsInfoPage = () => {
             {product &&
                 <>
                     <div className=" ">
-                        <img src={product.image} alt="beauty product"
+                        <img src={product.image_url} alt="beauty product"
                         className="w-3/4 h-auto rounded-2xl" />
                     </div>
     

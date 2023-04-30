@@ -14284,3 +14284,1038 @@ Processing by BeautyProductsController#show as */*
 Completed 200 OK in 12ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 750)
 
 
+Started POST "/login" for 127.0.0.1 at 2023-04-29 01:59:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000561d351347c0>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000561d351347c0>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 401 Unauthorized in 41ms (Views: 2.6ms | ActiveRecord: 7.6ms | Allocations: 21642)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-29 01:59:41 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84e401a160>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84e401a160>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 401 Unauthorized in 22ms (Views: 8.6ms | ActiveRecord: 1.6ms | Allocations: 977)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-29 02:00:14 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84d0019710>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84d0019710>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 7ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 976)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-29 02:00:36 +0300
+Processing by UsersController#register as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "email"=>"hanhuss035@hotmail.com", "user"=>{"username"=>"osama", "email"=>"hanhuss035@hotmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f84e0d9d5c0>, params: {"username"=>"osama", "password"=>"[FILTERED]", "email"=>"hanhuss035@hotmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"osama", "email"=>"hanhuss035@hotmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hanhuss035@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "osama"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "osama"], ["email", "hanhuss035@hotmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-28 23:00:36.925649"], ["updated_at", "2023-04-28 23:00:36.925649"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hanhuss035@hotmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "osama"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 201 Created in 404ms (Views: 1.2ms | ActiveRecord: 12.3ms | Allocations: 22138)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-29 02:00:39 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84f0d2ef98>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84f0d2ef98>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84f0d2ef98>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 285ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1424)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:00:39 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 45ms (Views: 25.7ms | ActiveRecord: 0.8ms | Allocations: 4877)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:00:39 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 760)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:03:13 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 36ms (Views: 30.2ms | ActiveRecord: 0.6ms | Allocations: 760)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:03:13 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.7ms | Allocations: 760)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-29 02:03:24 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84e4085e88>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84e4085e88>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84e4085e88>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.54ms)
+Completed 200 OK in 292ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1349)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:03:24 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.6ms | Allocations: 780)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:03:25 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 760)
+
+
+Started POST "/beauty_products" for ::1 at 2023-04-29 02:05:12 +0300
+Processing by BeautyProductsController#create as HTML
+  Parameters: {"name"=>"Lipstick", "description"=>"This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades.", "price"=>"3690", "qty"=>"25", "image_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm", "category"=>"make up", "beauty_product"=>{"name"=>"Lipstick", "description"=>"This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades.", "price"=>"3690", "image_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm", "category"=>"make up", "qty"=>"25"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beauty_products_controller.rb:19:in `create'
+  [1m[36mBeautyProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "beauty_products" ("name", "description", "price", "image_url", "category", "qty", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Lipstick"], ["description", "This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades."], ["price", 3690.0], ["image_url", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm"], ["category", "make up"], ["qty", 25], ["user_id", nil], ["created_at", "2023-04-28 23:05:12.744123"], ["updated_at", "2023-04-28 23:05:12.744123"]]
+  ↳ app/controllers/beauty_products_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beauty_products_controller.rb:19:in `create'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 201 Created in 49ms (Views: 14.5ms | ActiveRecord: 8.6ms | Allocations: 19617)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:05:20 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (6.2ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 200 OK in 20ms (Views: 13.6ms | ActiveRecord: 6.2ms | Allocations: 941)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:05:20 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.77ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 931)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:05:24 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 936)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:05:24 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 931)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:05:24 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 935)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:05:24 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 931)
+
+
+Started GET "/beauty_products/1" for ::1 at 2023-04-29 02:05:56 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 20ms (Views: 1.7ms | ActiveRecord: 1.1ms | Allocations: 886)
+
+
+Started GET "/beauty_products/1" for ::1 at 2023-04-29 02:05:56 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 749)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:06:50 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (1.2ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.58ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 1.2ms | Allocations: 931)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:06:50 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 0.6ms | Allocations: 931)
+
+
+Started POST "/beauty_products" for ::1 at 2023-04-29 02:08:21 +0300
+Processing by BeautyProductsController#create as HTML
+  Parameters: {"name"=>"Moisturizer", "description"=>"This hydrating moisturizer is great for dry skin and provides a natural, dewy finish.", "price"=>"5600", "qty"=>"700", "image_url"=>"data:image/jpeg;base64,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", "category"=>"Skincare", "beauty_product"=>{"name"=>"Moisturizer", "description"=>"This hydrating moisturizer is great for dry skin and provides a natural, dewy finish.", "price"=>"5600", "image_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEhAQEBAPFQ8QFRcQEBYSEA8PEBYPFRIXFhUVFRUYHCggGBolHhUVIjEiJSkrLi46Fx8zODMsNygtLisBCgoKDg0OGxAQGi0mICYtLTcrLi0tLS0rLS0wLjArLS4tLS0rLS0tLS0rLS8tLS0tKzAtLS0rLS0tLS0wLi0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABAECAwUGBwj/xABCEAACAQIDAwkEBgkDBQAAAAAAAQIDEQQSIQUxUQYTIjJBcYGRsRQzYaEHNEJzssEVIyRSYpPR4fBjcpJDdIKz8f/EABoBAQACAwEAAAAAAAAAAAAAAAACAwEFBgT/xAAxEQEAAgEBBQUHAwUAAAAAAAAAAQIDERIhQVFxBAUxM6ETIjJSkbHwgeHxFEJhwdH/2gAMAwEAAhEDEQA/APcQAAAAAAAAAAAAAAAAAAAKXAqChUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACPVck21uXcWuvLgjPV3PuI0twEerjZLe7LwRfDnHZ9PxZDxZvQISjU+PmV5ya3+hMAGHD1XLs07PiZiiKgAAAAAAAAAAAAAAAAAAAAAAAAAAAKBmr5S46WHwterDrwheN1dKTsk7eJKtZtaKxxRvaK1m08GxrTSi22krb27I1dXadCK1rUV31aa/M8jr7TxFdNVa1Sae9Sk3Hju3EGtJrcbuncu737/Ror9979K0+svWcVtXDtaV6D7qtN/mdPGaaurNPc07o+dpVH8PkZaG38Vh2nSr1Y5dyzNxsuzK9LfAjk7n0jWl/qtxd7TM+9X6S+hUypF2bXdSlSqP7cIz8ZRT/MlGlmNJ0bmJ1jUABhkAAAAAAAAAAAAAAAAAAAAAAAAAAFGc/y9f7DiO5fiR0DOd+kB/sOI/8AH8aLuzedXrCntHlW6S8jo7jFiDNRTsYsRB8H5HaTO5xFY95EkRK6Jrg+D8iJWiVy9dPF9CcmJXweDfHD0X50omzNPyQlfA4L/t6P/qibg4zJ8c9Zdfj+COgACCYAAAAAAAAAAAAAAAAAAAAAAAAARqknLc7R+bAzTqJb2l3tIg7QlSqxdKWWcZdZaSVi/mI8EVUVwXkI3b2JjXdLDRwNFLowiu5R/oXSwdP92PkjKYsVXVOE6jUmoRc2orNKyV3ZdrJbVpnxY2axHgwTwVP9yPkiDitm0nvpU33wi15GsX0hYDjW/lP+of0gYDjW/lP+p6I7P2j5Z9Xn/qOz/NDotj42Kjzc3GLhpFWUI5Oy1tNNxtIVYy6sk+5pnDv6QMBxrfyX/U2WzNsYPGX5maco6tWlTqL42dn4orvgy132rKynaMVp0raHUg1eGxUoSUJu8HpGT3p9ifHvNmilcqAAAAAAAAAAKAqAAAAAAAAAAAAsquyZhS7DLX3MxgWstIu1Nq4fDRUsRWpUovc6k4wv3X3jZ20qGJjnoVqdSK0bpzjNX+NtxnSdNWNY8EplLFQYZeI8rtl+y4qrTStTb5ylwyS1t4O68DTHqf0nbJ5yhHERXToO0vjSlo/J2fmeYYjDzpycKkZRmt8ZJprvR1PY8/tcUc3Mdsw+zyzyYzLhcVOlONSnJxqQd4tb/wD58CkcPNwlUUZOnFqMpW6Kk9yb4mJnpnS0TDy76zq90wddYihTq2tzkFPubV3bxubnBVM0IN72lfv7TnuS/wBSw33UTfbM93Dx9WchkjS8xHN12OdaRM8koAEEwAAAAAAAFCoAAAAAAAAAAAAYq+5+HqWl2I6r8C0Dh+RmBp4uWJ2jiIxqV6lerSp50pKjh6VRwhTgnu3Xb3snbfp4TZsa+0oYeCxEYKj0P1am5zioRklp1suvYR5bMxmArV6mAVCth8TN1p4erWdCVOvJ3nKlUSkrSvfK0YtobJx20aVanjJ4bD0pwtSpUn7TKNeM4yhVnUajezj1Utb+d/jbXXd+blXDd4sGI5QYzCKlXxGK2fXpSnCGIpUY5J01UkoKVKWduSi5RvdPS5XYW29pYyVWUZYWlhsNiKtOrVnCUpVKcKjSjBZrRtBK8n2v4MrhNmYmUqcJbL2NSUZR52vHm6qlFO7yUlSi4t/GTtcvp8mqz2fjMI50o1K1evWg82am4TrupCM7bk1o+8zOzpwYjaavFcqZwcIVNobNxtGrOOHxFKlFU66hVkqbnDLN3s5K6ae/4Gt5Z4GWSnWlrVoP2LEvjKCzUqj/AN0Gv8R0G19n7QxdGlQ9kwOHhRq0aksuIVVyjSqRk1TSpx5tWV+29rdtzZ8qXQoS9orxcsLWUYVlFX/XUp56E9ONpRb7j0dmy+zvGn5/Ly9pxbdJ1c9PY8aeCpU6kK040ctWrSo+8qYurFOMJNJ2jCFr/wC74Gj2zsyEcLHEUaNWlF1ebq06ybnGWVuLhNpNwdvMyYHlJn9qhXq16UcTU5+NWi5Z6VTdZxTTlDLlVr/ZIO28XTcI04YvF4iWbNOVVzhStZ2UacpSd79t+JssVMsX389eOn/P9tbkvjmmsctOH8vU+TH1LDfdR9De7N93Hx/EzQ8mfqWG+6j6G+2b7uPj+JmhzeZbrP3b7F8FeiUACtYAAAAAAAAAAAAAAAAAAAAAMWJ6r8PUsL8T1X4epYBr6uFws6kk1SdVtOSzLP0dzavdWLJ4DDQabhSi9Wruza0vvev+cTRYzZeIeIrThhry9oWIp1nOjFZI4eMcialnV5Jrd23Ij2ftCcJRnTm103CMqtKT1hSajd1Jb5RnvfkmemMUT/f6vLOWfk9HV/oqhbLzUMu61raXT9YryKLZOH1/Uw136av/AC78zX8nXWnPESqTk6dOTo0k3e9pOcpPi1nUL/6bN6VXiazpquppaNdEN7Jw7/6UNyWt3olZLySRj2vsqFfD1cPZKM4vL8J3zRf/ACSZsShGL2iYnklNItEw+eq1OUJShJWlCTjJcJJtP5otOv8ApM2VzOJVeK6GITb4c7G2bzTT8zjzrcGSMmOLxxcpmxzjvNZ4PbOTP1LDfdR9DfbN93Hx/EzQ8mPqWG+6ib/Zvu4ePqzlM3mW6z93U4fgr0hJABWsAAAAAAAAAAAAAAAAAAAAAGHFdV+Hqi0uxXVfh6otA4XbONx0Z49UnLmVUjlmnZ0VCnTlOMV/HnVrbrSJE+UFeU3BqNlNXUechOllxUKSjUlfXPFue5aJ70br9L5Vjp1I9DCzypRXSlHmacu12veduG412I5Tu84qjOOSnUnPNzcpRqU6kI2aU7SVprVPtXxt7azNt2zDwzEV37c/ktfS5Q4meSSnTvHnFKMad6cp8znhCM1N5ndPg92hPw+3a1eooUZUsjcum4TmssaNKbS6S1vOS+FvgSJcpqd8qoV25SUaSXNLnL1JU80by06UXvt2M2uzcXGvThWjFpTV7SSUk72adm+1PcQvOm+aJ0janSLuRqbfrZHBVKelDnJRfORrZ3ujGea8n9p6aJLiTK/KDExzaUsspTjF83UfNwhilRcppPp6O+ltx1WVcEY8Rh41IuE1eL32covR30cWmteBH2tPlS9lfhZzG1sNLaOzc7UXWSlVp5U0s9OUlZJ7rpW8TyNn0Jh6EKcYwhFRhFWiluSPGeW2yvZsXUilanU/W0+6W9eEr/I2fdmeNbY/1hru8sExEZP0l6dyY+p4b7qPob/Z3u4+Pqzn+S7/AGPC/dR9DoNne7h4+rNRm8y3Wfu22H4K9ISQAVrAAAAAAAAAAAAAAAAAAAAABgxfVfevVFCuM6vivVFANJWwOGlWnnw0nOq3GT1cJ9BJuSzWtay3dncYI4bCuOX2WosqkrZdXGfSldt9K7S+Xhv3Vjqs0dNWrrTvLZTWuq036r5k9u/OUNinKGlp0cLGUpxw0lJTU5PLZ51JtNXdrXk3p2tvtJeFxEKdqUKU4wjZRsrrpteWs/mT3Nb7q3G63fkU5yO/NGy1eq0W+74aXZiZmfFmK1jwRIbRTdnTqeCuutl39vgTSjkuK/IZlxXmjGiWqpx/0k7K57Dc7FfrMO83fSek14aPwOwMVWCknGSTjJNNPc09GizDknHeLRwVZscZKTWeLT8lvqWF+6j6HQbO93Dx9WarZuDVCjTop3VOORPtcVuv4WNrs73cfH1ZHJaLXmY5yzjrs1iJ5JIAILAAAAAAAAAAAAAAAAAAAAABgxnV8V6ooVxnV8V6ooBoMXhaMq082FrNzkk6kJSSebotu0lok/Ujxp0dJLB4pqWaPWluSUb2z9qirP0N1W2hllKPN1Hl7UlZ9wnjUr3jO1luV3rfRrstYvi9o4eqiaV1/ZpoUaSu1hMT0otS6cs3SSi1bNwl8r7xWoUbQXsmIaUEl0p6R5uSSbzatKNtf3jbfpCPZGr/AMLF0MdF36M1a17x4rs7htz46epsRPH0afmaUY5XhMS1NZ30pN53nTv0rJ6y+Gq3aF8MHRzpey11d788nDSf2ul/E2bP9IR0eSrqrrodi39vwEdoRbcctTfbq6dmvdr8ht25epFa/kJGHoRpxUIK0Y6LVvt4vUSMjMcihcsmStne7j4+rIlTcS9ne7j4+rAkgAMgAAAAAAAAAAAAAAAAAAAADBjOr4r1KIuxXV8V6lqAiTw9S82qtlJpxWXq2Vmr31T07DHHD1u2t3pU7dqulr3627Tntp7Rx8ZzUIyteySjGyWbjbXTcQ5bV2nbqu/Cy4Ptylka/wCFc6Ovp0KqavWuk9VkSTVt2/jqUjh6vRvWvZ3doZbrMnbraaK3icl+lNpX6skuOVcOGXidRserVnTvVTzX0usrcfivMWmY5MxESn3Fyhyf0kbTq0MPBUrWqSaqdJxfNqOqi0uLXDRPUhWu1OiVp0jV08cTTlJxjUg5LfFSi5LvS1LmeHznWoVJp1E6lHK3FOKtzjjraKvDempNvz1PXeTeNqV8LQq1bc7KLU7XtnjJxbWm55b+JZkxbO9XTJtJ9TtJezvdx8fVkSp2kvZ/u4+PqypYkgAMgAAAAAAAAAAAAAAAAAAAADFier4r1MaMmJ6r8PUxoC11Y3tmV91r634fNeZZ7RD95eZbLD65tL3v23vp8fgiiw0V2PzlxT9UBeqsXqpLzLr31RheFh0dOr1dXoZoqySW5aLuAHFfSNi3aGH5uErxdZSlfNGSlktFdt02mtW09DtTU7a5O4fFyhOsp5oJxWVpdF7+wnSYidZRvEzG55M62KnTjTblKlHWMZTnKmoxukopq9lbRSva63npXIraUq9GUZUYUuYlGlGMXOSy83Gad5a36RifILBf638z+xtdkbHpYSMoUlK05ZpZpZnmso+iRZkyVtG5XSkxKZIm7P8Adx8fVkKe5k7BK0Id1/PX8yhazgAMgAAAAAAAAAAAAAAAAAAAACjRHtbTyJJbJXAwFGXOEuyxbknwj5sCjKFebnwj5lObnwXn/YABzc+EfP8AsOan/D5gWstZe6M/4fmU9mk97Vvhp8wMMYZ3lW77XcbNIx0oZVZJLuMoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==", "category"=>"Skincare", "qty"=>"700"}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beauty_products_controller.rb:19:in `create'
+  [1m[36mBeautyProduct Create (6.6ms)[0m  [1m[32mINSERT INTO "beauty_products" ("name", "description", "price", "image_url", "category", "qty", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Moisturizer"], ["description", "This hydrating moisturizer is great for dry skin and provides a natural, dewy finish."], ["price", 5600.0], ["image_url", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEhAQEBAPFQ8QFRcQEBYSEA8PEBYPFRIXFhUVFRUYHCggGBolHhUVIjEiJSkrLi46Fx8zODMsNygtLisBCgoKDg0OGxAQGi0mICYtLTcrLi0tLS0rLS0wLjArLS4tLS0rLS0tLS0rLS8tLS0tKzAtLS0rLS0tLS0wLi0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABAECAwUGBwj/xABCEAACAQIDAwkEBgkDBQAAAAAAAQIDEQQSIQUxUQYTIjJBcYGRsRQzYaEHNEJzssEVIyRSYpPR4fBjcpJDdIKz8f/EABoBAQACAwEAAAAAAAAAAAAAAAACAwEFBgT/xAAxEQEAAgEBBQUHAwUAAAAAAAAAAQIDERIhQVFxBAUxM6ETIjJSkbHwgeHxFEJhwdH/2gAMAwEAAhEDEQA/APcQAAAAAAAAAAAAAAAAAAAKXAqChUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACPVck21uXcWuvLgjPV3PuI0twEerjZLe7LwRfDnHZ9PxZDxZvQISjU+PmV5ya3+hMAGHD1XLs07PiZiiKgAAAAAAAAAAAAAAAAAAAAAAAAAAAKBmr5S46WHwterDrwheN1dKTsk7eJKtZtaKxxRvaK1m08GxrTSi22krb27I1dXadCK1rUV31aa/M8jr7TxFdNVa1Sae9Sk3Hju3EGtJrcbuncu737/Ror9979K0+svWcVtXDtaV6D7qtN/mdPGaaurNPc07o+dpVH8PkZaG38Vh2nSr1Y5dyzNxsuzK9LfAjk7n0jWl/qtxd7TM+9X6S+hUypF2bXdSlSqP7cIz8ZRT/MlGlmNJ0bmJ1jUABhkAAAAAAAAAAAAAAAAAAAAAAAAAAFGc/y9f7DiO5fiR0DOd+kB/sOI/8AH8aLuzedXrCntHlW6S8jo7jFiDNRTsYsRB8H5HaTO5xFY95EkRK6Jrg+D8iJWiVy9dPF9CcmJXweDfHD0X50omzNPyQlfA4L/t6P/qibg4zJ8c9Zdfj+COgACCYAAAAAAAAAAAAAAAAAAAAAAAAARqknLc7R+bAzTqJb2l3tIg7QlSqxdKWWcZdZaSVi/mI8EVUVwXkI3b2JjXdLDRwNFLowiu5R/oXSwdP92PkjKYsVXVOE6jUmoRc2orNKyV3ZdrJbVpnxY2axHgwTwVP9yPkiDitm0nvpU33wi15GsX0hYDjW/lP+of0gYDjW/lP+p6I7P2j5Z9Xn/qOz/NDotj42Kjzc3GLhpFWUI5Oy1tNNxtIVYy6sk+5pnDv6QMBxrfyX/U2WzNsYPGX5maco6tWlTqL42dn4orvgy132rKynaMVp0raHUg1eGxUoSUJu8HpGT3p9ifHvNmilcqAAAAAAAAAAKAqAAAAAAAAAAAAsquyZhS7DLX3MxgWstIu1Nq4fDRUsRWpUovc6k4wv3X3jZ20qGJjnoVqdSK0bpzjNX+NtxnSdNWNY8EplLFQYZeI8rtl+y4qrTStTb5ylwyS1t4O68DTHqf0nbJ5yhHERXToO0vjSlo/J2fmeYYjDzpycKkZRmt8ZJprvR1PY8/tcUc3Mdsw+zyzyYzLhcVOlONSnJxqQd4tb/wD58CkcPNwlUUZOnFqMpW6Kk9yb4mJnpnS0TDy76zq90wddYihTq2tzkFPubV3bxubnBVM0IN72lfv7TnuS/wBSw33UTfbM93Dx9WchkjS8xHN12OdaRM8koAEEwAAAAAAAFCoAAAAAAAAAAAAYq+5+HqWl2I6r8C0Dh+RmBp4uWJ2jiIxqV6lerSp50pKjh6VRwhTgnu3Xb3snbfp4TZsa+0oYeCxEYKj0P1am5zioRklp1suvYR5bMxmArV6mAVCth8TN1p4erWdCVOvJ3nKlUSkrSvfK0YtobJx20aVanjJ4bD0pwtSpUn7TKNeM4yhVnUajezj1Utb+d/jbXXd+blXDd4sGI5QYzCKlXxGK2fXpSnCGIpUY5J01UkoKVKWduSi5RvdPS5XYW29pYyVWUZYWlhsNiKtOrVnCUpVKcKjSjBZrRtBK8n2v4MrhNmYmUqcJbL2NSUZR52vHm6qlFO7yUlSi4t/GTtcvp8mqz2fjMI50o1K1evWg82am4TrupCM7bk1o+8zOzpwYjaavFcqZwcIVNobNxtGrOOHxFKlFU66hVkqbnDLN3s5K6ae/4Gt5Z4GWSnWlrVoP2LEvjKCzUqj/AN0Gv8R0G19n7QxdGlQ9kwOHhRq0aksuIVVyjSqRk1TSpx5tWV+29rdtzZ8qXQoS9orxcsLWUYVlFX/XUp56E9ONpRb7j0dmy+zvGn5/Ly9pxbdJ1c9PY8aeCpU6kK040ctWrSo+8qYurFOMJNJ2jCFr/wC74Gj2zsyEcLHEUaNWlF1ebq06ybnGWVuLhNpNwdvMyYHlJn9qhXq16UcTU5+NWi5Z6VTdZxTTlDLlVr/ZIO28XTcI04YvF4iWbNOVVzhStZ2UacpSd79t+JssVMsX389eOn/P9tbkvjmmsctOH8vU+TH1LDfdR9De7N93Hx/EzQ8mfqWG+6j6G+2b7uPj+JmhzeZbrP3b7F8FeiUACtYAAAAAAAAAAAAAAAAAAAAAMWJ6r8PUsL8T1X4epYBr6uFws6kk1SdVtOSzLP0dzavdWLJ4DDQabhSi9Wruza0vvev+cTRYzZeIeIrThhry9oWIp1nOjFZI4eMcialnV5Jrd23Ij2ftCcJRnTm103CMqtKT1hSajd1Jb5RnvfkmemMUT/f6vLOWfk9HV/oqhbLzUMu61raXT9YryKLZOH1/Uw136av/AC78zX8nXWnPESqTk6dOTo0k3e9pOcpPi1nUL/6bN6VXiazpquppaNdEN7Jw7/6UNyWt3olZLySRj2vsqFfD1cPZKM4vL8J3zRf/ACSZsShGL2iYnklNItEw+eq1OUJShJWlCTjJcJJtP5otOv8ApM2VzOJVeK6GITb4c7G2bzTT8zjzrcGSMmOLxxcpmxzjvNZ4PbOTP1LDfdR9DfbN93Hx/EzQ8mPqWG+6ib/Zvu4ePqzlM3mW6z93U4fgr0hJABWsAAAAAAAAAAAAAAAAAAAAAGHFdV+Hqi0uxXVfh6otA4XbONx0Z49UnLmVUjlmnZ0VCnTlOMV/HnVrbrSJE+UFeU3BqNlNXUechOllxUKSjUlfXPFue5aJ70br9L5Vjp1I9DCzypRXSlHmacu12veduG412I5Tu84qjOOSnUnPNzcpRqU6kI2aU7SVprVPtXxt7azNt2zDwzEV37c/ktfS5Q4meSSnTvHnFKMad6cp8znhCM1N5ndPg92hPw+3a1eooUZUsjcum4TmssaNKbS6S1vOS+FvgSJcpqd8qoV25SUaSXNLnL1JU80by06UXvt2M2uzcXGvThWjFpTV7SSUk72adm+1PcQvOm+aJ0janSLuRqbfrZHBVKelDnJRfORrZ3ujGea8n9p6aJLiTK/KDExzaUsspTjF83UfNwhilRcppPp6O+ltx1WVcEY8Rh41IuE1eL32covR30cWmteBH2tPlS9lfhZzG1sNLaOzc7UXWSlVp5U0s9OUlZJ7rpW8TyNn0Jh6EKcYwhFRhFWiluSPGeW2yvZsXUilanU/W0+6W9eEr/I2fdmeNbY/1hru8sExEZP0l6dyY+p4b7qPob/Z3u4+Pqzn+S7/AGPC/dR9DoNne7h4+rNRm8y3Wfu22H4K9ISQAVrAAAAAAAAAAAAAAAAAAAAABgxfVfevVFCuM6vivVFANJWwOGlWnnw0nOq3GT1cJ9BJuSzWtay3dncYI4bCuOX2WosqkrZdXGfSldt9K7S+Xhv3Vjqs0dNWrrTvLZTWuq036r5k9u/OUNinKGlp0cLGUpxw0lJTU5PLZ51JtNXdrXk3p2tvtJeFxEKdqUKU4wjZRsrrpteWs/mT3Nb7q3G63fkU5yO/NGy1eq0W+74aXZiZmfFmK1jwRIbRTdnTqeCuutl39vgTSjkuK/IZlxXmjGiWqpx/0k7K57Dc7FfrMO83fSek14aPwOwMVWCknGSTjJNNPc09GizDknHeLRwVZscZKTWeLT8lvqWF+6j6HQbO93Dx9WarZuDVCjTop3VOORPtcVuv4WNrs73cfH1ZHJaLXmY5yzjrs1iJ5JIAILAAAAAAAAAAAAAAAAAAAAABgxnV8V6ooVxnV8V6ooBoMXhaMq082FrNzkk6kJSSebotu0lok/Ujxp0dJLB4pqWaPWluSUb2z9qirP0N1W2hllKPN1Hl7UlZ9wnjUr3jO1luV3rfRrstYvi9o4eqiaV1/ZpoUaSu1hMT0otS6cs3SSi1bNwl8r7xWoUbQXsmIaUEl0p6R5uSSbzatKNtf3jbfpCPZGr/AMLF0MdF36M1a17x4rs7htz46epsRPH0afmaUY5XhMS1NZ30pN53nTv0rJ6y+Gq3aF8MHRzpey11d788nDSf2ul/E2bP9IR0eSrqrrodi39vwEdoRbcctTfbq6dmvdr8ht25epFa/kJGHoRpxUIK0Y6LVvt4vUSMjMcihcsmStne7j4+rIlTcS9ne7j4+rAkgAMgAAAAAAAAAAAAAAAAAAAADBjOr4r1KIuxXV8V6lqAiTw9S82qtlJpxWXq2Vmr31T07DHHD1u2t3pU7dqulr3627Tntp7Rx8ZzUIyteySjGyWbjbXTcQ5bV2nbqu/Cy4Ptylka/wCFc6Ovp0KqavWuk9VkSTVt2/jqUjh6vRvWvZ3doZbrMnbraaK3icl+lNpX6skuOVcOGXidRserVnTvVTzX0usrcfivMWmY5MxESn3Fyhyf0kbTq0MPBUrWqSaqdJxfNqOqi0uLXDRPUhWu1OiVp0jV08cTTlJxjUg5LfFSi5LvS1LmeHznWoVJp1E6lHK3FOKtzjjraKvDempNvz1PXeTeNqV8LQq1bc7KLU7XtnjJxbWm55b+JZkxbO9XTJtJ9TtJezvdx8fVkSp2kvZ/u4+PqypYkgAMgAAAAAAAAAAAAAAAAAAAADFier4r1MaMmJ6r8PUxoC11Y3tmV91r634fNeZZ7RD95eZbLD65tL3v23vp8fgiiw0V2PzlxT9UBeqsXqpLzLr31RheFh0dOr1dXoZoqySW5aLuAHFfSNi3aGH5uErxdZSlfNGSlktFdt02mtW09DtTU7a5O4fFyhOsp5oJxWVpdF7+wnSYidZRvEzG55M62KnTjTblKlHWMZTnKmoxukopq9lbRSva63npXIraUq9GUZUYUuYlGlGMXOSy83Gad5a36RifILBf638z+xtdkbHpYSMoUlK05ZpZpZnmso+iRZkyVtG5XSkxKZIm7P8Adx8fVkKe5k7BK0Id1/PX8yhazgAMgAAAAAAAAAAAAAAAAAAAACjRHtbTyJJbJXAwFGXOEuyxbknwj5sCjKFebnwj5lObnwXn/YABzc+EfP8AsOan/D5gWstZe6M/4fmU9mk97Vvhp8wMMYZ3lW77XcbNIx0oZVZJLuMoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q=="], ["category", "Skincare"], ["qty", 700], ["user_id", nil], ["created_at", "2023-04-28 23:08:21.152961"], ["updated_at", "2023-04-28 23:08:21.152961"]]
+  ↳ app/controllers/beauty_products_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beauty_products_controller.rb:19:in `create'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (3.85ms)
+Completed 201 Created in 41ms (Views: 6.8ms | ActiveRecord: 11.3ms | Allocations: 2132)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:25 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (4.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.71ms)
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 4.3ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:26 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.6ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.8ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:38 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (2.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.95ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 2.6ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:38 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.44ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:38 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.31ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.8ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:38 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.38ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 02:08:40 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (2.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.89ms)
+Completed 200 OK in 21ms (Views: 7.7ms | ActiveRecord: 2.7ms | Allocations: 750)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 02:08:40 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 200 OK in 17ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 749)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:46 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.84ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 0.6ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:46 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.24ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:46 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.94ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.8ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:08:46 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.47ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 02:09:19 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.99ms)
+Completed 200 OK in 25ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 750)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 02:09:19 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.92ms)
+Completed 200 OK in 54ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 750)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:31 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.75ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:31 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.6ms)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 0.7ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:31 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:31 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.4ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.5ms | Allocations: 1095)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:37 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:37 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.62ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:37 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (13.2ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.34ms)
+Completed 200 OK in 34ms (Views: 19.8ms | ActiveRecord: 13.2ms | Allocations: 1097)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:09:37 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.9ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.17ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.9ms | Allocations: 1092)
+
+
+Started POST "/customers" for ::1 at 2023-04-29 02:25:38 +0300
+Processing by CustomersController#create as HTML
+  Parameters: {"name"=>"shukri", "address"=>"south c", "phoneNumber"=>"0769011081", "customer"=>{"name"=>"shukri", "address"=>"south c"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "phone", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "shukri"], ["email", nil], ["phone", nil], ["address", "south c"], ["created_at", "2023-04-28 23:25:38.309573"], ["updated_at", "2023-04-28 23:25:38.309573"]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+Completed 201 Created in 34ms (Views: 3.7ms | ActiveRecord: 21.9ms | Allocations: 16077)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:26:54 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.1ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.26ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.1ms | Allocations: 1206)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:26:54 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.81ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:26:54 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.71ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 02:26:54 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.34ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 21:31:02 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (11.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.42ms)
+Completed 200 OK in 210ms (Views: 191.1ms | ActiveRecord: 53.7ms | Allocations: 3959)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 21:31:02 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (45.03ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.3ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 21:31:02 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.47ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.7ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 21:31:02 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (1.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.07ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 1.4ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 21:31:25 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (1.0ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 78ms (Views: 2.2ms | ActiveRecord: 4.0ms | Allocations: 779)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 21:31:25 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (3.59ms)
+Completed 200 OK in 55ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 21:31:47 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (2.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.4ms)
+Completed 200 OK in 16ms (Views: 3.8ms | ActiveRecord: 2.3ms | Allocations: 749)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:14 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.0ms)
+Completed 200 OK in 491ms (Views: 488.0ms | ActiveRecord: 19.5ms | Allocations: 3957)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:14 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.7ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:14 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.88ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.6ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:14 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.21ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:29 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.0ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 1.0ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:30 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.65ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.7ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:30 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.99ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.8ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-29 22:43:30 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.09ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.5ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 22:43:33 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (1.1ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 200 OK in 15ms (Views: 6.4ms | ActiveRecord: 1.5ms | Allocations: 779)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-29 22:43:33 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 200 OK in 32ms (Views: 14.2ms | ActiveRecord: 0.7ms | Allocations: 749)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:18:22 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (2.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.72ms)
+Completed 200 OK in 147ms (Views: 130.3ms | ActiveRecord: 21.9ms | Allocations: 3975)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:18:23 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.13ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.8ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:18:23 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (8.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.48ms)
+Completed 200 OK in 21ms (Views: 12.1ms | ActiveRecord: 8.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:18:23 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.25ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.5ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:18:42 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (4.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.73ms)
+Completed 200 OK in 52ms (Views: 39.1ms | ActiveRecord: 4.4ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:18:43 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (3.9ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.82ms)
+Completed 200 OK in 50ms (Views: 44.7ms | ActiveRecord: 3.9ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:19:56 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (3.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.02ms)
+Completed 200 OK in 63ms (Views: 56.0ms | ActiveRecord: 3.8ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:19:56 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.96ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 1095)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:19:56 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.18ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:19:56 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.6ms)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.5ms | Allocations: 1092)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-30 14:20:29 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84d8220ce0>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84d8220ce0>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f84d8220ce0>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.2ms)
+Completed 200 OK in 329ms (Views: 4.7ms | ActiveRecord: 5.1ms | Allocations: 1349)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:20:29 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (1.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.03ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 1.3ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:20:29 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.9ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.25ms)
+Completed 200 OK in 34ms (Views: 29.5ms | ActiveRecord: 0.9ms | Allocations: 1104)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:20:55 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.21ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:20:55 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (2.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.27ms)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 2.8ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:20:55 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.03ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.6ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:20:55 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.36ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:24:13 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.9ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.24ms)
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 0.9ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 14:24:13 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.42ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.6ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:08:21 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (9.1ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.77ms)
+Completed 200 OK in 229ms (Views: 208.7ms | ActiveRecord: 46.9ms | Allocations: 3951)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:08:21 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.73ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.5ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:17:56 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.2ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.33ms)
+Completed 200 OK in 68ms (Views: 67.9ms | ActiveRecord: 14.3ms | Allocations: 3955)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:17:56 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.98ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:17:56 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.37ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:17:56 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (1.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.02ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 1.8ms | Allocations: 1092)
+
+
+Started POST "/customers" for ::1 at 2023-04-30 22:23:03 +0300
+Processing by CustomersController#create as HTML
+  Parameters: {"name"=>"abdishukri", "address"=>"south c", "phoneNumber"=>"0769011081", "customer"=>{"name"=>"abdishukri", "address"=>"south c"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mCustomer Create (4.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "phone", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "abdishukri"], ["email", nil], ["phone", nil], ["address", "south c"], ["created_at", "2023-04-30 19:23:03.743417"], ["updated_at", "2023-04-30 19:23:03.743417"]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (1.74ms)
+Completed 201 Created in 93ms (Views: 16.3ms | ActiveRecord: 9.5ms | Allocations: 1968)
+
+
+Started POST "/customers" for ::1 at 2023-04-30 22:42:26 +0300
+Processing by CustomersController#create as HTML
+  Parameters: {"name"=>"shukri", "address"=>"south c", "phoneNumber"=>"0769011081", "customer"=>{"name"=>"shukri", "address"=>"south c"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mCustomer Create (2.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "phone", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "shukri"], ["email", nil], ["phone", nil], ["address", "south c"], ["created_at", "2023-04-30 19:42:26.101975"], ["updated_at", "2023-04-30 19:42:26.101975"]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 201 Created in 86ms (Views: 10.0ms | ActiveRecord: 21.2ms | Allocations: 4705)
+
+
+Started POST "/customers" for ::1 at 2023-04-30 22:48:05 +0300
+Processing by CustomersController#create as HTML
+  Parameters: {"name"=>"shukri", "address"=>"south c", "phoneNumber"=>"0769011081", "customer"=>{"name"=>"shukri", "address"=>"south c"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mCustomer Create (2.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "phone", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "shukri"], ["email", nil], ["phone", nil], ["address", "south c"], ["created_at", "2023-04-30 19:48:05.498106"], ["updated_at", "2023-04-30 19:48:05.498106"]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 201 Created in 57ms (Views: 5.0ms | ActiveRecord: 16.2ms | Allocations: 4706)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:48:39 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (2.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.97ms)
+Completed 200 OK in 31ms (Views: 20.2ms | ActiveRecord: 2.7ms | Allocations: 1224)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:48:39 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (2.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.74ms)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 2.7ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:48:39 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.6ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 22:48:39 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (1.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.65ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.5ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-30 22:49:09 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (1.0ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (3.73ms)
+Completed 200 OK in 25ms (Views: 5.4ms | ActiveRecord: 1.7ms | Allocations: 779)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-30 22:49:09 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.84ms)
+Completed 200 OK in 22ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 749)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:36 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.0ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.5ms)
+Completed 200 OK in 82ms (Views: 80.9ms | ActiveRecord: 16.2ms | Allocations: 3955)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:37 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.9ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.25ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:37 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (6.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.6ms)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 6.4ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:37 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (5.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.76ms)
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 5.3ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:41 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.55ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 1.4ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:41 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (2.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.67ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 2.3ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:42 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.47ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.7ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:12:42 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.49ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.4ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-30 23:12:44 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (3.0ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.17ms)
+Completed 200 OK in 40ms (Views: 13.6ms | ActiveRecord: 3.4ms | Allocations: 779)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-04-30 23:12:44 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.11ms)
+Completed 200 OK in 16ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 749)
+
+
+Started POST "/customers" for ::1 at 2023-04-30 23:14:38 +0300
+Processing by CustomersController#create as HTML
+  Parameters: {"name"=>"shukri", "address"=>"south c", "phoneNumber"=>"0769011081", "customer"=>{"name"=>"shukri", "address"=>"south c"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mCustomer Create (1.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "phone", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "shukri"], ["email", nil], ["phone", nil], ["address", "south c"], ["created_at", "2023-04-30 20:14:38.463627"], ["updated_at", "2023-04-30 20:14:38.463627"]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (1.33ms)
+Completed 201 Created in 53ms (Views: 5.1ms | ActiveRecord: 6.8ms | Allocations: 1968)
+
+
+Started POST "/customers" for ::1 at 2023-04-30 23:16:32 +0300
+Processing by CustomersController#create as HTML
+  Parameters: {"name"=>"Mohamed Abdishukri", "address"=>"south c", "phoneNumber"=>"0769011081", "customer"=>{"name"=>"Mohamed Abdishukri", "address"=>"south c"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mCustomer Create (1.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "phone", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mohamed Abdishukri"], ["email", nil], ["phone", nil], ["address", "south c"], ["created_at", "2023-04-30 20:16:32.467953"], ["updated_at", "2023-04-30 20:16:32.467953"]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (1.68ms)
+Completed 201 Created in 47ms (Views: 3.6ms | ActiveRecord: 4.9ms | Allocations: 1966)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:16:38 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.28ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.8ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:16:38 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.68ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 1093)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:16:38 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.13ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-04-30 23:16:38 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (1.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.12ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.3ms | Allocations: 1092)
+
+
