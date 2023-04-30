@@ -25,7 +25,7 @@ function Navbar({isLoggedIn, username, handleLogout}) {
             <Link  to="/order"className="block py-2 text-2xl pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" passHref >
               <FontAwesomeIcon className="text-palette-primary w-6 m-auto" icon={faShoppingCart} />
             </Link>
-            <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-green-50 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            <button type="button" className="flex mr-3 text-sm bg-white rounded-full md:mr-0 focus:ring-4 focus:ring-green-50 dark:focus:ring-green-50" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
               <span className="sr-only">Open user menu</span>
               {/* <FontAwesomeIcon icon={faCircle} className='text-xl rounded-full w-8 h-8'/> */}
               <img className="w-8 h-8 rounded-full" src={profiledummy} alt="user photo"/>

@@ -9,15 +9,18 @@ module.exports = {
 
     extend: {
       colors: {
-        pink: "#e8a0bf",
+        pink: "#f5b9c9",
         white: "#FFFFFF",
         black: "#000000",
         grey: "#6B6868",
-        brown: "#D2B48C"
+        brown: "#ebd4b5	",
+        beige: "#debbb2",
+        dbrown: "#8f5e4b"
       }
     },
   },
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+
   ],
 }
