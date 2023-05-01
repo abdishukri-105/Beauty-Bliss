@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :user_id
-        head :no_content
+        app_response(status_code: 200, message: "Log out successfully")
       end
 
 end
