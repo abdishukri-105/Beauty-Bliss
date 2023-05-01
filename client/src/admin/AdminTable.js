@@ -4,12 +4,14 @@ import axios from 'axios';
 import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons';
+import { faCheck} from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import 'flowbite/dist/flowbite.min.css';
 import 'flowbite/dist/flowbite.min.js';
 function AdminTable() {
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [editingProduct, setEditingProduct] = useState(null);
 
 // GET/products
   useEffect(() => {
@@ -55,7 +57,7 @@ const handleSave = () => {
     });
 };
 return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg mr-20 ml-20 p-5">
+<div className="relative overflow-x-auto shadow-md sm:rounded-lg mr-20 ml-20 p-5">
         {/* Search */}
         <div className='flex  justify-start '>
             <div class="pb-4 bg-white dark:bg-gray-900 mr-9 mb-10">
@@ -71,14 +73,10 @@ return (
                           value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
                           />
                 </div>
-                </div> 
-               <Link to="/add-product" type="button" class="flex items-center justify-center mr-5 text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm    dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-                  <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
-                  </svg>
-                  Add product
+                </div>
+               <Link to="/add-product" type="button" class="">
+               <p className='px-8 bg-pink text-white font-semibold py-2 rounded-lg'>Add product</p>
                 </Link>
-
                 {/* <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full mr-5 md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
                   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
@@ -128,6 +126,8 @@ return (
                     <th scope="col" className="px-6 py-3">
                         Action
                     </th>
+                    <th scope="col" className="px-6 py-3">
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -135,7 +135,7 @@ return (
                 <tr key={product.id}  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     {/* image  */}
                     <td class="w-32 p-4">
-                    <img src={product.image_url} alt={product.name}/>
+                    <img src={product.image} alt={product.name}/>
                     </td>
                     {/* product name */}
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -151,14 +151,35 @@ return (
                     </td>
                     {/* price */}
                     <td className="px-6 py-4">
-                    {product.price}
+                    {editingProduct && editingProduct.id === product.id ? (
+                   <input
+                   type="text"
+                   value={editingProduct.price}
+                   onChange={(e) =>
+                     setEditingProduct({ ...editingProduct, price: e.target.value })
+                   }
+                     />
+                    ) : (
+                      product.price
+                    )}
                     </td>
-                    <td className="flex items-center px-6 py-4 space-x-3">
+                    <td>
+                    {editingProduct && editingProduct.id === product.id ? (
+                      <button onClick={() => handleSave(product)}>
+                        <FontAwesomeIcon icon={faCheck} style={{color: "#6EAE61",}} />
+                      </button>
+                    ) : (
+                      <button>
+                      </button>
+                    )}
+                    <button onClick={() => handleSave(product)}>
+                    </button>
+                  </td>
+                   <td className="flex items-center px-6 py-4 space-x-3">
                         {/* edit */}
-                        <Link to={`/edit-product/${product.id}`}>
-                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691DB", "--fa-secondary-color": "#3B60A0",}} />                    </button>
-                        </Link>
+                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => handleEdit(product)}>
+                        <FontAwesomeIcon icon={faPenToSquare} style={{"--fa-primary-color": "#6691DB", "--fa-secondary-color": "#3B60A0",}} />
+                        </button>
                         {/* delete */}
                         <button className="font-medium text-red-600 dark:text-red-500 hover:underline"
                         onClick={() => handleDelete(product.id)}
@@ -173,7 +194,6 @@ return (
     </div>
     )
 }
-
 export default AdminTable
 
 

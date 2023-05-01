@@ -21,7 +21,6 @@ import React, { useState } from 'react';
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
 import AddProduct from '../admin/AddProduct';
-import About from '../pages/About';
 import Success from '../pages/Success.js';
 
 function App() {

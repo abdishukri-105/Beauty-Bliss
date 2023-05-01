@@ -51,7 +51,7 @@ function login({handleSubmit,username,password, setPassword, setUsername}) {
             </div>
             <button
               type="submit"
-              className="w-full bg-red-400 rounded-md font-semibold py-2 "
+              className="w-full bg-red-300 py-2 text-white p-1 rounded-lg mb-3 font-semibold"
              >
               Login 
             </button>
