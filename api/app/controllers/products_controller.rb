@@ -15,25 +15,36 @@ class ProductsController < ApplicationController
     end
 
     def create
-        product = Product.find_by(id: params[:id])
-        product.create(product_params)
-        app_response(status: 201, message: "Created successfully")
+        # user = User.find(session[:user_id])
+        # app_response(status_code: 401, message: "You do not have permission to add a product to the store") unless user.valid?
+        product = Product.create(product_params)
+        render json: product
+        # app_response(status_code: 201, message: "Created successfully", body: product, serializer: ProductSerializer)
     end
 
     def update
-        product = Product.find_by(id: params[:id])
+        product = Product.find(params[:id])
         product_not_found unless product.valid?
-        product.update(product_params)
-        app_response(status: 200, message: "Updated successfully")
+             product.update(product_params)
+             app_response(status_code: 200, message: "Updated successfully", body: product, serializer: ProductSerializer)
+     end
+
+    def destroy
+        product = Product.find_by(id: params[:id])
+        product.destroy
+        app_response(message: "Deleted successfully")
     end
-end
+
+ 
 
     private
 
     def product_params
-        params.permit(:name, :description, :price, :image_url)
+        params.permit(:name, :description, :price, :image_url, :category)
     end
 
     def product_not_found
         not_found(message: "That does not seem to be a valid product.")
     end
+
+end
