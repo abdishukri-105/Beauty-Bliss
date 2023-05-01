@@ -127,7 +127,7 @@ useEffect(() => {
     setCartItems(prevState => {
       return [];
     });
-    navigate("/payment");
+    navigate("/success");
     console.log(cartItems)
   };
   
