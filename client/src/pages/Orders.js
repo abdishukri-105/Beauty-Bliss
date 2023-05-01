@@ -17,56 +17,89 @@ const Orders = () => {
 
   const navigate = useNavigate();
 
-  // fetch items from cart table
-//   useEffect(() => {
-//     axios.get('http://localhost:3000/cart')
-//       .then(response => {
-//         console.log(response.data)
-//         setCartItems(response.data)
-//       })
-//       .catch(error => console.log(error))
-//   }, []);
+
     
 useEffect(() => {
     if (cartItems.length === 0) {
-      axios.get('http://localhost:4000/cart')
+      axios.get('https://api.jsonbin.io/v3/b/645017f19d312622a3559b2a')
         .then(response => {
-          console.log(response.data)
-          setCartItems(response.data)
+          console.log(response.data.record.cart)
+          setCartItems(response.data.record.cart)
         })
         .catch(error => console.log(error))
     }
-  }, [cartItems]);
+  }, []);
   
   console.log(cartItems)
 
   // remove item from cart
+  // const handleDeleteItem = (item) => {
+  //   axios.delete(`https://api.jsonbin.io/v3/b/645017f19d312622a3559b2a/${item.id}`)
+  //     .then(response => {
+  //       setCartItems(prevState => prevState.filter(cartItem => cartItem.id !== item.id));
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }
   const handleDeleteItem = (item) => {
-    axios.delete(`http://localhost:4000/cart/${item.id}`)
-      .then(response => {
-        setCartItems(prevState => prevState.filter(cartItem => cartItem.id !== item.id));
+    axios
+      .delete(`https://api.jsonbin.io/v3/b/645017f19d312622a3559b2a/${item.id}`, {
+        headers: {
+          "X-Master-Key": "$2b$10$AUfXP3uvF.Tam/Gk8wDH7.A1JIULHSgJ1aqm6sIcrnU6Hkwxc8DhK",
+        },
       })
-      .catch(error => {
+      .then((response) => {
+        setCartItems((prevState) =>
+          prevState.filter((cartItem) => cartItem.id !== item.id)
+        );
+      })
+      .catch((error) => {
         console.log(error);
       });
-  }
-  
+  };
 
   
   // edit quantity in cart
+  // const handleQuantityChange = (value, item) => {
+  //   axios.patch(`https://api.jsonbin.io/v3/b/645017f19d312622a3559b2a/${item.id}`, { quantity: value })
+  //     .then(response => {
+  //       setCartItems(prevState => {
+  //         const index = prevState.findIndex(cartItem => cartItem.id === item.id);
+  //         prevState[index].quantity = parseInt(value);
+  //         return [...prevState];
+  //       });
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }
+
   const handleQuantityChange = (value, item) => {
-    axios.patch(`http://localhost:4000/cart/${item.id}`, { quantity: value })
-      .then(response => {
-        setCartItems(prevState => {
-          const index = prevState.findIndex(cartItem => cartItem.id === item.id);
+    axios
+      .patch(
+        `https://api.jsonbin.io/v3/b/645017f19d312622a3559b2a/${item.id}`,
+        { quantity: value },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "X-Master-Key": "$2b$10$AUfXP3uvF.Tam/Gk8wDH7.A1JIULHSgJ1aqm6sIcrnU6Hkwxc8DhK",
+          },
+        }
+      )
+      .then((response) => {
+        setCartItems((prevState) => {
+          const index = prevState.findIndex(
+            (cartItem) => cartItem.id === item.id
+          );
           prevState[index].quantity = parseInt(value);
           return [...prevState];
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
-  }
+  };
   
   const handleCheckout = () => {
     // Clear the cart and set the stage to "billing"
@@ -82,21 +115,12 @@ useEffect(() => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // Submit the form data to the server and navigate to the receipt
-    const response = await axios.post('http://localhost:3000/customers', formData);
+    const response = await axios.post('https://beaty-product-shop.onrender.com/customers', formData);
     const { name, address } = response.data;
     // setFormData({ name: '', address: '', phoneNumber: '' });
     setStage("receipt");
   };
 
-//   const handleDeleteAllItems = () => {
-//   axios.delete(`http://localhost:4000/cart`)
-//     .then(response => {
-//       setCartItems([]);
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// }
 
 
   const handleConfirm = () => {

@@ -29,7 +29,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/beauty_products", {
+      const response = await axios.post("https://beaty-product-shop.onrender.com/beauty_products", {
         ...product,
         category, // include the category property in the product object
       });
