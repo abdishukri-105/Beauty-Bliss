@@ -109,8 +109,7 @@ const About = () => {
                     Frontend Developer
                   </p>
                   <p className="mt-2 max-w-2xl text-sm text-gray-500">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nunc nec nisi convallis pulvinar. Sed mattis, turpis a lacinia faucibus, quam velit feugiat lacus, quis vestibulum mauris quam sit amet arcu. 
-                  </p>
+                  He is a freelance front-end developer, building responsive and dynamic websites for clients across various industries. I'm passionate about creating beautiful and user-friendly web experiences that help businesses achieve their goals and connect with their audiences.In my free time, I enjoy staying up-to-date with the latest web development trends and experimenting with new technologies. I also enjoy mentoring aspiring developers and helping them navigate the industry                  </p>
                 </div>
               </div>
 
