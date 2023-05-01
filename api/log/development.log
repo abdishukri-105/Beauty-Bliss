@@ -1,0 +1,263 @@
+Started GET "/beauty_products" for ::1 at 2023-05-01 12:43:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.7ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.79ms)
+Completed 200 OK in 102ms (Views: 62.6ms | ActiveRecord: 11.0ms | Allocations: 43039)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 12:43:41 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.36ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 1093)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 12:43:41 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.28ms)
+Completed 200 OK in 12ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 12:43:41 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (13.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 13.8ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-05-01 12:43:47 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 200 OK in 54ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 1443)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-05-01 12:43:47 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 749)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:43:53 +0300
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:43:54 +0300
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:43:58 +0300
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+Started POST "/users" for 127.0.0.1 at 2023-05-01 12:44:09 +0300
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+Started POST "/users" for 127.0.0.1 at 2023-05-01 12:45:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+Started POST "/users" for 127.0.0.1 at 2023-05-01 12:45:28 +0300
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+Started POST "/users" for 127.0.0.1 at 2023-05-01 12:45:31 +0300
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+Started POST "/users" for 127.0.0.1 at 2023-05-01 12:46:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "email"=>"abdshukrimohamed105@gmail.com", "user"=>{"username"=>"osama", "email"=>"abdshukrimohamed105@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00005600d9f4c010>, params: {"username"=>"osama", "password"=>"[FILTERED]", "email"=>"abdshukrimohamed105@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"osama", "email"=>"abdshukrimohamed105@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abdshukrimohamed105@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "osama"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abdshukrimohamed105@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "osama"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (617.78ms)
+Completed 422 Unprocessable Entity in 1065ms (Views: 630.6ms | ActiveRecord: 11.4ms | Allocations: 390816)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:46:43 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f5998011578>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f5998011578>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f5998011578>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 200 OK in 267ms (Views: 0.8ms | ActiveRecord: 1.2ms | Allocations: 1749)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 12:46:44 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.58ms)
+Completed 200 OK in 97ms (Views: 74.7ms | ActiveRecord: 5.4ms | Allocations: 22388)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 12:46:44 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.5ms | Allocations: 1095)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 13:17:46 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.28ms)
+Completed 200 OK in 113ms (Views: 109.6ms | ActiveRecord: 36.3ms | Allocations: 4015)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 13:17:46 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 13:17:46 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.51ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 13:17:46 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.5ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.4ms | Allocations: 1092)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-05-01 13:17:52 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (1.3ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 1.6ms | Allocations: 910)
+
+
+Started GET "/beauty_products/2" for ::1 at 2023-05-01 13:17:52 +0300
+Processing by BeautyProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.99ms)
+Completed 200 OK in 22ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 749)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 13:18:07 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"osama", "password"=>"[FILTERED]", "user"=>{"username"=>"osama"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f59ac1a3850>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f59ac1a3850>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'osama' OR email = NULL) ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f59ac1a3850>, params: {"username"=>"osama", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"osama"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.0ms)
+Completed 200 OK in 218ms (Views: 1.5ms | ActiveRecord: 1.1ms | Allocations: 1349)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 13:18:07 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.5ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.24ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.5ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 13:18:07 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (3.0ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.39ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 3.0ms | Allocations: 1093)
+
+
+Started PUT "/beauty_products/1" for ::1 at 2023-05-01 13:18:18 +0300
+Processing by BeautyProductsController#update as HTML
+  Parameters: {"id"=>"1", "name"=>"Lipstick", "description"=>"This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades.", "price"=>3690, "image_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm", "category"=>"make up", "qty"=>25, "user_id"=>nil, "beauty_product"=>{"id"=>"1", "name"=>"Lipstick", "description"=>"This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades.", "price"=>3690, "image_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm", "category"=>"make up", "qty"=>25, "user_id"=>nil}}
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products" WHERE "beauty_products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/beauty_products_controller.rb:44:in `set_beauty_product'
+[31mUnpermitted parameters: :id, :user_id. Context: { controller: BeautyProductsController, action: update, request: #<ActionDispatch::Request:0x00007f599c096418>, params: {"id"=>"1", "name"=>"Lipstick", "description"=>"This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades.", "price"=>3690, "image_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm", "category"=>"make up", "qty"=>25, "user_id"=>nil, "controller"=>"beauty_products", "action"=>"update", "beauty_product"=>{"id"=>"1", "name"=>"Lipstick", "description"=>"This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades.", "price"=>3690, "image_url"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm", "category"=>"make up", "qty"=>25, "user_id"=>nil}} }[0m
+[active_model_serializers] Rendered BeautyProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1267)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 14:04:49 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (1.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.11ms)
+Completed 200 OK in 98ms (Views: 84.8ms | ActiveRecord: 16.8ms | Allocations: 3955)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 14:04:49 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (0.4ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.11ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.4ms | Allocations: 1092)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 14:04:49 +0300
+Processing by BeautyProductsController#index as */*
+  [1m[36mBeautyProduct Load (0.6ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.08ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 1096)
+
+
+Started GET "/beauty_products" for ::1 at 2023-05-01 14:04:49 +0300
+Processing by BeautyProductsController#index as HTML
+  [1m[36mBeautyProduct Load (2.8ms)[0m  [1m[34mSELECT "beauty_products".* FROM "beauty_products"[0m
+  ↳ app/controllers/beauty_products_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.08ms)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 2.8ms | Allocations: 1092)
+
+

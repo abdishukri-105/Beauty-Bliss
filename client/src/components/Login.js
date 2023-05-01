@@ -13,7 +13,6 @@ function login({handleSubmit,username,password, setPassword, setUsername}) {
         {/* <!-- the container for the span --> */}
         <div className="mb-7 text-center">
           <span className="mb-3 text-xl text-center font-bold font-Poppins">Welcome Admin</span>
-         
         </div>
         <span className="font-light text-end italic text-pink   ">
             <span className="font-light text-black">No Account ?</span>
