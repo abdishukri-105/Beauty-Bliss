@@ -21,6 +21,7 @@ import React, { useState } from 'react';
 import AdminTable from '../admin/AdminTable';
 import AddProduct from '../admin/AddProduct';
 import About from '../pages/About';
+import Success from '../pages/Success.js';
 
 function App() {
 
@@ -77,6 +78,8 @@ function App() {
       <Route path="/signup" element={<Signup />} /> 
       <Route path="/add-product" element={<AddProduct/>} /> 
       <Route path="/admin-table" element={< AdminTable/>} /> 
+      <Route path="/success" element={< Success/>} /> 
+
     </Routes>
     {/* <Slideshow/> */}
     <Footer/>

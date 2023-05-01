@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const ProductList = ({ category, products, setProducts }) => {
 
     useEffect(() => {
-      fetch(' http://localhost:3000/beauty_products')
+      fetch(' http://localhost:3000/products')
         .then((response) => response.json())
         .then((data) => {
            console.log(data) 

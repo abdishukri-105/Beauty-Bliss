@@ -9,13 +9,14 @@ module.exports = {
 
     extend: {
       colors: {
-        pink: "#f5b9c9",
-        white: "#FFFFFF",
+        pink: "#EEB2B2",
+        lpink: "#EABFAF",
+        white: "#F5F5F5",
         black: "#000000",
         grey: "#6B6868",
         brown: "#ebd4b5	",
-        beige: "#debbb2",
-        dbrown: "#8f5e4b"
+        beige: "#F2DFD8",
+        dbrown: "#9D6C5B"
       }
     },
   },

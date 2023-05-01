@@ -6,6 +6,8 @@ function Signup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
 
   const navigate = useNavigate()
   const handleSubmit = async (e) => {
@@ -18,10 +20,15 @@ function Signup() {
         password,
         email,
       });
+      setMessage('Successfully signed up!');
+      setMessageType('success');
       console.log(response.data)
       navigate("/login")
     } catch (error) {
       console.log(error)
+      setMessage('Failed to sign up. Please try again.');
+      setMessageType('error');
+
     }
   };
 
@@ -38,6 +45,16 @@ function Signup() {
               <Link className="ml-2 text-pink" to="/Login">Sign in</Link>
             </span>
           </div>
+          
+          {message && (
+            <div
+              className={`${
+                messageType === 'success' ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'
+              } p-4 rounded-lg mb-4`}
+            >
+              {message}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className="py-4">

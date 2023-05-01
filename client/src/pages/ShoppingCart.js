@@ -11,10 +11,10 @@ console.log(cartItems);
   return (
     <div>
       <div className="text-center text-xl mt-5 ">
-      <Link to="/products"><button className="border border-pink-400 text-black rounded-2xl py-2 px-4">back to all products</button>   </Link> 
+      <Link to="/products"><button className="border border-black text-black font-semibold rounded-2xl py-2 px-4">back to all products</button>   </Link> 
       </div>
     <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full shadow-md rounded-md bg-white" >
-      <h1 className='text-center text-2xl uppercase font-bold underline italic mb-3'>your cart</h1>
+      <h1 className='text-center text-3xl uppercase font-bold   mb-3'>your cart</h1>
         <table className="mx-auto">
           <thead>
             <tr className="uppercase text-xs sm:text-sm text-black border-b border-palette-light">
@@ -46,7 +46,7 @@ console.log(cartItems);
                     </tr>
                 )) :
                 <tr>
-                    <td colSpan="5" className="text-center py-4 text-red-600 text-3xl font-bold">No items in cart</td>
+                    <td colSpan="5" className="text-center py-4 text-red-600 text-m font-semibold">cart is empty :( </td>
                 </tr>
             }
             {cartItems.length > 0 &&
