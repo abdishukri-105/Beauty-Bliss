@@ -13,7 +13,7 @@ function AdminTable() {
 
 // GET/products
   useEffect(() => {
-    axios.get('http://localhost:3000/products')
+    axios.get('https://beaty-product-shop.onrender.com/beauty_products')
       .then(response => {
         setProducts(response.data);
       })
@@ -25,7 +25,7 @@ function AdminTable() {
   const handleDelete = (productId) => {
     if (window.confirm("Are you sure you want to delete this product?,You cant go back once you do this")) {
       axios
-        .delete(`http://localhost:3000/products/${productId}`)
+        .delete(`https://beaty-product-shop.onrender.com/beauty_products/${productId}`)
         .then(() => {
           setProducts(products.filter((p) => p.id !== productId));
         })
@@ -38,7 +38,22 @@ function AdminTable() {
   const filteredProducts = products.filter((product) =>
   product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
 );
-
+// edit logic
+const handleEdit = (product) => {
+  setEditingProduct(product);
+};
+//save the edited price
+const handleSave = () => {
+  axios
+    .put(`https://beaty-product-shop.onrender.com/beauty_products/${editingProduct.id}`, editingProduct)
+    .then(() => {
+      setEditingProduct(null);
+      setProducts(products.map(p => p.id === editingProduct.id ? editingProduct : p));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg mr-20 ml-20 p-5">
         {/* Search */}
@@ -120,7 +135,7 @@ return (
                 <tr key={product.id}  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     {/* image  */}
                     <td class="w-32 p-4">
-                    <img src={product.image} alt={product.name}/>
+                    <img src={product.image_url} alt={product.name}/>
                     </td>
                     {/* product name */}
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">

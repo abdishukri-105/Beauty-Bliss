@@ -16,7 +16,7 @@ const ProductsInfoPage = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:3000/products/${id}`)
+        fetch(`https://beaty-product-shop.onrender.com/beauty_products/${id}`)
           .then(response => response.json())
           .then(data => {
             console.log(data)
@@ -62,7 +62,7 @@ const ProductsInfoPage = () => {
             {product &&
                 <>
                     <div className=" ">
-                        <img src={product.image} alt="beauty product"
+                        <img src={product.image_url} alt="beauty product"
                         className="w-3/4 h-auto rounded-2xl" />
                     </div>
     
@@ -84,7 +84,7 @@ const ProductsInfoPage = () => {
                                     <FontAwesomeIcon icon={faPlus} />
                                 </button>
                             </div>
-                            <div className="bg-pink py-4 px-6 rounded-2xl shadow-xl">
+                            <div className="bg-pink-300 py-4 px-6 rounded-2xl shadow-xl">
                                 <button onClick={handleAddToCartClick}>
                                     <span className="uppercase text-white font-semibold">add to cart</span> 
                                     <span className="ml-3 "><FontAwesomeIcon bounce icon={faCartShopping} style={{color: "#F5F5F5",}}/></span>

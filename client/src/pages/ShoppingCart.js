@@ -18,12 +18,12 @@ console.log(cartItems);
         <table className="mx-auto">
           <thead>
             <tr className="uppercase text-xs sm:text-sm text-black border-b border-palette-light">
-                {/* <th className="font-primary font-normal px-6 py-4">Item</th>
-                <th className="font-primary font-normal px-6 py-4">image</th>
-                <th className="font-primary font-normal px-6 py-4">Quantity</th>
-                 <th className="font-primary font-normal px-6 py-4">Delete</th>
-                <th className="font-primary font-normal px-6 py-4 hidden sm:table-cell">Price</th>
-                <th className="font-primary font-normal px-6 py-4">Subtotal</th> */}
+                <th className="font-primary font-sembold px-6 py-4">Item</th>
+                <th className="font-primary font-semibold px-6 py-4">image</th>
+                <th className="font-primary font-semibold px-6 py-4">Quantity</th>
+                 <th className="font-primary font-semibold px-6 py-4">Delete</th>
+                <th className="font-primary font-semibold px-6 py-4 hidden sm:table-cell">Price</th>
+                <th className="font-primary font-semibold px-6 py-4">Subtotal</th>
             </tr>
           </thead>
           <tbody>
@@ -51,7 +51,7 @@ console.log(cartItems);
             }
             {cartItems.length > 0 &&
               <tr>
-                <td colSpan="4"></td>
+                <td colSpan="3"></td>
                 <td className='text-bold text-xl uppercase font-serif'>total:</td>
                 <td className="font-primary  px-6 py-4 font-semibold"> {cartItems.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)}</td>
                 <td></td>

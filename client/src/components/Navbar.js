@@ -1,15 +1,8 @@
-
 import React from 'react'
-// import Search from './Search'
-// import ShoppingCart from '../pages/ShoppingCart'
-// import User from './User'
-// import ProductPage from '../pages/ProductPage'
-// import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import profiledummy from"../images/profile.dummy.jpg"
-
+import { faShoppingCart, faCircle } from '@fortawesome/free-solid-svg-icons';
+import profiledummy from "../images/user.jpg"
 
 function Navbar({isLoggedIn, username, handleLogout}) {
 

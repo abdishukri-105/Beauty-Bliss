@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const ProductList = ({ category, products, setProducts }) => {
 
     useEffect(() => {
-      fetch(' http://localhost:3000/products')
+      fetch('https://beaty-product-shop.onrender.com/beauty_products')
         .then((response) => response.json())
         .then((data) => {
            console.log(data) 
@@ -59,7 +59,7 @@ const ProductList = ({ category, products, setProducts }) => {
              <div className='rounded-lg '>
                <img 
               className="object-cover p-2 rounded-t-lg"
-               src={product.image} 
+               src={product.image_url} 
                alt="beauty products"
                 />
             </div>

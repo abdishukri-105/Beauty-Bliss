@@ -6,25 +6,26 @@ function login({handleSubmit,username,password, setPassword, setUsername}) {
 
 
   return (
-  <div className="flex items-center justify-center min-h-screen bg-gray-100">
-    <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-3xl md:flex-row md:space-y-0 ">
+  <div className="flex items-center  justify-center min-h-screen bg-gray-100">
+    <div className="relative flex w-[25rem]  flex-col m-6 space-y-8 bg-white shadow-xl rounded-3xl md:flex-row md:space-y-0 ">
       {/* <!-- left side --> */}
       <div className="flex flex-col justify-center p-8 md:p-14">
         {/* <!-- the container for the span --> */}
-        <div className="mb-7">
-          <span className="mb-3 text-xl font-normal font-Poppins">Welcome Admin</span>
-          <span className="font-light text-pink  ml-56 ">
+        <div className="mb-7 text-center">
+          <span className="mb-3 text-xl text-center font-bold font-Poppins">Welcome Admin</span>
+         
+        </div>
+        <span className="font-light text-end italic text-pink   ">
             <span className="font-light text-black">No Account ?</span>
             <Link className="ml-2 text-pink" to="/Signup">Sign up</Link>
           </span>
-        </div>
 
         <form onSubmit={handleSubmit}>
             <div className="py-4">
               <span className="mb-2 text-md font-Poppins ">Username</span>
               <input
                 type="text"
-                className="w-full p-2 border border-pink rounded-3xl placeholder:font-light placeholder:text-gray-500"
+                className="w-full p-2 border border-pink rounded-md placeholder:font-light placeholder:text-gray-500"
                 name="username"
                 id="username"
                 value={username}
@@ -38,7 +39,7 @@ function login({handleSubmit,username,password, setPassword, setUsername}) {
                 type="password"
                 name="pass"
                 id="pass"
-                className="w-full p-2 border border-pink rounded-3xl placeholder:font-light placeholder:text-gray-500"
+                className="w-full rounded-md p-2 border border-pink  placeholder:font-light placeholder:text-gray-500"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -50,7 +51,7 @@ function login({handleSubmit,username,password, setPassword, setUsername}) {
             </div>
             <button
               type="submit"
-              className="w-full bg-pink text-black p-1 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
+              className="w-full bg-red-400 rounded-md font-semibold py-2 "
              >
               Login 
             </button>

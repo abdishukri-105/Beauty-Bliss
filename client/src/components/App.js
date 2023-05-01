@@ -9,6 +9,7 @@ import Slideshow from '../components/Slideshow';
 import BillingInfo from '../pages/BillingInfo';
 import Receipt from '../pages/Receipt';
 import Orders from '../pages/Orders';
+import About from '../pages/About';
 import Payment from './Payment';
 import Footer from './Footer';
 import Login from './Login';
@@ -36,7 +37,7 @@ function App() {
     // navigate("/admin-table");
 
     try {
-      const response = await axios.post('http://127.0.0.1:3000/login', {
+      const response = await axios.post('https://beaty-product-shop.onrender.com/login', {
         username,
         password,
       });

@@ -51,6 +51,7 @@ useEffect(() => {
       });
   }
   
+
   
   // edit quantity in cart
   const handleQuantityChange = (value, item) => {
@@ -87,32 +88,30 @@ useEffect(() => {
     setStage("receipt");
   };
 
-  
+//   const handleDeleteAllItems = () => {
+//   axios.delete(`http://localhost:4000/cart`)
+//     .then(response => {
+//       setCartItems([]);
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// }
+
+
   const handleConfirm = () => {
-    // Clear cart items and form data here
-    setCartItems([]);
-    setFormData({});
-    navigate("/payment")
+    setCartItems(prevState => {
+      return [];
+    });
+    navigate("/payment");
+    console.log(cartItems)
   };
-
-  
-//   const handleConfirm = () => {
-//     // Clear cart items and form data here
-//     axios.delete('http://localhost:3000/cart')
-//       .then(response => {
-//         setCartItems([]);
-//         setFormData({});
-//         navigate("/payment")
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
-//   };
   
 
-console.log(formData)
+console.log(formData, cartItems)
+
   return (
-    <div>
+    <div className='bg-gray-100 pt-5 pb-20'>
       {stage === "cart" && (
         <ShoppingCart 
           cartItems={cartItems} 
