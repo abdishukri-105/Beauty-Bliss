@@ -36,7 +36,7 @@ function App() {
     // navigate("/admin-table");
 
     try {
-      const response = await axios.post('http://127.0.0.1:3000/login', {
+      const response = await axios.post('https://beaty-product-shop.onrender.com/login', {
         username,
         password,
       });

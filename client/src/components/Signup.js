@@ -13,7 +13,7 @@ function Signup() {
     // navigate("/login")
 
     try {
-      const response = await axios.post('http://127.0.0.1:3000/users', {
+      const response = await axios.post('https://beaty-product-shop.onrender.com/users', {
         username,
         password,
         email,

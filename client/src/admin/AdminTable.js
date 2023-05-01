@@ -14,7 +14,7 @@ function AdminTable() {
     const [editingProduct, setEditingProduct] = useState(null);
 // GET/products
   useEffect(() => {
-    axios.get('http://localhost:3000/beauty_products')
+    axios.get('https://beaty-product-shop.onrender.com/beauty_products')
       .then(response => {
         setProducts(response.data);
       })
@@ -26,7 +26,7 @@ function AdminTable() {
   const handleDelete = (productId) => {
     if (window.confirm("Are you sure you want to delete this product?,You cant go back once you do this")) {
       axios
-        .delete(`http://localhost:3000/beauty_products/${productId}`)
+        .delete(`https://beaty-product-shop.onrender.com/beauty_products/${productId}`)
         .then(() => {
           setProducts(products.filter((p) => p.id !== productId));
         })
@@ -46,7 +46,7 @@ const handleEdit = (product) => {
 //save the edited price
 const handleSave = () => {
   axios
-    .put(`http://localhost:3000/beauty_products/${editingProduct.id}`, editingProduct)
+    .put(`https://beaty-product-shop.onrender.com/beauty_products/${editingProduct.id}`, editingProduct)
     .then(() => {
       setEditingProduct(null);
       setProducts(products.map(p => p.id === editingProduct.id ? editingProduct : p));

@@ -27,28 +27,28 @@
   ],
   "cart": [
     {
-      "id": 1,
-      "name": "Lipstick",
-      "description": "This long-lasting lipstick is perfect for all-day wear and comes in a variety of shades.",
-      "price": 3690,
-      "image_url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgaHRoZGhgYGBgYGBwZGhocGhgYGBgcIS4lHB4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQrISs7NzQ0NDU0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0MTQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAGBwAFAQMEAgj/xABMEAABAgIFBQsJBgUCBgMAAAABAAIDEQQFBhIhMXFysbIHIjIzQVFhgZGhwRMjJDRCc7PC8FJigqLR4RRjdIOSw/EVQ0Sj0uIlVGT/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALREAAgEDAgQFAwUBAAAAAAAAAAECAxExITIEEkFREzNxgfAiI0I0Q2GR4aH/2gAMAwEAAhEDEQA/AAWSklmSzJLHnmSkl6WZKEPMliS9KSUIeZKSWIr5CaIKjosOmQS1smUiGMwezkJHPyTQuSQyNFyV0UElJLppNFex5Y9pa4ZQdeZaJIgGrHmSi9LChRhSSklJKEJJYksyUkoQ8yUkvSihR4kpJe1vhURzsmXkHKVBkKU57Vc5JLBC2ELElBZrksSWwhYkoQ1yWJLZJYkrIa5LBC9yWCFCjxJRepLKhDskosqKgiLCyooQiiysgKEOSnGQAW+yz3Mih7DIg/QPQVyVg/FdlmeGUl7WdKlFKokMunVfDpsIOkGxAMDyg8x52pe06hvhPLHiTh3jkI5wmNVQkMsipaOqG0iEXASewTaefnaegqoSsVxNBN3iLEhYXsheU85x5kosqKEPKi9LChDCwvS3URk3CeRQOlB1JqK66G6jUaQvHLqW9hIc0jKCJZ5ra8K2s1VnlIrXuwYwzx9pwxAHQiaPTKnChSssL/pzW1qbyMURGiTIm",
-      "category": "make up",
-      "qty": 25,
+      "id": 6,
+      "name": "Hyaluronic Acid Serum",
+      "description": "This serum is packed with hyaluronic acid to hydrate and plump up your skin. It helps to reduce the appearance of fine lines and wrinkles, and leaves your skin looking and feeling smoother and more radiant.",
+      "price": 29.99,
+      "image_url": "https://example.com/images/hyaluronic_acid_serum.jpg",
+      "category": "Serums",
+      "qty": null,
       "user_id": null,
-      "quantity": 1,
-      "timestamp": 1682723158627
+      "quantity": "5",
+      "timestamp": 1682950467640
     },
     {
-      "id": 2,
-      "name": "Moisturizer",
-      "description": "This hydrating moisturizer is great for dry skin and provides a natural, dewy finish.",
-      "price": 5600,
-      "image_url": "data:image/jpeg;base64,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",
-      "category": "Skincare",
-      "qty": 700,
+      "id": 4,
+      "name": "Rosewater Toner",
+      "description": "This toner is made with rosewater to help soothe and hydrate your skin. It helps to balance your skin's pH and prepare it for the rest of your skincare routine. It can also be used throughout the day to refresh and revitalize your skin.",
+      "price": 19.99,
+      "image_url": "https://example.com/images/rosewater_toner.jpg",
+      "category": "Toners",
+      "qty": null,
       "user_id": null,
-      "quantity": 1,
-      "timestamp": 1682723323322
+      "quantity": 3,
+      "timestamp": 1682950525046
     }
   ],
   "customers": [

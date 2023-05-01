@@ -17,7 +17,7 @@ const ProductPage = ({ userId }) => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:3000/beauty_products', {
+    axios.get('https://beaty-product-shop.onrender.com/beauty_products', {
     })
     .then(response => {
       const data = response.data;
