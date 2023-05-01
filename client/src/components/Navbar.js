@@ -11,14 +11,14 @@ function Navbar({isLoggedIn, username, handleLogout}) {
   return (
       <nav className="bg- border-gray-200 dark:bg-gray-900 shadow-sm pt-3  ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-              <Link to='/'  className=" text-black font-bold text-3xl font-['Poppins'] ">
+        <Link to='/'  className=" text-black font-bold text-3xl font-['Poppins'] ">
                 Beauty Bliss
               </Link> 
         <div className="flex items-right gap-4 md:order-2">
             <Link  to="/order"className="block py-2 text-2xl pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" passHref >
               <FontAwesomeIcon className="text-palette-primary w-6 m-auto" icon={faShoppingCart} />
             </Link>
-            <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-green-50 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            <button type="button" className="flex mr-3 text-sm bg-white rounded-full md:mr-0 focus:ring-4 focus:ring-green-50 dark:focus:ring-green-50" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
               <span className="sr-only">Open user menu</span>
               {/* <FontAwesomeIcon icon={faCircle} className='text-xl rounded-full w-8 h-8'/> */}
               <img className="w-8 h-8 rounded-full" src={profiledummy} alt="user photo"/>

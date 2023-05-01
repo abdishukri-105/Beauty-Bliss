@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from "react";
 import ProductList from "../components/ProductList";
 import Search from "../components/Search";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
-
+import CategoryBar from "../components/CategoryBar";
 
 const ProductPage = ({ userId }) => {
 
@@ -21,12 +20,16 @@ const ProductPage = ({ userId }) => {
     })
     .then(response => {
       const data = response.data;
-      const filtered = data.filter(product => product.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      const filtered = data.filter(product => {
+        const productName = product.name || "";
+        const search = searchQuery || "";
+        return productName.toLowerCase().includes(search.toLowerCase());
+      });
       setFilteredProducts(filtered);
     })
     .catch(error => console.log(error));
   }, [searchQuery]);
-  
+    
   
   return (
     <div className="flex p-5 ">
@@ -38,7 +41,9 @@ const ProductPage = ({ userId }) => {
           <div className="py-4">
             <Search onSearch={handleSearch} />
           </div>
-      
+        </div>
+        <div>
+          <CategoryBar setCategory={setCategory}/>
         </div>
         <div className=" overflow-y-auto">
           <ProductList
@@ -53,4 +58,3 @@ const ProductPage = ({ userId }) => {
 };
 
 export default ProductPage;
-

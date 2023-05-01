@@ -2,7 +2,7 @@ import '../App.css'
 import LandingPage from '../pages/LandingPage'
 import Navbar from './Navbar';
 import ProductPage from "../pages/ProductPage"
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import ProductsInfoPage from './ProductsInfo';
 import ShoppingCart  from '../pages/ShoppingCart'
 import Slideshow from '../components/Slideshow';
@@ -18,10 +18,10 @@ import 'flowbite/dist/flowbite.min.css';
 import 'flowbite/dist/flowbite.min.js';
 import axios from 'axios';
 import React, { useState } from 'react';
-
 // for the admin panel
 import AdminTable from '../admin/AdminTable';
 import AddProduct from '../admin/AddProduct';
+import Success from '../pages/Success.js';
 
 function App() {
 
@@ -78,6 +78,8 @@ function App() {
       <Route path="/signup" element={<Signup />} /> 
       <Route path="/add-product" element={<AddProduct/>} /> 
       <Route path="/admin-table" element={< AdminTable/>} /> 
+      <Route path="/success" element={< Success/>} /> 
+
     </Routes>
     {/* <Slideshow/> */}
     <Footer/>

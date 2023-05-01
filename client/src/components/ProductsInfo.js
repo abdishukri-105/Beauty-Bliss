@@ -34,11 +34,13 @@ const ProductsInfoPage = () => {
     const handlePlusClick = () => {
         setQuantity(quantity + 1);
     };
+    const [isItemAdded, setIsItemAdded] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleAddToCartClick = () => {
         const timestamp = Date.now();
         const newCartItem = { ...product, quantity, timestamp };
-        fetch('http://localhost:4000/cart', {
+        fetch('http://localhost:3000/cart', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newCartItem)
@@ -46,9 +48,12 @@ const ProductsInfoPage = () => {
         .then(() => {
           console.log('Item added to cart:', newCartItem);
           setCartItem(newCartItem)
+          setIsItemAdded(true);
+          setTimeout(() => setIsItemAdded(false), 3000); // hide the message after 3 seconds
           navigate('/order');
         })
         .catch(error => console.log(error));
+        setErrorMessage('Failed to add item to cart. Please try again.');
     };
     
       
@@ -68,7 +73,7 @@ const ProductsInfoPage = () => {
                             <p className="mb-6 text-grey font-medium"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, facere illum ea sint consequuntur labore sit dolore quos nulla in?{product.description}</p>
                         </div>
                         <div className="flex justify-around ">
-                            <div className=" bg-gray-100 rounded-2xl p-3">
+                            <div className=" bg-transparent rounded-2xl p-3">
                                 <button className="bg-transparent rounded-lg px-3 py-1"
                                     onClick={handleMinusClick}>
                                     <FontAwesomeIcon icon={faMinus} />
@@ -82,13 +87,24 @@ const ProductsInfoPage = () => {
                             <div className="bg-pink-300 py-4 px-6 rounded-2xl shadow-xl">
                                 <button onClick={handleAddToCartClick}>
                                     <span className="uppercase text-white font-semibold">add to cart</span> 
-                                    <span className="ml-3 "><FontAwesomeIcon icon={faCartShopping} /></span>
+                                    <span className="ml-3 "><FontAwesomeIcon bounce icon={faCartShopping} style={{color: "#F5F5F5",}}/></span>
                                 </button>
                             </div>
                         </div>
+                        {isItemAdded && (
+                        <div className="bg-green-500 text-white p-2 rounded-md mt-4">
+                            Item successfully added to cart!
+                        </div>
+                        )}
+                        {errorMessage && (
+                        <div className="bg-red-500 text-white p-2 rounded-md mt-4">
+                        {errorMessage}
+                        </div>
+                        )}
+
                         <div className="  text-bold mt-10">
                         <Link to="/products">
-                            <div className="text-lg font-medium text-pink-500 hover:underline dark:text-brown">
+                            <div className="text-lg font-medium text-pink-500 hover:underline text-dbrown dark:text-dbrown">
                                 continue shopping  
                             </div>   
                         </Link> 

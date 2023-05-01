@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
 import Receipt from "./Receipt"
 
@@ -11,10 +11,10 @@ console.log(cartItems);
   return (
     <div>
       <div className="text-center text-xl mt-5 ">
-      <Link to="/products"><button className="border border-pink-400 text-black rounded-2xl py-2 px-4">back to all products</button>   </Link> 
+      <Link to="/products"><button className="border border-black text-black font-semibold rounded-2xl py-2 px-4">back to all products</button>   </Link> 
       </div>
-    <div className="min-h-80 max-w-3xl p-5 my-4 sm:my-8 mx-auto w-full shadow-md rounded-md bg-white" >
-      <h1 className='text-center text-2xl text-pink uppercase font-bold underline italic mb-3'>your cart</h1>
+    <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full shadow-md rounded-md bg-white" >
+      <h1 className='text-center text-3xl uppercase font-bold   mb-3'>your cart</h1>
         <table className="mx-auto">
           <thead>
             <tr className="uppercase text-xs sm:text-sm text-black border-b border-palette-light">
@@ -29,19 +29,24 @@ console.log(cartItems);
           <tbody>
             {cartItems.length > 0 ? 
                 cartItems.map((item, index) => (
-                    <tr key={index} className="text-black border-b border-palette-light">
-                        <td className="font-primary font-normal px-4 py-2">{item.name}</td>
-                         <td className='px-6 py-4' ><img className='h-10 w-10 rounded-md' src={item.image_url} alt="product" /></td>
-                        <td className="font-primary  font-normal px-4 py-2">
-                          <input type="number" className='rounded-md' min="1" value={item.quantity} onChange={(e) => handleQuantityChange(e.target.value, item)} />
+                    <tr key={index} className="text-black border-b grey">
+                         {/* name */}
+                        <td className="font-primary font-normal px-6 py-4">{item.name}</td>
+                         <td className='px-6 py-4' ><img className='h-14 w-14 rounded-md' src={item.image} alt="product" /></td>
+                         {/* quantity */}
+                        <td className="font-primary font-normal px-6 py-4">
+                          <input type="number" min="1" value={item.quantity} onChange={(e) => handleQuantityChange(e.target.value, item)} />
                         </td>
-                        <td className="font-primary font-normal px-4 py-2"><button onClick={() => handleDeleteItem(item)}> <FontAwesomeIcon icon={faDeleteLeft}/></button></td>
-                        <td className="font-primary font-normal px-4 py-2 hidden sm:table-cell">{item.price}</td>
-                        <td className="font-primary font-normal px-4 py-2">{item.quantity * item.price}</td>
+                        {/* subtotal */}
+                        <td className="font-primary font-normal px-6 py-4 hidden sm:table-cell">{item.price}</td>
+                        <td className="font-primary font-normal px-6 py-4">{item.quantity * item.price}</td>
+                        {/* delete */}
+                        <td className="font-primary font-normal px-6 py-4"><button onClick={() => handleDeleteItem(item)}><FontAwesomeIcon icon={faXmark} /></button></td>
+
                     </tr>
                 )) :
                 <tr>
-                    <td colSpan="5" className="text-center py-4 text-red-600 text-3xl font-bold">No items in cart</td>
+                    <td colSpan="5" className="text-center py-4 text-red-600 text-m font-semibold">cart is empty :( </td>
                 </tr>
             }
             {cartItems.length > 0 &&
@@ -78,3 +83,47 @@ console.log(cartItems);
 }
 
 export default ShoppingCart;
+
+// {/* <div className="min-h-80 max-w-2xl my-4 sm:my-8 mx-auto w-full" >
+// <table className="mx-auto">
+//  {/* heading */}
+//   <thead>
+//     <tr className="uppercase text-xs sm:text-sm text-black border-b border-palette-light">
+//     <th className="font-primary font-normal px-6 py-4">Item</th>
+//         <th className="font-primary font-normal px-6 py-4">Quantity</th>
+//         <th className="font-primary font-normal px-6 py-4 hidden sm:table-cell">Price</th>
+//         <th className="font-primary font-normal px-6 py-4">Remove</th>
+//     </tr>
+//   </thead>
+//   <tbody className="divide-y divide-palette-lighter">
+//     <tr>
+//       <td>
+//         {/* product */}
+//         <img
+//         src= ""
+//         alt= ""
+//         className=''
+//         />
+//         <>hi</>
+//       </td>
+
+//       {/* quantity */}
+//       <td>
+//         <>hi</>
+//       </td>
+
+//       {/* price */}
+//       <td>
+//        <>hi</>
+//       </td>
+
+//       {/* delete */}
+//       <td>
+//        <>hi</>
+//       </td>
+
+//     </tr>
+//   </tbody>
+// </table>
+// </div>
+//  */}

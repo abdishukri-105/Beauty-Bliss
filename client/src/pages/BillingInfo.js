@@ -4,7 +4,19 @@ import { useNavigate } from 'react-router-dom';
 
 function BillingInfo({ handleChange, handleSubmit, formData }) {
 
-//   const navigate = useNavigate();
+  // const navigate = useNavigate();
+  // const [error, setError] = useState('');
+
+  // THE ERROR MESSAGE
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     await axios.post('/api/billing', formData);
+  //     navigate('/success');
+  //   } catch (err) {
+  //     setError('Failed to add billing information');
+  //   }
+  // };
 
 
   return (

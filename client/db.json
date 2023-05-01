@@ -1,4 +1,5 @@
 {
+
   "cart": [
     {
       "id": 2,
@@ -24,17 +25,21 @@
       "quantity": 1,
       "timestamp": 1682970794928
     },
+  
     {
-      "id": 44,
-      "name": "Anti-Aging Eye Cream",
-      "description": "This eye cream is packed with antioxidants and peptides to help reduce the appearance of fine lines and wrinkles around your eyes. It helps to hydrate and firm up the delicate skin around your eyes, leaving it looking smoother and more youthful.",
-      "price": 49.99,
-      "image_url": "https://example.com/images/anti_aging_eye_cream.jpg",
-      "category": "Eye Creams",
-      "qty": null,
-      "user_id": null,
-      "quantity": 1,
-      "timestamp": 1682971597076
+      "id": 4,
+      "name": "Lip Balm",
+      "description": "Moisturizing lip balm with SPF 15",
+      "price": 4.99,
+      "image_url": "https://example.com/lip-balm.jpg",
+      "category": "Skincare",
+      "qty": 25,
+      "user_id": 1,
+      "quantity": 2,
+      "timestamp": 1682702356753
     }
   ]
+  
+  
+  
 }
