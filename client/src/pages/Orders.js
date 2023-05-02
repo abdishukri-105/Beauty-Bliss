@@ -21,10 +21,10 @@ const Orders = () => {
     
 useEffect(() => {
     if (cartItems.length === 0) {
-      axios.get('http://localhost:4000/cart')
+      axios.get('https://api.jsonbin.io/v3/b/645017f19d312622a3559b2a')
         .then(response => {
-          console.log(response.data)
-          setCartItems(response.data)
+          console.log(response.data.record.cart)
+          setCartItems(response.data.record.cart)
         })
         .catch(error => console.log(error))
     }
