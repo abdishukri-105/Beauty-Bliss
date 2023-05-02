@@ -135,7 +135,7 @@ return (
                 <tr key={product.id}  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     {/* image  */}
                     <td class="w-32 p-4">
-                    <img src={product.image} alt={product.name}/>
+                    <img src={product.image_url} alt={product.name}/>
                     </td>
                     {/* product name */}
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">

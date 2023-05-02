@@ -32,7 +32,7 @@ console.log(cartItems);
                     <tr key={index} className="text-black border-b grey">
                          {/* name */}
                         <td className="font-primary font-normal px-6 py-4">{item.name}</td>
-                         <td className='px-6 py-4' ><img className='h-14 w-14 rounded-md' src={item.image} alt="product" /></td>
+                         <td className='px-6 py-4' ><img className='h-14 w-14 rounded-md' src={item.image_url} alt="product" /></td>
                          {/* quantity */}
                         <td className="font-primary font-normal px-6 py-4">
                           <input type="number" min="1" value={item.quantity} onChange={(e) => handleQuantityChange(e.target.value, item)} />

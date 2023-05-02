@@ -1,18 +1,5 @@
 {
-
   "cart": [
-    {
-      "id": 2,
-      "name": "Charcoal Face Mask",
-      "description": "This face mask is infused with charcoal to help purify and detoxify your skin. It helps to unclog pores and remove impurities, leaving your skin feeling refreshed and rejuvenated.",
-      "price": 14.99,
-      "image_url": "https://example.com/images/charcoal_face_mask.jpg",
-      "category": "Masks",
-      "qty": null,
-      "user_id": null,
-      "quantity": 1,
-      "timestamp": 1682968792738
-    },
     {
       "id": 33,
       "name": "Lipstick",
@@ -22,24 +9,8 @@
       "category": "Makeup",
       "qty": 400,
       "user_id": null,
-      "quantity": 1,
+      "quantity": "3",
       "timestamp": 1682970794928
-    },
-  
-    {
-      "id": 4,
-      "name": "Lip Balm",
-      "description": "Moisturizing lip balm with SPF 15",
-      "price": 4.99,
-      "image_url": "https://example.com/lip-balm.jpg",
-      "category": "Skincare",
-      "qty": 25,
-      "user_id": 1,
-      "quantity": 2,
-      "timestamp": 1682702356753
     }
   ]
-  
-  
-  
 }

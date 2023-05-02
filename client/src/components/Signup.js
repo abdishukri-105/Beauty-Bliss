@@ -38,13 +38,13 @@ function Signup() {
         {/* <!-- left side --> */}
         <div className="flex flex-col justify-center  p-8 md:p-14">
           {/* <!-- the container for the span --> */}
-          <div className="mb-7">
+          <div className="mb-7 text-center">
             <span className="mb-3 text-4xl font-sm font-Poppins">Sign up</span>
-            <span className="font-light text-pink-400  ml-56 ">
+          </div>
+          <span className="font-light text-pink-400 text-end ">
               <span className="font-light text-black">already have account ?</span>
               <Link className="ml-2 text-pink" to="/Login">Sign in</Link>
-            </span>
-          </div>
+          </span>
           
           {message && (
             <div

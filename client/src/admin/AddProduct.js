@@ -152,12 +152,12 @@ const AddProduct = () => {
         </div>
         <div className="flex items-center justify-center">
           <button
-            className="bg-pink-500 mr-4 hover:bg-pink text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+            className="bg-red-300 mr-4 hover:bg-red-350 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Add Product
           </button>
-          <Link to="/admin-table" className="border border-pink-500 py-2 px-4 rounded-lg">Go to admin page</Link>
+          <Link to="/admin-table" className="border border-red-300 py-2 px-4 rounded-lg">Go to admin page</Link>
         </div>
       </form>
     </div>
