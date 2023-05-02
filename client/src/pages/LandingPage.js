@@ -48,7 +48,7 @@ function LandingPage() {
             <h2 className="max-w-2xl mb-6  tracking-tight leading-none Poppins text-4xl italic h-16 w-[514px]">Everyone loves!</h2>
             <p class="max-w-2xl mb-6 font-normal text-black lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">"Elevate your beauty game with our premium cosmetics. Shop now and indulge in the ultimate beauty experience!"</p>
             <Link to="/products">
-              <button className="px-16 py-7 text-3xl text-white font-bold rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 bg-pink hover:bg-pink-600 duration-300 inline-flex items-center justify-center  text-center border border-pink  hover:bg-pink focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-pink dark:hover:bg-pink dark:focus:ring-pink">
+              <button className="px-10 py-3 text-3xl text-white font-bold rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 bg-pink hover:bg-pink-600 duration-300 inline-flex items-center justify-center  text-center border border-pink  hover:bg-pink focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-pink dark:hover:bg-pink dark:focus:ring-pink">
                 Shop Now 
               </button>
             </Link> 

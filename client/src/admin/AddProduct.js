@@ -31,7 +31,7 @@ const AddProduct = () => {
     try {
       const response = await axios.post("https://beaty-product-shop.onrender.com/beauty_products", {
         ...product,
-        category, // include the category property in the product object
+        category, 
       });
       console.log(response.data);
       setSuccessMsg("Product added successfully!");
@@ -49,7 +49,7 @@ const AddProduct = () => {
       setError(
         "There was an error adding the product. Please try again later."
       );
-      setSuccessMsg(null); // reset the success message if there was any
+      setSuccessMsg(null);
     }
   };
 

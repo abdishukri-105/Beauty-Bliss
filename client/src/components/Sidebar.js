@@ -4,9 +4,11 @@ const Sidebar = ({ setCategory }) => {
 
   const [categories, setCategories] = useState([
     "All",
-    "Skincare",
+    "Serums",
     "Makeup",
-    "vaseline"
+    "Masks",
+    "Toners",
+    "Eye Creams"
   ]);
 
   const handleClick = (category) => {

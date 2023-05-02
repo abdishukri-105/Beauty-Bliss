@@ -2,7 +2,7 @@ puts "Destroying existing records..."
 
 BeautyProduct.destroy_all
 User.destroy_all
-
+ 
 puts "Seeding..."
 beauty_products = [
   {
