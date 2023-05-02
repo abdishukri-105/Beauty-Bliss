@@ -1,7 +1,7 @@
 # Beauty-Bliss
 
 # Description
-This is an e-commerce site that sells a wide variety of beauty products to customers in need. The site is built using Ruby on Rails for the backend and ReactJS for the frontend. It also uses PostgreSQL as the database, and Jest and Minitests as the testing framework.
+This is an e-commerce site that sells a wide variety of beauty products to customers in need. The site is built using Ruby on Rails for the backend and ReactJS for the frontend. It also uses PostgreSQL as the database, and Rspec as the testing framework.
 
 # Getting Started
 Prerequisites
