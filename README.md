@@ -50,18 +50,18 @@ This app can be deployed to a production environment using a platform such as He
 The app has the following MVP features:
 
 Login
-Create an account
-Cart section for viewing all beauty products added to cart
-Checkout section for order purchase
-Simulation of a payment process by generating address, billing information, and invoices for every order submitted.  
+* Create an account
+* Cart section for viewing all beauty products added to cart
+* Checkout section for order purchase
+* Simulation of a payment process by generating address, billing information, and invoices for every order submitted.  
 
 Admin Features
 The app also has the following admin features:
 
-Perform CRUD operations of beauty products.
-Add users based on roles to manage beauty products and orders made.
-View analytics of different beauty products within the platform.
-View analytics of orders made by customers within the platform.
+* Perform CRUD operations of beauty products.
+* Add users based on roles to manage beauty products and orders made.
+* View analytics of different beauty products within the platform.
+* View analytics of orders made by customers within the platform.
 
 # License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
