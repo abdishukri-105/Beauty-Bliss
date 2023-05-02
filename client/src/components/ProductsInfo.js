@@ -40,7 +40,7 @@ const ProductsInfoPage = () => {
     const handleAddToCartClick = () => {
         const timestamp = Date.now();
         const newCartItem = { ...product, quantity, timestamp };
-        fetch('http://localhost:3000/cart', {
+        fetch('http://localhost:4000/cart', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newCartItem)
