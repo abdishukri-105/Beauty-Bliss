@@ -43,7 +43,7 @@ const ProductPage = ({ userId }) => {
           </div>
         </div>
         <div>
-          <CategoryBar setCategory={setCategory}/>
+          {/* <CategoryBar setCategory={setCategory}/> */}
         </div>
         <div className=" overflow-y-auto">
           <ProductList
