@@ -12,7 +12,7 @@ function Signup() {
   const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // navigate("/login")
+    
 
     try {
       const response = await axios.post('https://beaty-product-shop.onrender.com/users', {

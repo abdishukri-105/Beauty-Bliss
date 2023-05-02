@@ -26,30 +26,8 @@ const ProductList = ({ category, products, setProducts }) => {
     return <div className="text-2xl ml-12 text-red-700">No product of this category</div>;
   }
 
-
-    // const filteredProducts = category
-    //   ? products.filter((product) => product.category === category)
-    //   : products;
-
-    //   if (filteredProducts.length === 0) {
-    //     return <div className="text-2xl ml-12 text-red-700">No product of this category</div>;
-    //   }
   
-    // const handleDelete = (id) => {
-    //   fetch(`https://api-article254.onrender.com/articles/${id}`, { method: 'DELETE' })
-    //     .then((response) => {
-    //       if (response.ok) {
-    //         console.log(response)
-    //         setArticles(articles.filter((article) => article.id !== id));
-    //       } else {
-    //         throw new Error('Not your article');
-    //       }
-    //     })
-    //     .catch((error) => alert(error.message));
-    // };
-    
-  
-    return (
+return (
 
 <div >
     {/* <Sidebar setCategory={setCategories} /> */}

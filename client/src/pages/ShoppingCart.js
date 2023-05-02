@@ -59,15 +59,7 @@ console.log(cartItems);
             }
           </tbody>
         </table>
-{/* 
-        {showReceipt ? <Receipt cartItems={cartItems} setShowReceipt={setShowReceipt} /> : (
-      <div className="min-h-80 max-w-4xl p-5 my-4 sm:my-8 mx-auto w-full rounded-md bg-pink-50">
-        ...
-        <div className="flex justify-end mt-4">
-          <button className="px-4 py-2 font-primary font-bold uppercase text-dark bg-pink-200 rounded-md hover:bg-palette-light transition-colors duration-300" onClick={() => setShowReceipt(true)}>Checkout</button>
-        </div>
-      </div>
-    )} */}
+
        { cartItems.length  > 0 && 
         <div className="flex justify-end mt-4">
           <button  onClick={handleCheckout}

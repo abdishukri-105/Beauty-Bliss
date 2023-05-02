@@ -65,9 +65,7 @@ const About = () => {
                   <p className="mt-2 max-w-2xl text-sm text-brown">
                     Full Stack Developer
                   </p>
-                  {/* <div className=' object-contain'>
-                   <img src={shukri} alt="abdishukri" className=''  />
-                  </div> */}
+                 
                   <p className="mt-2 max-w-2xl text-sm text-gray-500">
                   A skilled full-stack developer with a degree in IT from JKUAT and currently in a rigorous bootcamp at Moringa School. He is passionate about creating user-friendly websites and delivering high-quality work that exceeds client expectations. As a valuable member of the BeautyBliss team, he contributed to the development of a great-looking website with easy navigation and a delightful shopping experience for customers.
                  </p>
@@ -140,9 +138,6 @@ const About = () => {
                   </p>
                 </div>
               </div>
-
-              
-              
             </div>
           </div>
         </div>

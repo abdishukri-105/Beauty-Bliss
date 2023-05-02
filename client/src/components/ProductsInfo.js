@@ -9,7 +9,8 @@ const ProductsInfoPage = () => {
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1); 
     const [cartItem, setCartItem] = useState(0);
-
+    const [isItemAdded, setIsItemAdded] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const navigate = useNavigate()
   
@@ -25,17 +26,19 @@ const ProductsInfoPage = () => {
           .catch(error => console.log(error))
       }, [id]);
 
+
     const handleMinusClick = () => {
         if (quantity > 1) {
             setQuantity(quantity - 1);
         }
     };
 
+
     const handlePlusClick = () => {
         setQuantity(quantity + 1);
     };
-    const [isItemAdded, setIsItemAdded] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
+
+  
 
     const handleAddToCartClick = () => {
         const timestamp = Date.now();
@@ -49,7 +52,7 @@ const ProductsInfoPage = () => {
           console.log('Item added to cart:', newCartItem);
           setCartItem(newCartItem)
           setIsItemAdded(true);
-          setTimeout(() => setIsItemAdded(false), 3000); // hide the message after 3 seconds
+          setTimeout(() => setIsItemAdded(false), 3000); 
           navigate('/order');
         })
         .catch(error => console.log(error));

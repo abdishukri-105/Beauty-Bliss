@@ -64,7 +64,7 @@ useEffect(() => {
   
   // edit quantity in cart
   const handleQuantityChange = (value, item) => {
-    axios.patch(`http://localhost:4000/cart/${item.id}`, { quantity: value })
+    axios.patch(`http://localhost:4000/${item.id}`, { quantity: value })
       .then(response => {
         setCartItems(prevState => {
           const index = prevState.findIndex(cartItem => cartItem.id === item.id);

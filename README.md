@@ -1,67 +1,95 @@
-# Beauty-Bliss
+# Beauty Bliss E-commerce
+Beauty Bliss is an e-commerce platform that sells a wide range of beauty products. It consists of a frontend built with React and a backend built with Ruby on Rails.
 
-# Description
-This is an e-commerce site that sells a wide variety of beauty products to customers in need. The site is built using Ruby on Rails for the backend and ReactJS for the frontend. It also uses PostgreSQL as the database, and Rspec as the testing framework.
+##  Links
+- [deployed api](https://beaty-product-shop.onrender.com)
+- [LIve link](https://beauty-bliss-ul2a.vercel.app/products)
 
-# Getting Started
-Prerequisites
-To run this app on your local machine, you must have the following installed:
 
-* Ruby v2.7..+
-* Rails v7.0.+
-* PostgreSQL 13.2
-* Node.js 14.16.1
-* rspec v3.12
-* sqlite3
+## Beauty Bliss Frontend
+The frontend is a responsive web application optimized for both desktop and mobile devices. It uses React, React Router, Axios, Tailwindcss, and Font Awesome to provide the following functionalities to the users:
 
-# Installing
-To install the app, follow these steps:
+- View a list of beauty products
+- View the details of a beauty product
+- Add a beauty product to the cart
+- View the cart
+- Remove a beauty product from the cart
+- Create an account
+- Log in to an existing account
+- Log out of the account
 
-Clone the repo: 
-git clone https://github.com/abdishukri-105/Beauty-Bliss
+#### The app includes several user pages, including: 
+ - the landing page, product page, 
+ - cart page, checkout page, 
+ -  confirm page.
+ 
+ #### It also includes: 
+ -  an admin section where users with administrative privileges can add, edit, and delete products.
 
-Then; cd Beauty-Bliss
+## Beauty Bliss Backend
+The backend is built with Ruby on Rails and uses PostgreSQL as the database and RSpec as the testing framework. It provides several API endpoints that the frontend uses to retrieve and manipulate data. The models used in the backend are:
 
-Install dependencies: 
-bundle install or yarn install
+- BeautyProduct: stores information about a beauty product, including its name, description, price, image URL, category, and quantity.
+- Cart: stores information about a user's cart, including the beauty products in the cart, the quantity of each product, and whether the cart is active.
+- CartItem: associates a beauty product with a cart and stores the quantity of the product in the cart.
+- Customer: stores information about a customer, including their name, email, phone number, and address.
+- Order: stores information about an order, including the total amount, the cart data, and the customer who placed the order.
+- User: stores information about a user, including their username, email, and password digest.
 
-Create the database:
-rails db:create
+### Setup
+To set up the Beauty Bliss backend, follow these steps:
 
-Run the migrations:
-rails db:migrate
+Clone the repository:
+       
+    
+       git clone https://github.com/abdishukri-105/Beauty-Bliss.git
 
-Seed the database: 
-rails db:seed
+                    
+### Install dependencies:
 
-Start the server: rails s
-You can then access the app at http://localhost:3000.
+    bundle install
+### Create and migrate the database:
 
-Running the Tests
-To run the tests, use the following command:
 
-bash
-bundle exec rspec
+    rake db:create
+    rake db:migrate
+    Seed the database:
+    Copy code
+    rake db:seed
 
-Deployment
-This app can be deployed to a production environment using a platform such as Heroku. Be sure to set the RAILS_ENV environment variable to production.
+### Start the server:
 
-# MVP Features
-The app has the following MVP features:
+    rails s
 
-Login
-* Create an account
-* Cart section for viewing all beauty products added to cart
-* Checkout section for order purchase
-* Simulation of a payment process by generating address, billing information, and invoices for every order submitted.  
 
-Admin Features
-The app also has the following admin features:
 
-* Perform CRUD operations of beauty products.
-* Add users based on roles to manage beauty products and orders made.
-* View analytics of different beauty products within the platform.
-* View analytics of orders made by customers within the platform.
+## To set up the Beauty Bliss frontend, follow these steps:
+#### Clone the repository:
 
-# License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+    https://github.com/abdishukri-105/Beauty-Bliss
+
+#### Install dependencies:
+
+    npm install
+
+#### Start the development server:
+
+    npm start
+
+#### Build the production version:
+
+
+    npm run build
+
+
+## Authors
+- Abdishukri Mohamed (scrum master)
+- Mutheki Njora
+- Griffins Ngeno
+- Casey Ochieng
+- Louis Okwaro
+- Victor Aketch
+
+## Conclusion
+Beauty Bliss is an e-commerce platform that provides an easy way for customers to purchase beauty products online. The frontend and backend work together seamlessly to provide users with a great shopping experience.

@@ -12,10 +12,10 @@ const AddProduct = () => {
     price: "",
     qty: "",
     image_url: "",
-    category: "", // new category state variable
+    category: "",
   });
 
-  const [category, setCategory] = useState(""); // new category state variable
+  const [category, setCategory] = useState("");
 
    const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,9 +41,9 @@ const AddProduct = () => {
         price: "",
         qty: "",
         image_url: "",
-        category: "", // reset the category value
+        category: "",
       });
-      setError(null); // reset the error message if there was any
+      setError(null); 
     } catch (error) {
       console.error(error);
       setError(
@@ -54,8 +54,6 @@ const AddProduct = () => {
   };
 
   return (
-    // <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
-  //     <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
     <div className="flex flex-col items-center mt-10 justify-center ">
       <h2 className="text-2xl font-bold mb-2 ">Add Product</h2>
       {error && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">{error}</div>}
@@ -132,8 +130,8 @@ const AddProduct = () => {
             name="category"
             type="text"
             placeholder="Product Category"
-            value={category} // use the category state for the input value
-            onChange={handleChangeCategory} // call the new handleChangeCategory function
+            value={category} 
+            onChange={handleChangeCategory} 
           />
         </div>
         <div className="mb-4">
