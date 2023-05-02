@@ -19,6 +19,7 @@ To install the app, follow these steps:
 
 Clone the repo: 
 git clone https://github.com/abdishukri-105/Beauty-Bliss
+Then; cd Beauty-Bliss
 
 Install dependencies: 
 bundle install or yarn install
